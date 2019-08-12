@@ -74,7 +74,7 @@ The next step is to create an interpreter that is able to perform computations s
   
 (You may want to open `Interpreter.hs` in a text editor ... if you have never seen Haskell before, I hope you are impressed by how simple it is ... essentially just 5 lines of code.)
 
-Open `TestCalc.hs` in a text editor, then modify it as discribed in the [slides](http://www.grammaticalframework.org/ipl-book/slides/2-slides-ipl-book.pdf) on page 33 and save it as Calculator.hs. <sup>[[3]](#footnote)</sup> It is important to import the interpreter and replace the main function (also consider that indentation can make a difference in Haskell).
+Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it is interpreting the code, we obtain the file `Calculator.hs`. <sup>[[3]](#footnote)</sup> It is important to import the interpreter and replace the main function (also consider that indentation can make a difference in Haskell).
   
     ghc --make Calculator.hs
     echo "1 + 2 * 3" | ./Calculator
@@ -89,6 +89,4 @@ Follow [my instructions here](https://github.com/alexhkurz/compiler-construction
 
 ---
 
-<a name="haskell">[1]</a>: Thanks to Majid Aziz.
-
-<a name="footnote">[3]</a>: What is going on here? Remember that `TestCalc` printed the abstract syntax tree. The slides show you how to replace the code of the `main` function that printed the abstract syntax tree by code that interpretes the abstract syntax tree. Essentially, interpreting is very similar to printing. In both cases one walks recursively through the abstract syntax tree. For interpreting as opposed to printing, instead of calling the print function, just call the addition function of the host langauge on encountering a node labelled `EAdd` in the tree (imilarly for `EMul`).
+<a name="footnote">[3]</a>: `TestCalc` prints the abstract syntax tree. Essentially, interpreting is very similar to printing. In both cases one walks recursively through the abstract syntax tree. For interpreting as opposed to printing, instead of calling the print function, just call the addition function of the host langauge on encountering a node labelled `EAdd` in the tree (imilarly for `EMul`).
