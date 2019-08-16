@@ -59,9 +59,9 @@ Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it 
     echo "1 + 2 * 3" | ./Calculator
     
 which should produce the answer `7`.
-    
-Great, you have successfully compiled and run your first program.
 
+Great, you know have created a programming language with an interpreter.
+    
 ---
 
 <a name="footnote">[3]</a>: `TestCalc` prints the abstract syntax tree. Essentially, interpreting is very similar to printing. In both cases one walks recursively through the abstract syntax tree. For interpreting as opposed to printing, instead of calling the print function, just call the addition function of the host langauge on encountering a node labelled `EAdd` in the tree (imilarly for `EMul`).
