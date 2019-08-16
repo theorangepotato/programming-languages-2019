@@ -6,28 +6,7 @@ The [BNFC homepage](http://bnfc.digitalgrammars.com/) is the first place to go, 
 
 I don't use Windows, so I am dependent on your feedback to put more information here ...
 
-There are two possibilities:
-
-- Download the [binaries](https://github.com/BNFC/bnfc/releases) and install natively under Windows. Here are some instructions that worked last year. Let me know if I should add anything.
-
-  - Install `make`, see http://gnuwin32.sourceforge.net/packages/make.htm 
-
-  - Download JLex and Cup (see below). Be sure to unzip them (google if you don't know how to do this). Write down their directories.
-
-  - Go to your default directory and open your .bash_profile (vi .bash_profile). Edit it to look something like below, using the directories you created:  
-
-        export CLASSPATH=.:/c/Users/ryan/Documents/Java:/c/Users/ryan/Documents/Java/JLex/:/c/Users/ryan/Documents/Java/Cup
-
-    After saving this, be sure to do '. .bash_profile' to reload your bash profile.
-
-  - Now you should be able to run the following commands:
-
-        bnfc -m -java Calc.cf
-        make
-        echo "23 + 4 * 70" | java Calc/Test
-
-
-- Install Linux from the Windows store and continue to follow the instructions for Linux/MacOS in the next section ... this maybe preferable as it puts us all on the same page ... specifically there is the Windows Subsystem for Linux (WSL). Any Windows 10 user can install WSL on their pc. <sup>[[1]](#haskell)</sup>
+Install Linux from the Windows store and continue to follow the instructions for Linux/MacOS in the next section ... this maybe preferable as it puts us all on the same page ... specifically there is the Windows Subsystem for Linux (WSL). Any Windows 10 user can install WSL on their pc. 
 
 ## Working under Linux/MacOS
 
@@ -82,10 +61,6 @@ Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it 
 which should produce the answer `7`.
     
 Great, you have successfully compiled and run your first program.
-
-## Installing the Java lexer and parser
-
-Follow [my instructions here](https://github.com/alexhkurz/compiler-construction/blob/master/BNFC-installation-java.md).
 
 ---
 
