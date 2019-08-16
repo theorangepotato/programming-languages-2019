@@ -12,7 +12,10 @@ The course will have a practical and a theoretical component.
 
 **BNFC**: BNFC is a tool that helps creating your own programming language. A more in depth study of the tool will be part of the Compiler Construction Course. For this course, for most of the exercises you will get template files. But later, or if you want to conduct your own developments and experiments, you will have to have BNFC installed, so why not start right now. Here are the instructions to follow:
 
- - 
+- [BNFC: basic installation instructions](https://github.com/alexhkurz/compiler-construction/blob/master/BNFC-installation.md)
+- [BNFC: self check](https://github.com/alexhkurz/compiler-construction/blob/master/BNFC-example.md)
+- [LBNF](https://hackmd.io/s/SyJowOgD4): Some tips on the language in which a BNF-grammar is written.
+  
 
 **Haskell** is the leading functional programming language and will be of interest to the course for a number of reasons:
 
