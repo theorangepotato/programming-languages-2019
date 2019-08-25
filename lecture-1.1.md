@@ -16,7 +16,7 @@ The course will have a practical and a theoretical component.
 
 **Haskell** is the leading functional programming language and will be of interest to the course for a number of reasons:
 
- - Haskell can be considered as a domain specific language for creating programming languages.
+ - Haskell, even though a powerful general purpose language, has been  called a domain specific language for creating programming languages for a good reason.
  
  - Haskell is the langauge in which many tools (such as BNFC) in the area of Programming Languages is implemented.
  
