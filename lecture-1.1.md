@@ -18,9 +18,9 @@ The course will have a practical and a theoretical component.
 
  - Haskell, even though a powerful general purpose language, has been  called a domain specific language for creating programming languages for a good reason.
  
- - Haskell is the langauge in which many tools (such as BNFC) in the area of Programming Languages is implemented.
+ - Haskell is the langauge in which many tools (such as BNFC) in the area of Programming Languages are implemented.
  
- - Haskell is a lazy functional programming language and a prime example of an important paradigm in Programming Languages.
+ - Haskell is a lazy functional programming language and, thus, a prime example of an important paradigm in Programming Languages.
  
  - Haskell is an elaboration of the lambda calculus, which also forms the basis for our own small programming language.
  
