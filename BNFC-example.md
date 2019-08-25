@@ -31,4 +31,4 @@ Write a lambda calculus program that adds plus two and parse it.
 
 ## Exercise:
 
-Build your own program and parse it. Play around to get a feel for which programs parse and which do not.
+Build your own program and parse it. Play around to get a feel for which programs parse and which do not. If you are adventurous, feel free to modify the grammar as well. Come to my office hours or ask in the lectures if you have questions.
