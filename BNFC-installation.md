@@ -60,7 +60,13 @@ Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it 
     
 which should produce the answer `7`.
 
-Great, you know have created a programming language with an interpreter.
+Great, you know have created a programming language (even if only a very simple calculator) with an interpreter.
+
+Now go to the
+
+- [BNFC Self Check](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md)
+
+to see whether you can transfer this to another example.
     
 ---
 
