@@ -22,11 +22,11 @@ The course will have a practical and a theoretical component.
  
  - Haskell is a lazy functional programming language and, thus, a prime example of an important paradigm in Programming Languages.
  
- - Haskell is an elaboration of the lambda calculus, which also forms the basis for our own small programming language.
+ - Haskell is an elaboration of the lambda calculus, which also forms the basis for our own small programming language that we will consider in the exercises of this course.
  
  - Haskell is the language in which we will write the interpeter used to execute our programming language.
  
  - Haskell's semantics is based on rewriting, which forms one of the central theoretical concept of the course.
  
- - Haskell is gaining popularity in industry applications for a number of important reasons, such as self-documenting code, a strong type system, side-effect free parallelizable code, ...
+ - Last but not least, Haskell is gaining popularity in industry applications for a number of important reasons, such as self-documenting code, a strong type system, side-effect free parallelizable code, ... so some of you may be interested in adding Haskell to the portfolio of your programming languages.
 
