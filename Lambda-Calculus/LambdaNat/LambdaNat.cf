@@ -1,0 +1,20 @@
+Prog.   Program ::= Exp ;
+EAbs.   Exp1 ::= "\\" Id "." Exp ;  -- in effect: "\" Id "." Exp ;
+EApp.   Exp2 ::= Exp2 Exp3 ; -- application associates on the left
+EVar.   Exp3 ::= Id ;
+ENat.   Exp4 ::= Nat ; 
+Nat0.   Nat ::= "0" ;
+NatS.   Nat ::= "S" Nat ; -- "S" is now a terminal and cannot be parsed as an identifier (variable)
+
+coercions Exp 4 ;
+
+token Id (letter (letter | digit | '_')*) ;
+
+-- S 0 is a number 
+-- S0 is a variable
+-- S S 0 is a number
+-- S (S 0) and S x are not legal expressions
+-- \x.x x x equals \x. ((x x) x) -- the empty spaces between the x are important (why?)
+-- (\x.x) x x equals (((\x.x) x) x) 
+-- (\x.x) S 0 equals (\x.x) (S 0) 
+-- Btw, I say that two strings are equal if they produce the same parse tree (abstract syntax tree)
