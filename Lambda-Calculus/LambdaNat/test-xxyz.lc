@@ -1,0 +1,4 @@
+(\x.x) y z
+
+// parsed as:
+// Prog (EApp (EApp (EAbs (Id "x") (EVar (Id "x"))) (EVar (Id "y"))) (EVar (Id "z")))
