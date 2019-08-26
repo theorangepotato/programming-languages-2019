@@ -8,6 +8,6 @@ To parse a program in the language LambdaNat run
 
     ./TestLambdaNat nameOfProgram
     
-where `nameOfProgram` could be for example [`test-xxyz](https://github.com/alexhkurz/programming-languages-2019/edit/master/Lambda-Calculus/LambdaNat/test-xxyz.lc)`. 
+where `nameOfProgram` could be for example [`test-xxyz`](https://github.com/alexhkurz/programming-languages-2019/edit/master/Lambda-Calculus/LambdaNat/test-xxyz.lc). 
   
   
