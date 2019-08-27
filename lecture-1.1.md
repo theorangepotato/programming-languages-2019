@@ -46,11 +46,11 @@ The course will have a practical and a theoretical component.
  
  **Short Introductin to Parsing:** This is a topic that we will study in much more detail next semester in Compiler Construction. Here we just need to know a few simple rules in order to translate linear syntax, such as `1+2*3`, into a tree such as
  
-     *
-    / \
-   +   3
-  / \
- 1   2
+         *
+        / \
+       +   3
+      / \
+     1   2
  
  The rules according to which a string is transformed into a tree can be given in the form of a [context free grammar]() and are often written using [BNF](). A short BNF definition of a little language for a calculator could be
  
