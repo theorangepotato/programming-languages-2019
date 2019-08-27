@@ -46,4 +46,4 @@ The course will have a practical and a theoretical component.
  
  - Lambda Calculus is the basis for many fully fledged programming languages such as Lisp, Scheme, ML, Haskell, Ocaml, ...
  
- **Homework:** Install the Haskell Platform available at [Haskell](https://www.haskell.org/) on your machine.
+ **Homework:** Install the [Haskell Platform](https://www.haskell.org/downloads/#platform) available at [Haskell](https://www.haskell.org/) on your machine.
