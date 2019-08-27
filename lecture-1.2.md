@@ -1,5 +1,7 @@
 # Short Introduction to Parsing
 
+## Parsing arithmetic expressions
+
 This is a topic that we will study in much more detail next semester in Compiler Construction. 
 Here we just need to know a few simple rules in order to translate linear syntax (aka concrete syntax) into tree form (aka abstract syntax).
 
@@ -42,7 +44,9 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
     
  Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc and for `Exp2 ::= "(" Exp ")"`.
 
-**Parsing Lambda Calculus** The abstract syntax of the lambda calculus can be described simply by
+## Parsing Lambda Calculus expressions 
+
+The abstract syntax of the lambda calculus can be described simply by
 
     Exp ::= "\" Id "." Exp | Exp Exp | Id 
     
