@@ -36,7 +36,7 @@ The course will have a practical and a theoretical component.
  
  **Lambda Calculus** is the smallest practical [Turing complete](https://en.wikipedia.org/wiki/Turing_completeness) programming language. This is suprising because at first sight it is not obvious how to implement any meaningful computation if one only has abstraction and application, but no data types, no if-then-else, no while or recursion ... we will come back to this later. 
  
- *Remark:* In class I gave a quick overview of what is a Turing machine, how it defines a model of computation, what is meant by a computable function and a programming language being Turing complete. I also indicated how to prove that Lambda Calculus is Turing complete and, conversely, how to prove that every Turing machine can be coded as a Lambda Calculus program.
+ *Remark:* In class I gave a quick overview of what is a Turing machine, how it defines a model of computation, what is meant by a computable function and a programming language being Turing complete. I also indicated how to prove that Lambda Calculus is Turing complete and, conversely, how to prove that every Turing machine can be coded as a Lambda Calculus program. I also should have mentioned [Curch's Thesis](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) saying, very roughly, that all unrestricted models of computation are equivalent.
  
  The Lambda Calculus is important to this course for a number of reasons:
  
