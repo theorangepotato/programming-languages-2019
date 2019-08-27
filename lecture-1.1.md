@@ -103,9 +103,11 @@ The course will have a practical and a theoretical component.
  **Homework:** 
  - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
   
- - Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat).
+ - Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat). 
  
- - Install BNFC,  and parse some lambda expressions.
+ - Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as in the previous item.
+ 
+ - [Install BNFC](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md),  and parse some lambda expressions as in the [BNFC Self Check](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md). Compare the abstract syntax trees produced by the parser with the parsing you have done by hand in the exercises above.
 
  
 
