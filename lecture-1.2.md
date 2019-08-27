@@ -1,4 +1,4 @@
-# Short Introductin to Parsing
+# Short Introduction to Parsing
 
 This is a topic that we will study in much more detail next semester in Compiler Construction. 
 Here we just need to know a few simple rules in order to translate linear syntax, such as `1+2*3` into a tree.
