@@ -6,7 +6,7 @@ The course will have a practical and a theoretical component.
 
 - *The practical component* will be about building a small programming language. We will start with the smallest practical programming language known as lambda calculus and then extend it with features. There will be room for invention and adventure there if you feel like it. But there will also be guided exercises.
 
-**Assesment:** The theoretical component will be assessed by a final exam worth 30% and a number of tests during the semester worth together 20%. The practical component will be assessed by a short essay and presentation worth 20% and a number of programming exercises during the semester worth together 30%.
+**Assessment:** The theoretical component will be assessed by a final exam worth 30% and a number of tests during the semester worth together 20%. The practical component will be assessed by a short essay and presentation worth 20% and a number of programming exercises during the semester worth together 30%. There may also be unnannounced short quizzes at the beginning of a lecture to provide feedback to students and lecturer. These quizzes do not contribute to the final grade.
 
 **Creating our own little programming language** will be an important part of the course. This will involve using the tool BNFC as well as learning some of the programming Haskell. 
 
@@ -29,4 +29,45 @@ The course will have a practical and a theoretical component.
  - Haskell's semantics is based on rewriting, which forms one of the central theoretical concept of the course.
  
  - Last but not least, Haskell is gaining popularity in industry applications for a number of important reasons, such as self-documenting code, a strong type system, side-effect free parallelizable code, ... so some of you may be interested in adding Haskell to the portfolio of your programming languages.
+ 
+ **Lambda Calculus** is the smallest practical [Turing complete](https://en.wikipedia.org/wiki/Turing_completeness) programming language. It is important to this course for a number of reasons:
+ 
+ - Because it is small it is easily explained and a good starting point for experimentation.
+ 
+ - Lambda Calculus is minimal in that all it has is
+   - abstraction, that is, the ability to declare a formal parameter and 
+   - application, that is, a mechanims to substitute an argument for a formal parameter.
+ 
+ - Lambda Calculus can be evaluated according to different strategies, in particular call by value and call by name.
+ 
+ - Lambda Calculus can be extended in various ways: types, addresses, references, ...
+ 
+ - Lambda Calculus is the basis for many fully fledged programming languages such as Lisp, Scheme, ML, Haskell, Ocaml, ...
+ 
+ **Short Introductin to Parsing:** This is a topic that we will study in much more detail next semester in Compiler Construction. Here we just need to know a few simple rules in order to translate linear syntax, such as `1+2*3`, into a tree such as
+ 
+     *
+    / \
+   +   3
+  / \
+ 1   2
+ 
+ The rules according to which a string is transformed into a tree can be given in the form of a [context free grammar]() and are often written using [BNF](). A short BNF definition of a little language for a calculator could be
+ 
+    Exp ::= Num | Exp + Exp | Exp * Exp
+    
+ where `Num` stands for any number, say, in decimal notation. 
+ 
+*Exercise:* Show that `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
+
+*Exercise:* In the grammar above the string `1+2*3` can be parsed into two different trees. Write them down.
+ 
+ We can modify the grammar so that `1+2-3` has only one parse tree.
+ 
+   Exp3 ::= Num | Exp2
+   Exp2 ::= Exp 2 * Exp3
+ 
+ 
+ 
+ **Homework:** Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat).
 
