@@ -1,7 +1,7 @@
 # Short Introduction to Parsing
 
 This is a topic that we will study in much more detail next semester in Compiler Construction. 
-Here we just need to know a few simple rules in order to translate linear syntax, such as `1+2*3` into a tree.
+Here we just need to know a few simple rules in order to translate linear syntax (aka concrete syntax) into tree form (aka abstract syntax).
 
 Why is it important to translate strings into trees? In a string such as `1+2+3+4+5*6` we first need to calculate `5*6`. 
 This shows that the substring we need to compute first
