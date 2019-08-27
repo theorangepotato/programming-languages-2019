@@ -8,7 +8,7 @@ The course will have a practical and a theoretical component.
 
 **Assessment:** The theoretical component will be assessed by a final exam worth 30% and a number of tests during the semester worth together 20%. The practical component will be assessed by a short essay and presentation worth 20% and a number of programming assignments during the semester worth together 30%. There may also be unnannounced short quizzes at the beginning of a lecture to provide feedback to students and lecturer. These quizzes do not contribute to the final grade.
 
-**Groups:** For essay, presentation, and assignments I recommend to work in groups of 2-4 students. Let me know when you decided on a group via [email](mailto:akurz@chapman.edu?subject=CPSC-354). 
+**Groups:** For essay, presentation, and assignments I recommend to work in groups of 2-4 students. Let me know when you decided on a group via [email using this link](mailto:akurz@chapman.edu?subject=CPSC-354). 
 
 **Homework:** Most lectures will finish with some homework. Homework is not graded but feel free to hand it in for feedback or come into my office hourse to discuss. Homework is essential to achieve the learning outcomes.
 
