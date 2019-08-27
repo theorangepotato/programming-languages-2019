@@ -34,7 +34,11 @@ The course will have a practical and a theoretical component.
  
  - Last but not least, Haskell is gaining popularity in industry applications for a number of important reasons, such as self-documenting code, a strong type system, side-effect free parallelizable code, ... so some of you may be interested in adding Haskell to the portfolio of your programming languages.
  
- **Lambda Calculus** is the smallest practical [Turing complete](https://en.wikipedia.org/wiki/Turing_completeness) programming language. It is important to this course for a number of reasons:
+ **Lambda Calculus** is the smallest practical [Turing complete](https://en.wikipedia.org/wiki/Turing_completeness) programming language. This is suprising because at first sight it is not obvious how to implement any meaningful computation if one only has abstraction and application, but no data types, no if-then-else, no while or recursion ... we will come back to this later. 
+ 
+ *Remark:* In class I gave a quick overview of what is a Turing machine, how it defines a model of computation, what is meant by a computable function and a programming language being Turing complete. I also indicated how to prove that Lambda Calculus is Turing complete and, conversely, how to prove that every Turing machine can be coded as a Lambda Calculus program.
+ 
+ The Lambda Calculus is important to this course for a number of reasons:
  
  - Because it is small it is easily explained and a good starting point for experimentation.
  
