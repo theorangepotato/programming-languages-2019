@@ -54,20 +54,38 @@ The course will have a practical and a theoretical component.
  
  The rules according to which a string is transformed into a tree can be given in the form of a [context free grammar]() and are often written using [BNF](). A short BNF definition of a little language for a calculator could be
  
-    Exp ::= Num | Exp + Exp | Exp * Exp
+    Exp ::= Integer | Exp "+" Exp | Exp "*" Exp
     
- where `Num` stands for any number, say, in decimal notation. 
+ where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing.
  
 *Exercise:* Show that `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
 
 *Exercise:* In the grammar above the string `1+2*3` can be parsed into two different trees. Write them down.
  
- We can modify the grammar so that `1+2-3` has only one parse tree.
+ We can modify the grammar so that `1+2*3` has only one parse tree.
  
-   Exp3 ::= Num | Exp2
-   Exp2 ::= Exp 2 * Exp3
+    Exp     ::=     Exp     "+"     Exp1  | Exp 1
+    Exp1    ::=     Exp1    "*"     Exp2  | Exp 2
+    Exp2    ::=     Integer 
+
+*Exercise:* Show that there is only one way to parse `1+2*3` in the second grammar. How do you parse `1+2+3+4`?
+
+*Exercise:* Add rules for minus and division.
+
+*Exercise:* Can you parse `(1+2)*3` ? How can you modify the grammar to account for such strings?
+
+*Remark:* BNFC has a feature called coercions. Using this the grammar for the calculator looks as follows:
+
+    Exp     ::=     Exp     "+"     Exp1  ;
+    Exp1    ::=     Exp1    "*"     Exp2  ;
+    Exp2    ::=     Integer ;
+    
+    coercions Exp 2
+
+
  
+ **Homework:** 
+ - Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat).
  
- 
- **Homework:** Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat).
+  - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
 
