@@ -78,7 +78,7 @@ The abstract syntax of the lambda calculus can be described simply by
  **Homework:** 
  - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
   
- - Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat). 
+ - Run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat) (this needs Haskell installed, see the homework of the previous lecture).
  
  - Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as in the previous item.
  
