@@ -16,9 +16,9 @@ The rules according to which a string is transformed into a tree can be given in
     
 where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing.
  
-*Exercise:* Show that `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
+*Exercise:* `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
 
-*Exercise:* In the grammar above the string `1+2*3` can be parsed into two different trees. Write them down.
+*Exercise:* In the grammar above the string `1+2*3` can be parsed into two different trees. Write them down. How many parse trees are there for `1+2+3+4`?
  
  We can modify the grammar so that `1+2*3` has only one parse tree.
  
@@ -26,7 +26,7 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
     Exp1    ::=     Exp1    "*"     Exp2  | Exp 2
     Exp2    ::=     Integer 
 
-*Exercise:* Show that there is only one way to parse `1+2*3` in the second grammar. How do you parse `1+2+3+4`?
+*Exercise:* Show that there is only one way to parse `1+2*3` in the second grammar. How do you parse `1+2+3+4` now?
 
 *Exercise:* Add rules for minus and division.
 
@@ -39,6 +39,8 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
     Exp2    ::=     Integer ;
     
     coercions Exp 2
+    
+ Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc and for `Exp2 ::= "(" Exp ")"`.
 
 **Parsing Lambda Calculus** The abstract syntax of the lambda calculus can be described simply by
 
