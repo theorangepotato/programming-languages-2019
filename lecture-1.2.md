@@ -8,13 +8,13 @@ This shows that the substring we need to compute first
 can be arbitrarily far away from the first letter of the string. So how do we find this substring? The answer is by first converting
 the string into a tree. Once we have the data in tree form the answer to such and similar questions is obvious.
 
-*Exercise:* Transform `1+2*3'into a tree. 
+*Exercise:* Transform `1+2*3` into a tree. 
  
- The rules according to which a string is transformed into a tree can be given in the form of a [context free grammar]() and are often written using [BNF](). A short BNF definition of a little language for a calculator could be
+The rules according to which a string is transformed into a tree can be given in the form of a [context free grammar](https://en.wikipedia.org/wiki/Context-free_grammar) and are often written using [BNF](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form). A short BNF definition of a little language for a calculator could be
  
     Exp ::= Integer | Exp "+" Exp | Exp "*" Exp
     
- where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing.
+where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing.
  
 *Exercise:* Show that `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
 
