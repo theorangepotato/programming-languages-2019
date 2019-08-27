@@ -3,7 +3,7 @@
 This is a topic that we will study in much more detail next semester in Compiler Construction. 
 Here we just need to know a few simple rules in order to translate linear syntax (aka concrete syntax) into tree form (aka abstract syntax).
 
-Why is it important to translate strings into trees? In a string such as `1+2+3+4+5*6` we first need to calculate `5*6`. 
+Why is it important to translate strings into trees? To evaluate a string such as `1+2+3+4+5*6` we first need to calculate `5*6`. 
 This shows that the substring we need to compute first
 can be arbitrarily far away from the first letter of the string. So how do we find this substring? The answer is by first converting
 the string into a tree. Once we have the data in tree form the answer to such and similar questions is obvious.
