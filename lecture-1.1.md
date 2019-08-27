@@ -82,10 +82,30 @@ The course will have a practical and a theoretical component.
     
     coercions Exp 2
 
+**Parsing Lambda Calculus** The abstract syntax of the lambda calculus can be described simply by
 
+    Exp ::= "\" Id "." Exp | Exp Exp | Id 
+    
+ As in the arithmetic example, this does not take into account parenthesis. 
+ 
+ *Exercise:* Show that `x y z` can be parsed in two different ways.
+ 
+    Exp1 ::= "\" Id "." Exp1 ;
+    Exp2 ::= Exp2 Exp3 
+    Exp3 ::= Id ;
+
+    coercions Exp 3 ;
+    
+ *Exercise:* Show that `x y z` has now only one parse tree.
+ 
+ [LambdaNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf)
  
  **Homework:** 
+ - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
+  
  - Install [Haskell](https://www.haskell.org/) on your machine and run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat).
  
-  - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
+ - Install BNFC,  and parse some lambda expressions.
+
+ 
 
