@@ -1,13 +1,10 @@
 # README
 
-The `.hs` files in this directory have been produced by
+To run a program in the language LambdaNat:
 
-    bnfc -m -haskell LambdaNat.cf
-  
-To parse a program in the language LambdaNat run
+- download this directory
 
-    ./TestLambdaNat nameOfProgram
-    
-where the file `nameOfProgram` could be, for example, [`test-xxyz`](https://github.com/alexhkurz/programming-languages-2019/edit/master/Lambda-Calculus/LambdaNat/test-xxyz.lc). 
-  
+- run `stack build` in this directory from a terminal
+
+- run `stack exec LambdaNat-exe test/test-xxyz.lc`
   
