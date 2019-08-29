@@ -30,7 +30,7 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
 
 **Exercise:** Show that there is only one way to parse `1+2*3` in the second grammar. How do you parse `1+2+3+4` now?
 
-***Exercise:** Add rules for minus and division.
+**Exercise:** Add rules for minus and division.
 
 **Exercise:** Can you parse `(1+2)*3` ? How can you modify the grammar to account for such strings?
 
