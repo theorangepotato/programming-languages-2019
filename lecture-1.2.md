@@ -77,7 +77,7 @@ By the way, this is the form in which you would write down the grammar in a theo
 
   and as a context free grammar 
 
-        Exp -> Exp '+' Exp1                                 
+Exp -> Exp '+' Exp1                                 
 	Exp -> Exp '-' Exp1                                 
 	Exp -> Exp1                                         
 	Exp1 -> Exp1 '*' Exp2                               
