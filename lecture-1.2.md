@@ -77,14 +77,14 @@ By the way, this is the form in which you would write down the grammar in a theo
 
   and as a context free grammar 
 
-Exp -> Exp '+' Exp1                                 
-	Exp -> Exp '-' Exp1                                 
-	Exp -> Exp1                                         
-	Exp1 -> Exp1 '*' Exp2                               
-	Exp1 -> Exp1 '/' Exp2                               
-	Exp1 -> Exp2                                        
-	Exp2 -> Integer                                    
-	Exp2 -> '(' Exp ')'                                 
+    Exp -> Exp '+' Exp1                                 
+    Exp -> Exp '-' Exp1                                 
+    Exp -> Exp1                                         
+    Exp1 -> Exp1 '*' Exp2                               
+    Exp1 -> Exp1 '/' Exp2                               
+    Exp1 -> Exp2                                        
+    Exp2 -> Integer                                    
+    Exp2 -> '(' Exp ')'                                 
      
  `1+2+3+4` has 5 parse trees in the grammar `Exp ::= Integer | Exp "+" Exp | Exp "*" Exp` but only one in the full grammar above.
  
