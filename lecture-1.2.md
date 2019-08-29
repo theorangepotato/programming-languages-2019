@@ -53,7 +53,7 @@ Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc a
      
 By the way, this is the form in which you would write down the grammar in a theory course on formal languages, see [context free grammar](https://en.wikipedia.org/wiki/Context-free_grammar) again.
 
-*Activity:* Being new to a subject, one of the stumbling blocks is always the subject specific jargon and notation. For example, both BNF and context free grammars are equivalent. Every context free gramma can be written in BNF, and vices versa. So why should we learn both? Discuss ...
+*Activity:* Being new to a subject, one of the stumbling blocks is always the subject specific jargon and notation. For example, both BNF and context free grammars are equivalent. Every context free gramma can be written in BNF, and vice versa. So why should we learn both? Discuss ...
 
 ## Parsing Lambda Calculus expressions 
 
