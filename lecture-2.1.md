@@ -1,6 +1,8 @@
 (under construction)
 
-## Parsing Lambda Calculus expressions 
+# Lambda Calculus
+
+## Syntax (parsing lambda calculus expressions)
 
 The abstract syntax of the lambda calculus can be described simply by
 
@@ -9,6 +11,8 @@ The abstract syntax of the lambda calculus can be described simply by
  As in the arithmetic example, this does not take into account parenthesis. 
  
  **Exercise:** Show that `x y z` can be parsed in two different ways.
+ 
+As in the example of arithmetic, we eliminate unwanted parse trees by refining the grammar so that rules are applied in a particular order.
  
     Exp1 ::= "\" Id "." Exp1 ;
     Exp2 ::= Exp2 Exp3 
