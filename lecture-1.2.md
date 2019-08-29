@@ -55,26 +55,7 @@ By the way, this is the form in which you would write down the grammar in a theo
 
 **Activity:** Being new to a subject, one of the stumbling blocks is always the subject specific jargon and notation. For example, both BNF and context free grammars are equivalent. Every context free gramma can be written in BNF, and vice versa. So why should we learn both? Discuss ... (Actually, the situation is even "worse": If you look at the particular form of BNF implemented in the tool BNFC, you will find that the notation is slightly different again ... but again there are good reasons for this (we may come back to this later).)
 
-## Parsing Lambda Calculus expressions 
 
-The abstract syntax of the lambda calculus can be described simply by
-
-    Exp ::= "\" Id "." Exp | Exp Exp | Id 
-    
- As in the arithmetic example, this does not take into account parenthesis. 
- 
- **Exercise:** Show that `x y z` can be parsed in two different ways.
- 
-    Exp1 ::= "\" Id "." Exp1 ;
-    Exp2 ::= Exp2 Exp3 
-    Exp3 ::= Id ;
-
-    coercions Exp 3 ;
-    
- **Exercise:** Show that `x y z` has now only one parse tree.
- 
- [LambdaNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf)
- 
  ## Answers to selected Exercises
  
  The trees for `(1+2)*3`  and for `1+2*3` are, respectively,
@@ -107,12 +88,6 @@ The abstract syntax of the lambda calculus can be described simply by
      
  
  ## Homework
- - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels".
-  
- - Run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat) (this needs Haskell installed, see the homework of the previous lecture).
  
- - Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as in the previous item.
- 
- - [Install BNFC](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md),  and parse some lambda expressions as in the [BNFC Self Check](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md). Compare the abstract syntax trees produced by the parser with the parsing you have done by hand in the exercises above.
-
+ - Write down some arithmetic expressions and construct the parse tree using the rules of the grammar. Also write down the abstract syntax trees.
  
