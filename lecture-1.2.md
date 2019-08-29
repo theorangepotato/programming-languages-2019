@@ -45,11 +45,11 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
 Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc and for `Exp2 ::= "(" Exp ")"`. If you want to see all the rules specified by the above BNF in detail, it looks like this:
  
      Exp -> Exp '+' Exp1                             
-    	Exp -> Exp1                                      
-	    Exp1 -> Exp1 '*' Exp2                             
-    	Exp1 -> Exp2                                       
-	    Exp2 -> Integer                                    
-	    Exp2 -> '(' Exp ')'         
+     Exp -> Exp1                                      
+     Exp1 -> Exp1 '*' Exp2                             
+     Exp1 -> Exp2
+     Exp2 -> Integer   
+     Exp2 -> '(' Exp ')'         
      
 By the way, this is the form in which you would write down the grammar in a theory course on formal languages, see [context free grammar](https://en.wikipedia.org/wiki/Context-free_grammar) again.
 
@@ -75,7 +75,7 @@ The abstract syntax of the lambda calculus can be described simply by
  
  [LambdaNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf)
  
- **Answers to selected Exercises**
+ ## Answers to selected Exercises
  
  The trees for `(1+2)*3`  and for `1+2*3` are, respectively,
  
@@ -84,6 +84,26 @@ The abstract syntax of the lambda calculus can be described simply by
        +   3        1   *
       / \              / \
      1   2            2   3
+     
+  Thu full grammar for the calculator is in BNF
+  
+    Exp     ::=     Exp     "+"     Exp1  | Exp 1
+    Exp     ::=     Exp     "-"     Exp1  | Exp 1
+    Exp1    ::=     Exp1    "*"     Exp2  | Exp 2
+    Exp1    ::=     Exp1    "/"     Exp2  | Exp 2
+    Exp2    ::=     Integer 
+    Exp2    ::=     "(" Exp ")"
+
+  and as a context free grammar
+  
+        Exp -> Exp '+' Exp1                                
+	Exp -> Exp '-' Exp1                                
+	Exp -> Exp1                                         
+	Exp1 -> Exp1 '*' Exp2                               
+	Exp1 -> Exp1 '/' Exp2                               
+	Exp1 -> Exp2                                        
+	Exp2 -> Integer                                    
+	Exp2 -> '(' Exp ')'                                 
      
  
  ## Homework
