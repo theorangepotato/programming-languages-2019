@@ -42,7 +42,16 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
     
     coercions Exp 2
     
- Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc and for `Exp2 ::= "(" Exp ")"`.
+Using coercions we do not need to add explicit rules for `Exp ::=  Exp 1`, etc and for `Exp2 ::= "(" Exp ")"`. If you want to see all the rules specified by the above BNF in detail, it looks like this:
+ 
+     Exp -> Exp '+' Exp1                             
+    	Exp -> Exp1                                      
+	    Exp1 -> Exp1 '*' Exp2                             
+    	Exp1 -> Exp2                                       
+	    Exp2 -> Integer                                    
+	    Exp2 -> '(' Exp ')'         
+     
+By the way, this is the form in which you would write down the grammar in a theory course on formal languages, see [context free grammar](https://en.wikipedia.org/wiki/Context-free_grammar) again.
 
 ## Parsing Lambda Calculus expressions 
 
