@@ -56,7 +56,7 @@ By the way, this is the form in which you would write down the grammar in a theo
 **Activity:** Being new to a subject, one of the stumbling blocks is always the subject specific jargon and notation. For example, both BNF and context free grammars are equivalent. Every context free gramma can be written in BNF, and vice versa. So why should we learn both? Discuss ... (Actually, the situation is even "worse": If you look at the particular form of BNF implemented in the tool BNFC, you will find that the notation is slightly different again ... but again there are good reasons for this (we may come back to this later).)
 
 
- ## Answers to selected Exercises
+ ## Answers to the Exercises
  
  The trees for `(1+2)*3`  and for `1+2*3` are, respectively,
  
@@ -66,7 +66,7 @@ By the way, this is the form in which you would write down the grammar in a theo
       / \              / \
      1   2            2   3
      
-  Thu full grammar for the calculator is in BNF
+  The full grammar for the calculator is in BNF
   
     Exp     ::=     Exp     "+"     Exp1  | Exp 1
     Exp     ::=     Exp     "-"     Exp1  | Exp 1
@@ -86,6 +86,7 @@ By the way, this is the form in which you would write down the grammar in a theo
 	Exp2 -> Integer                                    
 	Exp2 -> '(' Exp ')'                                 
      
+ `1+2+3+4` has 5 parse trees in the grammar `Exp ::= Integer | Exp "+" Exp | Exp "*" Exp` but only one in the full grammar above.
  
  ## Homework
  
