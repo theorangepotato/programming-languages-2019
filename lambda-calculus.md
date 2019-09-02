@@ -1,5 +1,7 @@
 # Lambda Calculus
 
+Read [here](https://hackmd.io/eIL-haCIS7-q1ja8LAXy-Q?view).
+
 ## The Syntax of Lambda Calculus
 
 We will use what we learned in our [Short Introduction to Parsing]() in order to define our first programming language, the ***$\lambda$-calculus*** or ***lambda calculus***.
@@ -18,6 +20,7 @@ $$\lambda x.e$$ is the program (or function), which has as a formal parameter $x
 - **Variables:** The basic programs are just the variables.
 
 
+
 Recall from the [Short Introduction to Parsing]() how to use define a language using BNF.
 
 ### The Grammar of Lambda Calculus
@@ -30,15 +33,17 @@ $$ e ::= \lambda x.e \mid e\, e \mid x$$
 
 where $x$ ranges over an infinite set, the elements of which are called variables.
 
-**Exercise:** Compare the three bullet points above with $$ e ::= \lambda x.e \mid e e \mid x.$$ Both have the same meaning. What are the advantages of the shorter notation? 
+**Exercise:** Compare the three bullet points above with $\ e ::= \lambda x.e \mid e e \mid x\ .$ Both have the same meaning. What are the advantages of the shorter notation? 
 
 In BNFC, we write down the same definition slightly differently. Each rule gets a name and goes on a separate line. This then looks as follows.
 
-**Definition 2:** The lambda calculus is the language defined by the grammar
+**Definition 2:** The lambda calculus is the language defined by the folloing BNFC grammar
 
     EAbs.   Exp ::= "\\" Id "." Exp ;  
     EApp.   Exp ::= Exp Exp1 ; 
     EVar.   Exp1 ::= Id ;
+    
+    coercions Exp 1 ;
     
 **Remark:** Most of the notation has been explained before. But some comments are in order. 
 
@@ -50,4 +55,28 @@ In BNFC, we write down the same definition slightly differently. Each rule gets 
 
 The differences between the mathematical notation and BNFC stem from the following observations. The mathematical notation is optimised for human readers and pen and paper mathematics. BNFC is written by humans but also processed by machines. 
 
+**Remark:** At the moment, it looks like we cannot write very interesting programs as we have neither data types nor constructs like assignment or if-then-else or while. We will come back to this question soon. But we can ask which strings are legal programs and which are not, see the next
 
+**Exercise:** Show that any of the following are lambda calculus expressions
+
+    x
+    x x
+    x y
+    x y z 
+    \x.x
+    \x.x x
+    (\x (\y . x y)) (\x.x) z
+    
+What are the abstract syntax trees? 
+
+**Exercise:** Show that the following are not lambda calculus expressions (according the BNFC grammar above)
+
+    x
+    x x
+    x y
+    \x.x
+    \x.x x
+    (\x (\y . x y)) (\x.x)
+    
+What are the abstract syntax trees? 
+- $\lambda x. x$ is a function that takes one argument, as we can see from the $\lambda x$. 
