@@ -99,7 +99,7 @@ What error message would you suggest a parser could return to the programmer?
     \x.\y. x y z
    
    
-**Exercise:** Do the following expressions e1 and e2 have the same abstract syntax tree?
+**Exercise (IMPORTANT):** Do the following expressions e1 and e2 have the same abstract syntax tree?
     
 | e1| e2|
 |:--:|:---:|
@@ -130,6 +130,16 @@ Numbers are special programs but not every program is a number. Numbers are defi
 
 Now we can define the syntax of the programming language LambdaNat via the BNFC grammar
 
+    EAbs.   Exp ::= "\\" Id "." Exp ;  
+    EApp.   Exp2 ::= Exp2 Exp3 ; 
+    EVar.   Exp3 ::= Id ;
+    ENat.   Exp4 ::= Nat ; 
+    Nat0.   Nat ::= "0" ;
+    NatS.   Nat ::= "S" Nat ; 
+
+    coercions Exp 4 ;
+    
+The full BNFC grammar is in the file [LambdNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf).
 
 
 ## Semantics of the Lambda Calculus
@@ -170,17 +180,17 @@ $$(\lambda x. e) e' \ \rightarrow \ e[e'/x]$$
 
 
 
-## Homework (to be revised)
+## Homework 
 
 - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
 
 - Read the [BNF Converter Tutorial](http://bnfc.digitalgrammars.com/tutorial/bnfc-tutorial.html) up to and including Section "The deeper semantics of precedence levels: dummy labels". Explain again why we use different levels of expressions in the grammar of the lambda calculus.
   
- - Run some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat) (this needs Haskell installed, see the homework of the previous lecture). In particular, solve the exercises of this lecture with the help of the tool.
+ - **(IMPORTANT)** Parse some programs in the [LambdaNat language](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat). In particular, solve the exercises of this lecture with the help of the tool as explained [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/README.md).
 
 
- - Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as in the previous item.
+ - **(IMPORTANT)** Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as in the previous item.
  
- - [Install BNFC](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md),  and parse some lambda expressions as in the [BNFC Self Check](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md). Compare the abstract syntax trees produced by the parser with the parsing you have done by hand in the exercises above.
+ - (Optional): [Install BNFC](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md),  and parse some lambda expressions as in the [BNFC Self Check](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md). Compare the abstract syntax trees produced by the parser with the parsing you have done by hand in the exercises above.
 
  
