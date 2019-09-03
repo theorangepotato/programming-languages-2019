@@ -3,9 +3,9 @@
 Learning Outcomes: After having worked through the exercises and homework, students will be able to
 
 - understand a context free grammar in BNFC for arithmetic expressions,
-- parse an arithmetic expression, that is, to transform an arithmetic expression into an abstract syntax tree.
+- parse an arithmetic expression, that is, to transform an arithmetic expression into an abstract syntax tree,
 - how precedence levels are used to make sure that each expresssion has only one parse tree,
-- explain what is an abstract syntax tree,
+- explain what is an abstract syntax tree.
 
 ## Parsing arithmetic expressions
 
