@@ -28,7 +28,7 @@ Now we can define the syntax of the programming language LambdaNat via the BNFC 
 
     coercions Exp 4 ;
     
-The full BNFC grammar is in the file [LambdNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf).
+The full BNFC grammar is in the file [LambdNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf). 
 
 
 ## Semantics of the Lambda Calculus
