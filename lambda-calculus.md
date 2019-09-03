@@ -46,12 +46,57 @@ where $x$ ranges over an infinite set, the elements of which are called variable
 
 **Exercise:** Compare the three bullet points above with $\ e ::= \lambda x.e \mid e e \mid x\ .$ Both have the same meaning. What are the advantages of the shorter notation? 
 
-**Remark:** The grammar $\ e ::= \lambda x.e \mid e e \mid x$ is enough to define the syntax of lambda expressions as trees. We add parenthesis if we want to disambiguate a string as in $$(\lambda x. (\lambda y. (x y z))) ((a b) c)$$
 
-**Exercise:** Write $(\lambda x. (\lambda y. (x y z))) ((a b) c)$ as a tree.
+**Remark:** We will comment on the three clauses in turn.
+- (Function definition.) $\lambda x.e$ is a function. If we compare this with a C-like language 
+
+      int plus_one(int x) { return x+1 }
+     
+  we note the following differences:
+    - No types, that is, `plus_one(x){ return x+1 }`
+    - No need for `return`, we just return the last value as in `plus_one(x){x+1}`
+    - No functions names which leaves us with `(x){x+1}` which we write as $\lambda x. x+1$
+
+  We will see later what to do about the `+ 1`.
+  
+   Function definition is called abstraction since in the same way as the definitions 
+
+      int plus_one(int x) { return x+1 }
+
+  and
+  
+      int plus_one(int y) { return y+1 }
+     
+  denote the same function, so do 
+  
+  $\lambda x.e$ and $\lambda y.e'$
+  
+  denote the same function if $e'$ arises from $e'$ by replacing every occurrence of $x$ by $y$. In other words, the meaning of $\lambda x.e$ does not depend on $x$, the name $x$ has been abstracted.
+  
+
+  
+- (Function Application.) In a C-like language we would write function application as 
+
+      plus_one(2)
+      
+  whereas we would write
+  
+      plus_one 2 
+     
+  in other words, we juxtapose (write next to each other) the function and its argument.
+  
+- (Variables.) Variables are mere names. The only operation we will use on names will be testing whether two names are equal or not. In particular, there will be no assignment of values to variables. In other words, the variables of lambda calculus are not memeory cells.
+
+
+
+
+
+**Remark:** The grammar $\ e ::= \lambda x.e \mid e e \mid x$ defines the syntax of lambda expressions as trees. We add parenthesis if we want to disambiguate a string as in $$(\lambda x. (\lambda y. (x y z))) ((a b) c)$$
+
+**Exercise:** Write $(\lambda x. (\lambda y. ((x y) z))) ((a b) c)$ as a tree.
 
 **Rules for dropping parenthesis:**
-To make writing and reading easier to the eye there are additional rules that allow us to drop parentheses. For example, we can abbreviate $(a b) c$, but not $a (b c)$, to $a b c$. And we abbreviate $\lambda x. (\lambda y. z)$ to $\lambda x. \lambda y. z$ and $\lambda x. (a b)$, but not $(\lambda x. a ) b$, to $\lambda x. a b$. 
+To make writing and reading easier on the eye there are additional rules that allow us to drop parentheses. For example, we can abbreviate $(a b) c$, but not $a (b c)$, to $a b c$. And we abbreviate $\lambda x. (\lambda y. z)$ to $\lambda x. \lambda y. z$ and $\lambda x. (a b)$, but not $(\lambda x. a ) b$, to $\lambda x. a b$. 
 
 **Exercise:** Use the convention on parentheses described in the previous remark in order to eliminate as many parentheses as possible from $(\lambda x. (\lambda y. (x y z))) ((a b) c)$ without changing the tree denoted by the expressions.
 
