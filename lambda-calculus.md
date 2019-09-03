@@ -11,6 +11,7 @@ Read [this lecture in HackMD](https://hackmd.io/eIL-haCIS7-q1ja8LAXy-Q?view).
 **Remark:** A program is by definition syntactically correct (otherwise it is not a program in the first place). But we sometimes say "syntactically correct program" or 
 "legal program" or "well-formed program" for emphasis. 
 
+**Warning:** Parsing and Lambda Calculus may well be the most difficult concepts we will meet in the course. So bear with me. I put a lot of "easy" exercises. Work through them. Let me know if you have questions about them.
 
 ## The Syntax of Lambda Calculus
 
@@ -44,6 +45,17 @@ $$ e ::= \lambda x.e \mid e\, e \mid x$$
 where $x$ ranges over an infinite set, the elements of which are called variables.
 
 **Exercise:** Compare the three bullet points above with $\ e ::= \lambda x.e \mid e e \mid x\ .$ Both have the same meaning. What are the advantages of the shorter notation? 
+
+**Remark:** The grammar $\ e ::= \lambda x.e \mid e e \mid x$ is enough to define the syntax of lambda expressions as trees. We add parenthesis if we want to disambiguate a string as in $$(\lambda x. (\lambda y. (x y z))) ((a b) c)$$
+
+**Exercise:** Write $(\lambda x. (\lambda y. (x y z))) ((a b) c)$ as a tree.
+
+**Rules for dropping parenthesis:**
+To make writing and reading easier to the eye there are additional rules that allow us to drop parentheses. For example, we can abbreviate $(a b) c$, but not $a (b c)$, to $a b c$. And we abbreviate $\lambda x. (\lambda y. z)$ to $\lambda x. \lambda y. z$ and $\lambda x. (a b)$, but not $(\lambda x. a ) b$, to $\lambda x. a b$. 
+
+**Exercise:** Use the convention on parentheses described in the previous remark in order to eliminate as many parentheses as possible from $(\lambda x. (\lambda y. (x y z))) ((a b) c)$ without changing the tree denoted by the expressions.
+
+**Remark:** For a human reader it is fine to think of the grammar as describing trees. But programs are meant to be read by humans and by machines. And machines read strings, not trees. So we need to complicate notation in order to tell the machine precisely how to transform a string into a tree. In particular, we need to be more precise about the rules that allow us to drop parentheses. This is achieved, as in the example of arithmetic expressions in the previous lecture, by putting this information directly into the grammar.
 
 In BNFC, we write down the same definition slightly differently. Each rule gets a name and goes on a separate line. This then looks as follows.
 
