@@ -9,7 +9,7 @@ All other files of this folder have been produced using bnfc by running the foll
     
 In particular, these commands produce the LambdaNat parser 
 
-   TestLambdaNat
+    TestLambdaNat
    
 To parse a program such as `\x.x` run
 
