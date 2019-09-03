@@ -14,13 +14,13 @@ Read [this lecture in HackMD](https://hackmd.io/eIL-haCIS7-q1ja8LAXy-Q?view).
 
 ## The Syntax of Lambda Calculus
 
-We will use what we learned in our [Short Introduction to Parsing]() in order to define our first programming language, the ***$\lambda$-calculus*** or ***lambda calculus***.
+We will use what we learned in our [Short Introduction to Parsing](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.2.md) in order to define our first programming language, the ***$\lambda$-calculus*** or ***lambda calculus***.
 
 To this end we first have to give a grammar, which specifies all the legal programs that can be written in lambda calculus.
 
 ### Recaps
 
-Recall from the [introduction](), that lambda calculus has only three programming constructs:
+Recall from the [introduction](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.1.md), that lambda calculus has only three programming constructs:
 
 - **Abstraction:** If $e$ is a program (also called an expression in lambda calculus), possibly containing a variable $x$, then
 $$\lambda x.e$$ is the program (or function), which has as a formal parameter $x$. This is called abstraction, because the program $\lambda x.e$ does not depend on $x$ anymore, $x$ is abstracted away. We will explain this in more detail below.
@@ -31,7 +31,7 @@ $$\lambda x.e$$ is the program (or function), which has as a formal parameter $x
 
 
 
-Recall from the [Short Introduction to Parsing]() how to use define a language using BNF.
+Recall from the [Short Introduction to Parsing](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.2.md) how to use define a language using BNF.
 
 ### The Grammar of Lambda Calculus
 
