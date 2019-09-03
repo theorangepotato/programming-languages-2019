@@ -7,5 +7,15 @@ All other files of this folder have been produced using bnfc by running the foll
     bnfc -m -haskell LambdaNat.cf
     make
     
+In particular, these commands produce the LambdaNat parser 
+
+   TestLambdaNat
+   
+To parse a program such as `\x.x` run
+
+    echo "\x.x" | ./TestLambdaNat
     
+or save the program into a file `file` and run
+
+    ./TestLambdaNat file
 
