@@ -2,7 +2,7 @@
 
 Notes for the **Programming Languages** course at Chapman University 2019 by Alexander Kurz and Samuel Balco.
 
-Any questions, comments, etc send a mail to akurz at chapman edu.
+Any questions, comments, etc send a mail to akurz at chapman.edu.
 
 Office Hours Tue and Thu 2pm to 3.30pm in Hashiger 208.
 
