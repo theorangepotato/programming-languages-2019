@@ -1,6 +1,6 @@
 # Lambda Calculus
 
-Read [here](https://hackmd.io/eIL-haCIS7-q1ja8LAXy-Q?view).
+Read this lecture in [HackMD](https://hackmd.io/eIL-haCIS7-q1ja8LAXy-Q?view).
 
 **Learning Outcomes:** After having worked through the exercises and homework, students will be able to
 
