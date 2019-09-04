@@ -101,6 +101,8 @@ By the way, this is the form in which you would write down the grammar in a theo
  
  - Write down some arithmetic expressions (such as `1+2*(3+4)`, `1+2+3*4+5`, etc) and construct the parse tree using the rules of the grammar. Also write down the abstract syntax trees.
  
- - Write down some illegal expressions (such as `1++2`, `2*`, etc) and try to parse them. where does the parsing get stuck? If you were a compiler, what syntax error would you provide to the user on encountering a syntax error? (In order to be implementable, the error message must be computed from the data available at the moment were the parsing gets stuck.)
+ - Compare your abstract syntax trees form the previous exercise with the ones computed by the parser available [here](https://github.com/alexhkurz/programming-languages-2019/tree/master/Calculator).
+ 
+ - Write down some illegal expressions (such as `1++2`, `2*`, etc) and try to parse them. Where does the parsing get stuck? If you were a compiler, what syntax error would you provide to the user on encountering a syntax error? (In order to be implementable, the error message must be computed from the data available at the moment were the parsing gets stuck.)
  
  
