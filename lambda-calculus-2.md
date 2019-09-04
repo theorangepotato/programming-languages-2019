@@ -5,7 +5,7 @@
 - explain and perform capture avoiding substitution, 
 - interpret (=execute) lambda calculus programs.
 
-## Syntax of LambdaNat
+## Syntax of LambdaNat 
 
 Later in the course we will see why lambda calculus is Turing complete. Despite only having abstraction and application, a rich repertoire of data and control can be encoded, including data types such as Booleans, numbers, and lists as well as control flow operations such as if-then-else and loops/recursion.
 
