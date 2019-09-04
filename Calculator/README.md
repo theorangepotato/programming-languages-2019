@@ -11,6 +11,8 @@ Compare the abstract syntax trees you get as an output above with those of
         echo "2 + 3" | ./TestCalc
         echo "((2) + 3)" | ./TestCalc
         
+        etc
+        
 What do you learn about spaces and parentheses?
 
 If you have installed BNFC, you may want to change the grammar so that you can also parse expressions with variables.
