@@ -15,6 +15,6 @@ Compare the abstract syntax trees you get as an output above with those of
         
 What do you learn about spaces and parentheses?
 
-If you have installed BNFC, you may want to change the grammar so that you can also parse expressions with variables.
+If you have installed BNFC, you may want to change the grammar and produce a new parser, so that you can also parse expressions with variables. See [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md) and [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-example.md) for details.
 
 
