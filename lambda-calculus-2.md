@@ -1,5 +1,10 @@
 # Lambda Calculus 2
 
+**Learning Outcomes:** After having worked through the exercises and homework, students will be able to
+
+- explain and perform capture avoiding substitution, 
+- interpret (=execute) lambda calculus programs.
+
 ## Syntax of LambdaNat
 
 Later in the course we will see why lambda calculus is Turing complete. Despite only having abstraction and application, a rich repertoire of data and control can be encoded, including data types such as Booleans, numbers, and lists as well as control flow operations such as if-then-else and loops/recursion.
@@ -41,7 +46,7 @@ First, we need to make sure that we know how to rename formal parameters. For ex
 
 $$\lambda x.x=\lambda y.y,$$
 
-that is, the formal parameter $x$ can be renamed to $y$ without changing the meaning of the lambda expression.
+that is, the formal parameter $x$ can be renamed to $y$ without changing the meaning of the lambda expression. We also say that $\lambda x.x$ and $\lambda y.y$ are *alpha-equivalent*.
 
 Since formal parameters can be renamed, we can always make them different from all other variables in the program.
 
@@ -66,7 +71,6 @@ $$(\lambda x. e) e' \ \rightarrow \ e[e'/x]$$
 - $(\lambda x. (\lambda y. x)) y \ \rightarrow \ \lambda z.y$
 
 **Exercise:** Explain $\ (\lambda x. (\lambda y. x)) y \ \rightarrow \ \lambda z.y$. (Hint: Note that the formal parameter $y$ in $(\lambda x. (\lambda y. x))$ needs to be renamed.)
-
 
 
 ## Homework 
