@@ -14,7 +14,7 @@ Installing BNFC under Linux/MacOS requires installing the programming language [
 
 Download and install the [Haskell platform](https://www.haskell.org/platform/). 
 
-Create a directory in which you want to clone the BNFC github directory and `cd` there in a terminal. Then perform the following commands.
+Create a directory in which you want to clone the BNFC github directory and `cd` there in a terminal. Then perform the following commands (you may have to add a `cabal update` before the `make`).
 
     git clone https://github.com/BNFC/bnfc
     cd bnfc  
