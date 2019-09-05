@@ -9,6 +9,8 @@ To parse some arithmetic expressions run the program `TestCalc` in a terminal as
 which produces the linearized abstract syntax tree
 
     EAdd (EInt 1) (EMul (EInt 2) (EInt 3))
+    
+**Exercise:** Compare the linearized tree with the grammar [Calc.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Calculator/Calc.cf). Explain how the tree is produced from the string.
 
 **Exercise:** Write `EAdd (EInt 1) (EMul (EInt 2) (EInt 3))` in the more familiar two-dimensional notation.
 
