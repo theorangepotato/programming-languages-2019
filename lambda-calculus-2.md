@@ -63,14 +63,15 @@ For this computation step to be allowed, we assume that $x$ does not occur in $e
 
 To summarise, if $x$ does not occur in $e'$, then
 $$(\lambda x. e) e' \ \rightarrow \ e[e'/x]$$
+In words, we say that $(\lambda x. e) e'$ ***reduces to*** $e[e'/x]$.
 
 
-**Example:** 
-- $(\lambda x. S x) S0 \ \rightarrow \ SS0$
-- $(\lambda x. S x) Sx \ \rightarrow \ SSx$
-- $(\lambda x. (\lambda y. x)) y \ \rightarrow \ \lambda z.y$
+**Exercise:** Reduce the following:
+- $(\lambda x. S x) S0$
+- $(\lambda x. S x) Sx$
+- $(\lambda x. (\lambda y. x)) y$
 
-**Exercise:** Explain $\ (\lambda x. (\lambda y. x)) y \ \rightarrow \ \lambda z.y$. (Hint: Note that the formal parameter $y$ in $(\lambda x. (\lambda y. x))$ needs to be renamed.)
+**Exercise:** Explain why we need to rename variables before being able to reduce $\ (\lambda x. (\lambda y. x)) y$. 
 
 
 #### Example: 
