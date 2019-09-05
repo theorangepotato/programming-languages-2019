@@ -73,6 +73,26 @@ $$(\lambda x. e) e' \ \rightarrow \ e[e'/x]$$
 **Exercise:** Explain $\ (\lambda x. (\lambda y. x)) y \ \rightarrow \ \lambda z.y$. (Hint: Note that the formal parameter $y$ in $(\lambda x. (\lambda y. x))$ needs to be renamed.)
 
 
+#### Example: 
+
+This example illustrates a subtle point about renaming variables. If you find it confusing right now rest assured that we will come back to it later.
+
+\begin{align}
+((\lambda x.(\lambda y. x)M)N & \to (\lambda y. M)N \\
+& \to M
+\end{align}
+
+Let us comment on the two reductions in turn.
+- The first reduction shows that we are allowed to apply reductions to subterms. In this case, since we can reduce $$(\lambda x.(\lambda y. x))M\to \lambda y. M$$
+
+  we can also do this reduction inside a bigger term such as
+$$((\lambda x.(\lambda y. x))M)N\to (\lambda y. M)N$$
+
+- The second reduction is only correct if we can assume that $y$ does not occur in $M$. [^correct] Do we need to make this assumption? No, because the first reduction $(\lambda x.(\lambda y. x))M\to \lambda y. M$ substituted $M$ in a capture avoiding way. Other phrases to express this include
+  - the binder $\lambda y$ does not capture free variables in $M$,
+  - $y$ is not free in $M$,
+  - $y$ is fresh for $M$.
+
 ## Homework 
 
 - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
