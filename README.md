@@ -10,6 +10,7 @@ Office Hours Tue and Thu 2pm to 3.30pm in Hashinger 208.
 
 [Lecture 1.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.2.md): Short Introduction to Parsing.
 
-[Lecture 2.1](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Skjdh1sSS): Lambda Calculus.
+[Lecture 2.1](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Skjdh1sSS): Syntax of Lambda Calculus.
 
+[Lecture 2.2](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB): Semantics of Lambda Calculus.
 
