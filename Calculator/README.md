@@ -4,9 +4,15 @@ This directory contains the parser produced using BNFC from the grammar Calc.cf 
 
 To parse some arithmetic expressions run the program `TestCalc` in a terminal as for example in
 
-    echo "2+3" | ./TestCalc
+    echo "1+2*3" | ./TestCalc
     
-Compare the abstract syntax trees you get as an output above with those of
+which produces the linearized abstract syntax tree
+
+    EAdd (EInt 1) (EMul (EInt 2) (EInt 3))
+
+**Exercise:** Write `EAdd (EInt 1) (EMul (EInt 2) (EInt 3))` in the more familiar two-dimensional notation.
+
+**Exercise:** Compare the abstract syntax trees you get as an output above with those of
 
         echo "2 + 3" | ./TestCalc
         echo "((2) + 3)" | ./TestCalc
