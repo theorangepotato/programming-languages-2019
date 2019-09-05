@@ -23,7 +23,7 @@ The rules according to which a string is transformed into a tree can be given in
  
     Exp ::= Integer | Exp "+" Exp | Exp "*" Exp
     
-where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing. The vertical bar `|` means or, that is, the one line above abbreviates the following three rules:
+where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing. The vertical bar `|` means "or", that is, the one line above abbreviates the following three rules:
 
     Exp ::= Integer 
     Exp ::= Exp "+" Exp 
