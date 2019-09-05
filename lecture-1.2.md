@@ -1,4 +1,4 @@
-# Short Introduction to Parsing
+# Short Introduction to Parsing 
 
 Learning Outcomes: After having worked through the exercises and homework, students will be able to
 
@@ -23,7 +23,11 @@ The rules according to which a string is transformed into a tree can be given in
  
     Exp ::= Integer | Exp "+" Exp | Exp "*" Exp
     
-where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing.
+where `Integer` stands for any whole number in decimal notation. The symbols enclosed in "..." are part of the program (concrete syntax). The other symbols serve to guide the parsing. The vertical bar `|` means or, that is, the one line above abbreviates the following three rules:
+
+    Exp ::= Integer 
+    Exp ::= Exp "+" Exp 
+    Exp ::= Exp "*" Exp
  
 **Exercise:** `1+2-3` cannot be parsed by the grammar above. Can you modify the grammar so that this becomes possible?
 
@@ -41,7 +45,7 @@ where `Integer` stands for any whole number in decimal notation. The symbols enc
 
 **Exercise:** Can you parse `(1+2)*3` ? How can you modify the grammar to account for such strings?
 
-**Remark:** BNFC has a feature called coercions. Using this the grammar for the calculator looks as follows:
+**Remark:** BNFC has a feature called coercions. Using this the grammar for the calculator looks as follows (BNFC also requires a `;` at the end of each rule): 
 
     Exp     ::=     Exp     "+"     Exp1  ;
     Exp1    ::=     Exp1    "*"     Exp2  ;
@@ -104,5 +108,4 @@ By the way, this is the form in which you would write down the grammar in a theo
  - Compare your abstract syntax trees form the previous exercise with the ones computed by the parser available [here](https://github.com/alexhkurz/programming-languages-2019/tree/master/Calculator).
  
  - Write down some illegal expressions (such as `1++2`, `2*`, etc) and try to parse them. Where does the parsing get stuck? If you were a compiler, what syntax error would you provide to the user on encountering a syntax error? (In order to be implementable, the error message must be computed from the data available at the moment were the parsing gets stuck.)
- 
  
