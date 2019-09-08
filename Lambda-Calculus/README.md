@@ -34,13 +34,12 @@ The working cycle that was used to produce all the different programming languag
 5) Run `bnfc -m -haskell LambdaNewfeature.cf` followed by `make`. Write programs and parse them in the new language as explained [here]().
 If not all tests run according to what you expect go back to 4).
 
-6) Run `cd ../src`. Study `AbsLambdaNewfeature.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
+6) Run `cd ../src`. Study `AbsLambda.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
 Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNewfeature.hs` in order to run
 the abstract syntax trees. (Instead of "run", one can also say "evaluate", "execute", "interprete".)
 
-7) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc into the folder where the source code for the interpreter is. 
-Study how `AbsLambdaNewfeature.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require
-the largest amount of work).
+7) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
+Study how `AbsLambdaNewfeature.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require the largest amount of work).
 
 8) Run `stack build`. Debug the interpreter if it does not compile. 
 
