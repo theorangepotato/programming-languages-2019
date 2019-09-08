@@ -44,9 +44,9 @@ the abstract syntax trees. (Instead of "run", one can also say "evaluate", "exec
 7) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
 Study how `AbsLambdaNewfeature.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require the largest amount of work).
 
-8) Run `stack build`. Debug the interpreter if it does not compile. 
+8) Run `../stack build`. Debug the interpreter if it does not compile. 
 
-9) Write a test program and save it in test/test.lc. Run the test program via `stack exec LambdaNewfeature-exe test/test.cf'. 
+9) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNewfeature-exe ../test/test.cf'. 
 If not all tests run according to what you expect go back to 7).
 
 10) Release your new programming language.
