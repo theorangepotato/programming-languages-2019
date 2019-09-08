@@ -2,6 +2,8 @@
 
 (under construction)
 
+## Introduction
+
 The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with [Lambda](),
 contains the smallest meaningful programming language, the lambda calculus. The syntax of the lambda caclulus has only variables, abstraction (function definition) and 
 function application. The semantics only has one computation rule, known as capture avoiding substitution or beta-reduction.
@@ -20,8 +22,9 @@ in the lambda calculus. We will come back later to the question how this is poss
 For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
 interesting examples.
 
-The working cycle that was used to produce all the different programming languages in this directory was as follows. 
+## The working cycle
 
+The working cycle that was used to produce all the different programming languages in this directory was as follows. 
 
 1) Choose a subdirectory, that is, a programming language, for example, [Lambda]().
 
@@ -48,6 +51,17 @@ If not all tests run according to what you expect go back to 7).
 
 10) Release your new programming language.
 
+## The different programming languages
+
+[Lambda](): The pure lambda calculus.
+
+[LambdaNat](): Natural numbers added as data. Why can't we compute "plus one" here in the expected way?
+
+[LambdaNat2](): Natural numbers added as expressions. Can do "plus one".
+
+[LambdaNat3](): If-then-else added. Cannot do "plus" easily.
+
+[LambdaNat4](): Recursion added. "Plus" still seemed difficult, so we also added "minus_one". We also added a "let" in addition to the "let rec" in order to illustrate the difference between the two (see the code of the interpreter).
 
 
 
