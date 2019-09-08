@@ -61,7 +61,7 @@ If not all tests run according to what you expect go back to 7).
 
 [LambdaNat3](): If-then-else added. Cannot do "plus" easily.
 
-[LambdaNat4](): Recursion added. "Plus" still seemed difficult, so we also added "minus_one". We also added a "let" in addition to the "let rec" in order to illustrate the difference between the two (see the code of the interpreter).
+[LambdaNat4](): Recursion added. "Plus" still seemed difficult, so we also added "minus_one". We also added a "let" in addition to the "let rec" in order to illustrate the difference between the two (and the "let rec" is difficult to get right without having done the "let" before).
 
 
 
