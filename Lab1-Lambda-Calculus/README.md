@@ -52,23 +52,26 @@ in the lambda calculus. We will come back later to the question how this is poss
 For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
 interesting examples.
 
+## From `LambbdaNat0` to `LambdaNat1`
+
+...
+
 ## The working cycle
 
 The working cycle that was used to produce all the different programming languages in this directory was as follows. 
 
-1) Choose a subdirectory, that is, a programming language, for example, [Lambda]().
+1) Choose a subdirectory, that is, a programming language, for example, [LambdaNat1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0).
 
-2) Copy the directory Lambda and all its content to a new folder called LambdaNewfeature.
+2) Copy the directory `LambdaNat1` and all its content to a new folder called `LambdaNewfeature` or `LambdaNat2`.
 
-3) Go to LambdaNewfeature/grammar and rename the grammar `Lambda.cf` to `LambdaNewfeature.cf`.
+3) Go to `LambdaNewfeature/grammar` and rename the grammar `LambdaNat1.cf` to `LambdaNewfeature.cf`.
 
 4) Change `LambdaNewfeature.cf` according to what you want to achieve.
 
-5) Run `bnfc -m -haskell LambdaNewfeature.cf` followed by `make`. Write programs and parse them in the new language as explained [here]().
-If not all tests run according to what you expect go back to 4).
+5) Run `bnfc -m -haskell LambdaNewfeature.cf` followed by `make`. Write programs and parse them in the new language as explained. If not all tests run according to what you expect go back to 4).
 
-6) Run `cd ../src`. Study `AbsLambda.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
-Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNewfeature.hs` in order to run
+6) Run `cd ../src`. Study `AbsLambdaNat.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
+Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to run
 the abstract syntax trees. (Instead of "run", one can also say "evaluate", "execute", "interprete".)
 
 7) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
@@ -85,13 +88,13 @@ If not all tests run according to what you expect go back to 7).
 
 [LambdaNat0](): The pure lambda calculus.
 
-[LambdaNat1](): Natural numbers added as data. Why can't we compute "plus one" here in the expected way?
+[LambdaNat1](): Natural numbers added as data. 
 
-[LambdaNat2](): Natural numbers added as expressions. Can do "plus one".
+[LambdaNat2](): Natural numbers added as expressions. 
 
-[LambdaNat3](): If-then-else added. Cannot do "plus" easily.
+[LambdaNat3](): If-then-else added. 
 
-[LambdaNat4](): Recursion added. "Plus" still seemed difficult, so we also added "minus_one". We also added a "let" in addition to the "let rec" in order to illustrate the difference between the two (and the "let rec" is difficult to get right without having done the "let" before).
+[LambdaNat4](): Recursion added. 
 
 
 
