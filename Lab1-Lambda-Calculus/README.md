@@ -19,7 +19,7 @@ To **view the grammar** of the pure lambda calculus open [LambdaNat0.cf](https:/
 
 To **create a parser** run
 
-    bnfc -m -haskell LambdaNat0.cf]
+    bnfc -m -haskell LambdaNat0.cf
     make
     
 To **parse a program** run, for example,
