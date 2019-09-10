@@ -11,7 +11,7 @@ This is a really small programming language and the learning outcome of this lab
 
 ## Preliminary preparations
 
-(This assumes that you have Haskell installed. Some of the steps also require bnfc.)
+I am pretty sure you already have [git](https://git-scm.com/) installed. I also assume that you have the [Haskell Platform](https://www.haskell.org/platform/) installed. Some of the steps also require the installation of [bnfc as described here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md), but most of the exercises can be done without.
 
 To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/). I do this from the command line running in my home directory
 
