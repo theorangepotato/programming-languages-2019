@@ -15,7 +15,7 @@ This is a really small programming language and the learning outcome of this lab
 
 To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus).
 
-To **view the grammar** of the pure lambda calculus open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
+To **view the grammar** of the pure lambda calculus go to the folder `grammar` and  open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
 
 To **create a parser** run
 
@@ -26,7 +26,7 @@ To **parse a program** run, for example,
 
     echo "\x.x y z" | ./TestLamdaNat
     
-To **view the interpreter** open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
+To **view the interpreter** find the folder `src` and open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
 To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
 
