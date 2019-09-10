@@ -13,7 +13,7 @@ This is a really small programming language and the learning outcome of this lab
 
 I am pretty sure you already have [git](https://git-scm.com/) installed. I also assume that you have the [Haskell Platform](https://www.haskell.org/platform/). Some of the steps require the installation of [bnfc as described here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md), but most of the exercises can be done without.
 
-To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/). I do this from the command line running in my home directory
+To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/). I do this from the command line by running in my home directory
 
     git clone https://github.com/alexhkurz/programming-languages-2019.git
     
