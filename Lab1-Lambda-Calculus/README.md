@@ -1,7 +1,5 @@
 # README
 
-(under construction)
-
 ## Introduction
 
 The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with [Lambda](),
