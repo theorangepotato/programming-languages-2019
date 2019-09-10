@@ -5,10 +5,38 @@
 ## Introduction
 
 The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with [Lambda](),
-contains the smallest meaningful programming language, the lambda calculus. The syntax of the lambda caclulus has only variables, abstraction (function definition) and 
+contains the smallest meaningful programming language, the lambda calculus. 
+
+The syntax of the lambda caclulus has only variables, abstraction (function definition) and 
 function application. The semantics only has one computation rule, known as capture avoiding substitution or beta-reduction.
 
-For the grammar of the lambda calculus see [Lambda.cf](). To run a program in the lambda calculus [use the interpreter]().
+This is a really small programming language and the learning out come of this lab is to teach how to extend this very basic language with new features.
+
+To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus).
+
+To **view the grammar** of the pure lambda calculus open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
+
+To **create a parser** run
+
+    bnfc -m -haskell LambdaNat0.cf]
+    make
+    
+To **parse a program** run, for example,
+
+    echo "\x.x y x" | .TestLamNat
+    
+To **view the interpreter** open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
+    
+To **create the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
+
+    stack build
+    
+To **write a program** open a text editor and save the file in the folder `test` as, say `myprogram.lc`. Or use one of the programs already available in the folder `test`.
+
+To **execute a program**  in the lambda calculus run
+
+    stack exec LambdaNat-exe test/myprogram.cf
+
 
 It is hard to think of an interesting program that one could write in lambda calculus. Here are some straight forward examples:
 
