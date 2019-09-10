@@ -12,6 +12,8 @@ function application. The semantics only has one computation rule, known as capt
 
 This is a really small programming language and the learning out come of this lab is to teach how to extend this very basic language with new features.
 
+## Preliminary preparations
+
 To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus).
 
 To **view the grammar** of the pure lambda calculus open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
