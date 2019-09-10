@@ -39,13 +39,13 @@ To **execute a program**  in the lambda calculus run
     stack exec LambdaNat-exe test/myprogram.cf
 
 
-It is hard to think of an interesting program that one could write in lambda calculus. Here are some straight forward examples:
+Despite being Turing complete, there seem to be no obvious interesting programs in lambda calculus. Here are some straight forward examples:
 
     \x.x -- the identity function that returns its argument
     \x.\y.x -- the function that takes two arguments and returns the first
     \x.\y.y -- the function that takes two arguments and returns the second
     
-but these functions are disappointingly simple and do not suggest that all functions that are computable at all can also be computed
+but these functions are disappointingly simple and would not make one think that all computable functions can be implemented
 in the lambda calculus. We will come back later to the question how this is possble.
 
 For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
