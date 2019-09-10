@@ -1,6 +1,6 @@
 {-# LANGUAGE BangPatterns #-}
 
-module Interpreter ( execCBV, execCBN ) where
+module Interpreter ( execCBN ) where
 
 import AbsLambdaNat
 import ErrM
@@ -9,31 +9,14 @@ import PrintLambdaNat
 import Data.Map ( Map )
 import qualified Data.Map as M
 
-
-execCBV :: Program -> Exp
-execCBV (Prog e) = evalCBV e
-
-evalCBV :: Exp -> Exp
-evalCBV e@(EApp e1 e2) = case (evalCBV e1) of
-    -- Haskell is lazy (similar to call-by-name) and to get the correct strict behaviour of
-    -- call-by-value, we use the Bang pattern in `!e2'` to explicitly force evaluation.
-    -- If we simply wrote `evalCBV (subst i (evalCBV e2) e1')` we would get the same 
-    -- behaviour as `evalCBN`.
-    (EAbs i e1') -> let !e2' = evalCBV e2 in evalCBV (subst i e2' e1')
-    e1' -> EApp e1' e2
-evalCBV x = x
-
-
 execCBN :: Program -> Exp
 execCBN (Prog e) = evalCBN e
-
 
 evalCBN :: Exp -> Exp
 evalCBN (EApp e1 e2) = case (evalCBN e1) of
     (EAbs i e1') -> evalCBN (subst i e2 e1')
     e1' -> EApp e1' e2
 evalCBN x = x
-
 
 -- A quick and dirty way of getting fresh names. Rather inefficient for big terms...
 fresh_ :: Exp -> String

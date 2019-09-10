@@ -36,10 +36,10 @@ run v p s = let ts = myLexer s in case p ts of
                           -- putStrLn "\nParse Successful!"
                           -- showTree v tree
                           putStrLn $ printTree tree
-                          putStrLn "\n Result computed using call by name:"
+                          -- putStrLn "\n Result computed using call by name:"
                           putStrLn $ printTree $ execCBN tree
-                          putStrLn "\n Result computed using call by value:"
-                          putStrLn $ printTree $ execCBV tree
+                          -- putStrLn "\n Result computed using call by value:"
+                          -- putStrLn $ printTree $ execCBV tree
                           exitSuccess
 
 showTree :: (Show a, Print a) => Int -> a -> IO ()
