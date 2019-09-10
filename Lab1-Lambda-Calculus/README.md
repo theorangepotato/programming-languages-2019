@@ -26,7 +26,9 @@ To **create a parser** run
 
     bnfc -m -haskell LambdaNat0.cf
     make
-    
+
+If you cannot download or build [bnfc as described here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md), you should still be able to run `make` as I uploaded to the the folder `grammar` all files produced by `bnfc` (you may have to delete the executable `TestLambdaNat` in order to force make to do something).
+
 To **parse a program** run, for example,
 
     echo "\x.x y z" | ./TestLambdaNat
