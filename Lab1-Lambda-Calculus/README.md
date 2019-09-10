@@ -51,7 +51,11 @@ To **execute a program**  in the lambda calculus run
 
     stack exec LambdaNat-exe test/myprogram.lc
 
-If you used `cabal build`, then `cabal exec` instead of `stack exec` should work. If it doesn't, search for the executable `LambdaNat-exe` and execute it by giving its full path, which is, on my machine, `dist/build/LambdaNat-exe/LambdaNat-exe`. If the executable was not created in the first place, come and see me in my office hours.
+If you used `cabal build`, then `cabal exec` instead of `stack exec` should work. If it doesn't, search for the executable `LambdaNat-exe` and execute it by giving its full path, which should be `dist/build/LambdaNat-exe/LambdaNat-exe` ... if you encounter this problem under Windows try
+
+   dist\build\LambdaNat-exe\LambdaNat-exe  test\myprogram.lc
+    
+If the executable was not created in the first place, come and see me in my office hours.
 
 Despite being Turing complete, there seem to be no obvious interesting programs in lambda calculus. Here are some straight forward examples:
 
