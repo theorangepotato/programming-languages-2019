@@ -53,9 +53,9 @@ If not all tests run according to what you expect go back to 7).
 
 ## The different programming languages
 
-[Lambda](): The pure lambda calculus.
+[LambdaNat0](): The pure lambda calculus.
 
-[LambdaNat](): Natural numbers added as data. Why can't we compute "plus one" here in the expected way?
+[LambdaNat1](): Natural numbers added as data. Why can't we compute "plus one" here in the expected way?
 
 [LambdaNat2](): Natural numbers added as expressions. Can do "plus one".
 
