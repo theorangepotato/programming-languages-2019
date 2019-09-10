@@ -64,7 +64,7 @@ in the lambda calculus. We will come back later to the question how this is poss
 
 **Exercise:** Write your own lamda calculus programs and execute them.
 
-For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
+For now, instead of encoding numbers, conditionals, and recursion in the pure lambda calculus, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
 interesting examples.
 
 ## From `LambbdaNat0` to `LambdaNat1`
