@@ -2,13 +2,12 @@
 
 ## Introduction
 
-The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with [Lambda](),
-contains the smallest meaningful programming language, the lambda calculus. 
+The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with the pure and untyped lambda calculus, available in the folder [LambdaNat0](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
 
-The syntax of the lambda caclulus has only variables, abstraction (function definition) and 
+Recall that the syntax of the lambda caclulus has only variables, abstraction (function definition) and 
 function application. The semantics only has one computation rule, known as capture avoiding substitution or beta-reduction.
 
-This is a really small programming language and the learning out come of this lab is to teach how to extend this very basic language with new features.
+This is a really small programming language and the learning outcome of this lab is to teach how to extend this very basic language with new features.
 
 ## Preliminary preparations
 
