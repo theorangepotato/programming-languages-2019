@@ -90,11 +90,6 @@ If not all tests run according to what you expect go back to 7).
 
 [LambdaNat1](): Natural numbers added as data. 
 
-[LambdaNat2](): Natural numbers added as expressions. 
-
-[LambdaNat3](): If-then-else added. 
-
-[LambdaNat4](): Recursion added. 
 
 
 
