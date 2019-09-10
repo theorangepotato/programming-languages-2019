@@ -15,7 +15,7 @@ This is a really small programming language and the learning outcome of this lab
 
 To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus).
 
-To **view the grammar** of the pure lambda calculus open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
+To **view the grammar** of the pure lambda calculus go to the folder `grammar` and  open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/grammar/LambdaNat0.cf). 
 
 To **create a parser** run
 
@@ -24,11 +24,11 @@ To **create a parser** run
     
 To **parse a program** run, for example,
 
-    echo "\x.x y z" | ./TestLamNat
+    echo "\x.x y z" | ./TestLamdaNat
     
-To **view the interpreter** open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
+To **view the interpreter** find the folder `src` and open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
-To **create the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
+To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
 
     stack build
     
@@ -39,13 +39,13 @@ To **execute a program**  in the lambda calculus run
     stack exec LambdaNat-exe test/myprogram.cf
 
 
-It is hard to think of an interesting program that one could write in lambda calculus. Here are some straight forward examples:
+Despite being Turing complete, there seem to be no obvious interesting programs in lambda calculus. Here are some straight forward examples:
 
     \x.x -- the identity function that returns its argument
     \x.\y.x -- the function that takes two arguments and returns the first
     \x.\y.y -- the function that takes two arguments and returns the second
     
-but these functions are disappointingly simple and do not suggest that all functions that are computable at all can also be computed
+but these functions are disappointingly simple and would not make one think that all computable functions can be implemented
 in the lambda calculus. We will come back later to the question how this is possble.
 
 For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
