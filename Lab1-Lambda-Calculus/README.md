@@ -28,7 +28,7 @@ To **parse a program** run, for example,
     
 To **view the interpreter** open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
-To **create the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
+To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
 
     stack build
     
