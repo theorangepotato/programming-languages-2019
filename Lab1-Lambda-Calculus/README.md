@@ -16,6 +16,9 @@ This is a really small programming language and the learning outcome of this lab
 To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/). I do this from the command line running in my home directory
 
     git clone https://github.com/alexhkurz/programming-languages-2019.git
+    
+You now have a folder `programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat0/
+`. This is the base folder to follow the instructions in this section on preliminary preparations.
 
 To **view the grammar** of the pure lambda calculus go to the folder `grammar` and  open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/grammar/LambdaNat0.cf). 
 
