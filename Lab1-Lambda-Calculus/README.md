@@ -39,12 +39,15 @@ To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNa
 
     stack build
     
+On some installations where `stack build` fails, `cabal build` works. 
+    
 To **write a program** open a text editor and save the file in the folder `test` as, say `myprogram.lc`. Or use one of the programs already available in the folder `test`.
 
 To **execute a program**  in the lambda calculus run
 
     stack exec LambdaNat-exe test/myprogram.lc
 
+If you used `cabal build`, then `cabal exec` instead of `stack exec` should work. If it doesn't, search for the executable `LambdaNat-exe` and execute it by giving its full path, which is, on my machine, `dist/build/LambdaNat-exe/LambdaNat-exe`.
 
 Despite being Turing complete, there seem to be no obvious interesting programs in lambda calculus. Here are some straight forward examples:
 
