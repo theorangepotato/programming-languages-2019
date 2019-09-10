@@ -76,6 +76,8 @@ interesting examples.
 
 The working cycle that was used to produce all the different programming languages in this directory was as follows. 
 
+(If you find this boring, feel free to jump to the next section and come back here for reference as needed.)
+
 1) Choose a subdirectory, that is, a programming language, for example, [LambdaNat1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0).
 
 2) Copy the directory `LambdaNat1` and all its content to a new folder called `LambdaNewfeature` or `LambdaNat2`.
