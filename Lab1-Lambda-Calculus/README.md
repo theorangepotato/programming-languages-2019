@@ -71,9 +71,6 @@ in the lambda calculus. We will come back later to the question how this is poss
 For now, instead of encoding numbers, conditionals, and recursion in the pure lambda calculus, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
 interesting examples.
 
-## From `LambbdaNat0` to `LambdaNat1`
-
-...
 
 ## The working cycle
 
@@ -102,6 +99,10 @@ Study how `AbsLambdaNewfeature.hs` changed now. Adapt the interpreter accordingl
 If not all tests run according to what you expect go back to 7).
 
 10) Release your new programming language.
+
+## From `LambbdaNat0` to `LambdaNat1`
+
+...
 
 ## The different programming languages
 
