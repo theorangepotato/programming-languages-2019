@@ -33,6 +33,8 @@ To **parse a program** run, for example,
 
     echo "\x.x y z" | ./TestLambdaNat
     
+**Exercise:** Write your own lamda calculus programs and parse them.
+    
 To **view the interpreter** find the folder `src` and open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
 To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNat0`)
@@ -57,6 +59,8 @@ Despite being Turing complete, there seem to be no obvious interesting programs 
     
 but these functions are disappointingly simple and would not make one think that all computable functions can be implemented
 in the lambda calculus. We will come back later to the question how this is possble.
+
+**Exercise:** Write your own lamda calculus programs and execute them.
 
 For now, we will go into a different direction. We will add features to the basic language until we have enough to compute some reasonably
 interesting examples.
