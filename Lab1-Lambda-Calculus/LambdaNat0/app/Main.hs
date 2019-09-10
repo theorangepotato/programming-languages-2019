@@ -35,8 +35,10 @@ run v p s = let ts = myLexer s in case p ts of
            Ok  tree -> do 
                           -- putStrLn "\nParse Successful!"
                           -- showTree v tree
+                          putStrLn "\n Input:"
                           putStrLn $ printTree tree
                           -- putStrLn "\n Result computed using call by name:"
+                          putStrLn "\n Output:"
                           putStrLn $ printTree $ execCBN tree
                           -- putStrLn "\n Result computed using call by value:"
                           -- putStrLn $ printTree $ execCBV tree
