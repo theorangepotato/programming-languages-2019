@@ -13,7 +13,12 @@ This is a really small programming language and the learning outcome of this lab
 
 (This assumes that you have Haskell installed. Some of the steps also require bnfc.)
 
-To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus).
+To set up your computer, clone [this directory](https://github.com/alexhkurz/programming-languages-2019/). I do this from the command line running in my home directory
+
+    git clone https://github.com/alexhkurz/programming-languages-2019.git
+    
+You now have a folder `programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat0/
+`. This is the base folder to follow the instructions in this section on preliminary preparations.
 
 To **view the grammar** of the pure lambda calculus go to the folder `grammar` and  open [LambdaNat0.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/grammar/LambdaNat0.cf). 
 
@@ -28,7 +33,7 @@ To **parse a program** run, for example,
     
 To **view the interpreter** find the folder `src` and open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
-To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/`) run
+To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNat0`) run
 
     stack build
     
@@ -36,7 +41,7 @@ To **write a program** open a text editor and save the file in the folder `test`
 
 To **execute a program**  in the lambda calculus run
 
-    stack exec LambdaNat-exe test/myprogram.cf
+    stack exec LambdaNat-exe test/myprogram.lc
 
 
 Despite being Turing complete, there seem to be no obvious interesting programs in lambda calculus. Here are some straight forward examples:
