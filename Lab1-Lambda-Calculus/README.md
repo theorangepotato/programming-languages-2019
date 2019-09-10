@@ -104,7 +104,7 @@ If not all tests run according to what you expect go back to 7).
 
 ## From `LambbdaNat0` to `LambdaNat1`
 
-...
+... to be continued on Thursday ...
 
 ## The different programming languages
 
