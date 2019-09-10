@@ -27,7 +27,7 @@ To **create a parser** run
     bnfc -m -haskell LambdaNat0.cf
     make
 
-If you cannot download or build [bnfc as described here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md), you should still be able to run `make` as I uploaded to the the folder `grammar` all files produced by `bnfc` (you may have to delete the executable `TestLambdaNat` in order to force make to do something).
+If you cannot download or build [bnfc as described here](https://github.com/alexhkurz/programming-languages-2019/blob/master/BNFC-installation.md), you should still be able to run `make` as I uploaded to the folder `grammar` all files produced by `bnfc` (you may have to delete the executable `TestLambdaNat` in order to force make to do something).
 
 To **parse a program** run, for example,
 
@@ -35,7 +35,7 @@ To **parse a program** run, for example,
     
 To **view the interpreter** find the folder `src` and open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
-To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNat0`) run
+To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNat0`)
 
     stack build
     
