@@ -24,7 +24,7 @@ To **create a parser** run
     
 To **parse a program** run, for example,
 
-    echo "\x.x y z" | ./TestLamNat
+    echo "\x.x y z" | ./TestLamdaNat
     
 To **view the interpreter** open [interpreter.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs).
     
