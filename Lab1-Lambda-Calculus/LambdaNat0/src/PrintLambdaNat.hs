@@ -99,7 +99,5 @@ instance Print AbsLambdaNat.Exp where
   prt i e = case e of
     AbsLambdaNat.EAbs id exp -> prPrec i 1 (concatD [doc (showString "\\"), prt 0 id, doc (showString "."), prt 0 exp])
     AbsLambdaNat.EApp exp1 exp2 -> prPrec i 2 (concatD [prt 2 exp1, prt 3 exp2])
-    AbsLambdaNat.ENat0 -> prPrec i 3 (concatD [doc (showString "0")])
-    AbsLambdaNat.ENatS exp -> prPrec i 3 (concatD [doc (showString "S"), prt 3 exp])
-    AbsLambdaNat.EVar id -> prPrec i 4 (concatD [prt 0 id])
+    AbsLambdaNat.EVar id -> prPrec i 3 (concatD [prt 0 id])
 

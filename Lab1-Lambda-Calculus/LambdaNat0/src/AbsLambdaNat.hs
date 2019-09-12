@@ -9,6 +9,6 @@ newtype Id = Id String
 data Program = Prog Exp
   deriving (Eq, Ord, Show, Read)
 
-data Exp = EAbs Id Exp | EApp Exp Exp | ENat0 | ENatS Exp | EVar Id
+data Exp = EAbs Id Exp | EApp Exp Exp | EVar Id
   deriving (Eq, Ord, Show, Read)
 

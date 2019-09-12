@@ -26,7 +26,7 @@ fresh_ :: Exp -> String
 fresh_ (EVar (Id i)) = i ++ "0"
 fresh_ (EApp e1 e2) = fresh_ e1 ++ fresh_ e2
 fresh_ (EAbs (Id i) e) = i ++ fresh_ e
-fresh_ _ = "0"
+-- fresh_ _ = "0"
 
 fresh = Id . fresh_
 

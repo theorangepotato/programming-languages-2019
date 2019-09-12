@@ -1,0 +1,47 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: b33b4bf165ed2438725e42a0a880f6036cf91cd2d498c56fa0a70238cd677665
+
+name:           Lambda
+version:        0.1.0.0
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+library
+  exposed-modules:
+      AbsLambda
+      ErrM
+      Interpreter
+      LexLambda
+      ParLambda
+      PrintLambda
+      SkelLambda
+  other-modules:
+      Paths_Lambda
+  hs-source-dirs:
+      src
+  build-depends:
+      array
+    , base >=4.7 && <5
+    , containers
+  default-language: Haskell2010
+
+executable Lambda-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_Lambda
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Lambda
+    , array
+    , base >=4.7 && <5
+    , containers
+  default-language: Haskell2010

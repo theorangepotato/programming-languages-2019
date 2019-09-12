@@ -72,39 +72,80 @@ For now, instead of encoding numbers, conditionals, and recursion in the pure la
 interesting examples.
 
 
-## The working cycle
+## The Work Cycle
 
-The working cycle that was used to produce all the different programming languages in this directory was as follows. 
+The Work Cycle that was used to produce all the different programming languages in this directory was as follows. 
 
 (If you find this boring, feel free to jump to the next section and come back here for reference as needed.)
 
-1) Choose a subdirectory, that is, a programming language, for example, [LambdaNat1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0).
+Here we assume that we have `LambdaNat42` and want to build a new language called `LambdaNat43`.
 
-2) Copy the directory `LambdaNat1` and all its content to a new folder called `LambdaNewfeature` or `LambdaNat2`.
+1) Choose a subdirectory, that is, an already existing programming language. For the sake of concreteness, let us assume that this language is in a folder called `LambdaNat42`.
 
-3) Go to `LambdaNewfeature/grammar` and rename the grammar `LambdaNat1.cf` to `LambdaNewfeature.cf`.
+2) Copy the directory `LambdaNat42` and all its content to a new folder called `LambdaNat43`.
 
-4) Change `LambdaNewfeature.cf` according to what you want to achieve.
+3) Go to `LambdaNat43/grammar` and rename the grammar `LambdaNat42.cf` to `LambdaNat43.cf`. 
 
-5) Run `bnfc -m -haskell LambdaNewfeature.cf` followed by `make`. Write programs and parse them in the new language as explained. If not all tests run according to what you expect go back to 4).
+   (You have to be careful if you want to choose a more descriptive name. The reason is that bnfc produces files and the names of these files need to be known to `stack` when you build the interpreter. You could use `LambdaNat.NewFeature.cf`.)
 
-6) Run `cd ../src`. Study `AbsLambdaNat.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
+4) Change `LambdaNat43.cf` according to what you want to achieve. 
+
+5) Run `bnfc -m -haskell LambdaNat43.cf` followed by `make`. 
+
+6) Write programs and parse them in the new language as explained. 
+   If not all tests run according to what you expect go back to 4).
+
+7) Run `cd ../src`. Study `AbsLambdaNat.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
 Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to run
 the abstract syntax trees. (Instead of "run", one can also say "evaluate", "execute", "interprete".)
 
-7) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
-Study how `AbsLambdaNewfeature.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require the largest amount of work).
+8) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
+Study how `AbsLambdaNat.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require the largest amount of work).
 
-8) Run `../stack build`. Debug the interpreter if it does not compile. 
+9) Run `../stack build`. Debug the interpreter if it does not compile. 
 
-9) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNewfeature-exe ../test/test.cf'. 
+10) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNewfeature-exe ../test/test.lc'. 
 If not all tests run according to what you expect go back to 7).
 
-10) Release your new programming language.
+11) Release your new programming language.
 
 ## From `LambbdaNat0` to `LambdaNat1`
 
-... to be continued on Thursday ...
+This section assumes that we can run the parser and interpreter for the LambdaNat0.
+
+Learning outcome of this section is a basic understanding of how to add a feature to a programming language.
+
+The running example is adding numbers to LambdaNat0. Our first milestone is the `plus_one` function. We will achieve this in two steps. The first step, LambdaNat1, is already in the repository. The second step, LambdaNat2, you should try as homework.
+
+Before going to write some code, we need a specification. 
+
+**Activity:** How can we write `plus_one` as a lambda expression? Can we do this in such a way that we use the computation rule of lambda calculus in order to compute plus one?
+
+**Outcome:** $$(\lambda x. Sx)$$
+
+**Example:** According to the computation rule of lambda calculus, if we apply the function $\lambda x.Sx$ to, say, $S0$, we obtain $SS0$.
+
+Let us look at what we have in the folder `LambdaNat1`. 
+
+Referring to the Work Cycle above (with 0 instantiating 42 and 1 instantiating 43), steps 1-5 have been performed already. Nevertheless, if you want to do step 6, you mave have to run `make` in the folder `grammar` in order to produce a parser that is actually executable on your machine.
+
+Now you should be able to run, for example,
+
+    echo "(\x.x) S 0" | ./TestLambdaNat
+
+**Exercise:** Do Step 6 of the Work Cycle.
+
+Steps 7-9 have already been performed again. 
+
+Nevertheless, you will have to perform Step 9 yourself, so that the interpreter is executable on your machine. 
+
+We can now test the interpreter, for example by running
+
+    echo "(\x.x) S 0" | stack exec LambdaNat-exe
+
+**Exercise:** Do Step 10 of the Work Cycle.
+
+
 
 ## The different programming languages
 

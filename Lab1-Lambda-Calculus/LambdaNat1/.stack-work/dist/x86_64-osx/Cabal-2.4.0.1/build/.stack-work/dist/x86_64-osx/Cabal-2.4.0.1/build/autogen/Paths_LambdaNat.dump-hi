@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-08-27 05:03:11.056995 UTC
+2019-09-10 13:21:15.837501 UTC
 
 interface LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t:Paths_LambdaNat 8064
-  interface hash: bfd09a35b073c515ba8dd5db0b59369a
-  ABI hash: a623361ab2e5e5bfa8f2ddf27dc01301
+  interface hash: b8acfd44fe38de7309726b0e11089604
+  ABI hash: db4a81fbb29c5a897993638ee9e5db71
   export-list hash: 650eb4577462588b2620c345f736c1ad
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 43649d51858ab1c3c4e1e7edb469a811
@@ -63,14 +63,14 @@ add624670f8be3e86b828c7d54e85f35
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
      Unfolding: ("LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t"#) -}
-1efd5e8294a90ba44665254133c66615
+b3d394c158d8c5b4170e9b4a3edaa897
   getBinDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getBinDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-071da533b1bd04f1251ea9b8dff7d02f
+4b8ffb8ae5328e65dbf939d0edd18f0b
   getBinDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -82,7 +82,7 @@ add624670f8be3e86b828c7d54e85f35
                    Paths_LambdaNat.getBinDir5
                    Paths_LambdaNat.getBinDir2
                    eta) -}
-3fd0cf118c3583752dc80ca4f8e48284
+4bb42250ae1aea57f8f8ad13a2ae6bc3
   getBinDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -107,14 +107,14 @@ add624670f8be3e86b828c7d54e85f35
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getBinDir3 #) } }) -}
-44f7687b1f763cc9452143262e116c91
+adccbb8d688fc4df05a07f18fa4497e1
   getBinDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getBinDir4) -}
-c137478ed9a1eced01905af70bae7a2c
+368781f5bc0b07da32f773f3d0773709
   getBinDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/bin"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/bin"#) -}
 4b04329a7f87cf65168520fdfadaa342
   getBinDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
@@ -147,14 +147,14 @@ c137478ed9a1eced01905af70bae7a2c
 9164e672db45a1974424835bf60e4354
   getBinDir7 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("LambdaNat_bindir"#) -}
-9febaad65b7d5687f76ece3677e026dc
+f8d632c06e8a47f70b9b77b0a73f7fe4
   getDataDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getDataDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-7bcc71f0cced762707d1c5250aab17e8
+f54d3df89cbca04ab8e4e1565ca7f3be
   getDataDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -166,7 +166,7 @@ c137478ed9a1eced01905af70bae7a2c
                    Paths_LambdaNat.getDataDir5
                    Paths_LambdaNat.getDataDir2
                    eta) -}
-ff563bea97d4c9ada72a7081cb794179
+b75684cc487fd3407515ce652a553052
   getDataDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -191,14 +191,14 @@ ff563bea97d4c9ada72a7081cb794179
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getDataDir3 #) } }) -}
-b7084dcf9a0b3d2414ebf18b8100373f
+1cb226c2e5f9e8793b595b70764d5b3d
   getDataDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getDataDir4) -}
-43672d582ce7590835b6b7f0cab56fe7
+d242c3c55f44e8b12a4f9f791dee08c8
   getDataDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/share/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/share/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"#) -}
 7ba41e7af003fea236280b3946ea4d5f
   getDataDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
@@ -231,7 +231,7 @@ b7084dcf9a0b3d2414ebf18b8100373f
 4cede0d1ada386a155cf0e4145a75f1c
   getDataDir7 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("LambdaNat_datadir"#) -}
-9b536f8b1e54ff3851a40626cf142259
+62254ac74395e270c39d200e65621c4b
   getDataFileName :: GHC.IO.FilePath -> GHC.Types.IO GHC.IO.FilePath
   {- Arity: 2, Strictness: <L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -239,7 +239,7 @@ b7084dcf9a0b3d2414ebf18b8100373f
                   `cast`
                 (<GHC.IO.FilePath>_R
                  ->_R Sym (GHC.Types.N:IO[0] <GHC.IO.FilePath>_R)) -}
-15be228debcaf45613237ae80caafbb3
+f9f108957938b1032e8be9af629d6caf
   getDataFileName1 ::
     GHC.IO.FilePath
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -263,14 +263,14 @@ b7084dcf9a0b3d2414ebf18b8100373f
 b66545b0dca14e8dc5d0b781187c578a
   getDataFileName2 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("/"#) -}
-1aa24597c05dec940e17519d16ed3c74
+5e52c9d7968936e99ccdb4294e00fe55
   getDynLibDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getDynLibDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-17716222755b5e63d017dd0f87701c17
+1fb4c1ce88041dd31805c9dfc0353f2e
   getDynLibDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -282,7 +282,7 @@ b66545b0dca14e8dc5d0b781187c578a
                    Paths_LambdaNat.getDynLibDir5
                    Paths_LambdaNat.getDynLibDir2
                    eta) -}
-a6167cdcaba5e6ad2ead88fcad1c886a
+3864f36bb14da851fe9094048e1dfe95
   getDynLibDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -307,14 +307,14 @@ a6167cdcaba5e6ad2ead88fcad1c886a
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getDynLibDir3 #) } }) -}
-f0a4b1c57c3262f3507b7aa7716f02d1
+ac57919f3516f568a410e35a018aade0
   getDynLibDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getDynLibDir4) -}
-9555e80bc915ee4aae802bc0015537b2
+f6fafbdc367d8fcb6dee68d55b8e23f0
   getDynLibDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4"#) -}
 578e01e3c3d1f7b00c0cf33eb33ea401
   getDynLibDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
@@ -347,14 +347,14 @@ bef6cf88f1b7fcac11e39c455a9f09da
 fdfe00bc64e735ecb09266b155618192
   getDynLibDir7 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("LambdaNat_dynlibdir"#) -}
-c9f3169e9f0fac5ccd79696e2f04779a
+5fd763ebb8550a7524a08d4230dfb7a2
   getLibDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getLibDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-2b5d51215da3f5e0cac10895c1b3c63f
+35d750cd5e946a82d9e95a1d467ff099
   getLibDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -366,7 +366,7 @@ c9f3169e9f0fac5ccd79696e2f04779a
                    Paths_LambdaNat.getLibDir5
                    Paths_LambdaNat.getLibDir2
                    eta) -}
-f75ba8c879ba5fd682e28bff41e43e71
+76d0925420670feea78948e31f0c7471
   getLibDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -391,14 +391,14 @@ f75ba8c879ba5fd682e28bff41e43e71
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getLibDir3 #) } }) -}
-597a009e14faecaaadcee8238556ee7e
+3d945fb2b657d2c517d99c90996d082f
   getLibDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getLibDir4) -}
-40e5e1acea9daadddff0c2d341190d07
+121d41ead034cadac7ad9b2d9f4d67a1
   getLibDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t"#) -}
 db75e56a3f7b028b04c4d4f82d091a14
   getLibDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
@@ -431,14 +431,14 @@ db75e56a3f7b028b04c4d4f82d091a14
 3f1078b79ea723eedcf50dea39a31035
   getLibDir7 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("LambdaNat_libdir"#) -}
-4bcf3ce6a2539c81bcfd393c85476ca2
+90413f08e65867a2fc62833f04e79384
   getLibexecDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getLibexecDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-7d64700ef9a599181c3719cc7904f66e
+1eeefc851a56bb563320391fc5dc4d98
   getLibexecDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -450,7 +450,7 @@ db75e56a3f7b028b04c4d4f82d091a14
                    Paths_LambdaNat.getLibexecDir5
                    Paths_LambdaNat.getLibexecDir2
                    eta) -}
-1e0cf901beebbbf6112e0b7f719868ce
+c090cc8650f6954ddc1bdd8a4eaab111
   getLibexecDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -475,14 +475,14 @@ db75e56a3f7b028b04c4d4f82d091a14
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getLibexecDir3 #) } }) -}
-85d5b7851a885ca638e1dbf7a6005b59
+cc42dc78fca6ef538fd4a077058ece53
   getLibexecDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getLibexecDir4) -}
-abc4562d41c33c4b60435af77f2c562a
+0f51f9fb171891bb4433e4ee93850937
   getLibexecDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/libexec/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/libexec/x86_64-osx-ghc-8.6.4/LambdaNat-0.1.0.0"#) -}
 89f2418a92f7223bd5f4c8d0c9ed2b52
   getLibexecDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
@@ -515,14 +515,14 @@ abc4562d41c33c4b60435af77f2c562a
 2cf7d0948295cab87480139632f21b7f
   getLibexecDir7 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("LambdaNat_libexecdir"#) -}
-3330272546da9f235a7151a18e1729aa
+e9278e62e36a185ec9add6f88af6cc0b
   getSysconfDir :: GHC.Types.IO GHC.IO.FilePath
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Paths_LambdaNat.getSysconfDir1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R)) -}
-1b3c27fcdbf19acb04c644ff14473f79
+eaa47637732e7f52eeb04171429b07f4
   getSysconfDir1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
@@ -534,7 +534,7 @@ abc4562d41c33c4b60435af77f2c562a
                    Paths_LambdaNat.getSysconfDir5
                    Paths_LambdaNat.getSysconfDir2
                    eta) -}
-916dc9adcf219df584a37fbc26829ca4
+a00dc4e4d9919a95e03d6e596c73574f
   getSysconfDir2 ::
     GHC.Exception.Type.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -559,14 +559,14 @@ abc4562d41c33c4b60435af77f2c562a
                         wild
                         eta
                    GHC.Types.True -> (# eta, Paths_LambdaNat.getSysconfDir3 #) } }) -}
-35d6b8788dd122a326c482b56aa46310
+dc425c001e3789e5894119367e696203
   getSysconfDir3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    Paths_LambdaNat.getSysconfDir4) -}
-eca9f49ea5c92503a253a6759c6259e5
+99386b28835016375e4394b39e1d662a
   getSysconfDir4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
-     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lambda-Calculus/LambdaNat/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/etc"#) -}
+     Unfolding: ("/Users/alexanderkurz/alexhkurz-at-github/programming-languages-2019/Lab1-Lambda-Calculus/LambdaNat1/.stack-work/install/x86_64-osx/lts-13.12/8.6.4/etc"#) -}
 6c52ab0071f5f04f3393412f932c1834
   getSysconfDir5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
