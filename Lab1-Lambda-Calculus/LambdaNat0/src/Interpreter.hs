@@ -9,17 +9,14 @@ import PrintLambdaNat
 import Data.Map ( Map )
 import qualified Data.Map as M
 
-
 execCBN :: Program -> Exp
 execCBN (Prog e) = evalCBN e
-
 
 evalCBN :: Exp -> Exp
 evalCBN (EApp e1 e2) = case (evalCBN e1) of
     (EAbs i e1') -> evalCBN (subst i e2 e1')
     e1' -> EApp e1' e2
 evalCBN x = x
-
 
 -- A quick and dirty way of getting fresh names. Rather inefficient for big terms...
 fresh_ :: Exp -> String
