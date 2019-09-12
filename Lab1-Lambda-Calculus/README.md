@@ -119,7 +119,7 @@ The running example is adding numbers to LambdaNat0. Our first milestone is the 
 
 Before going to write some code, we need a specification. 
 
-**Activity:** How can we write `plus_one` as a lambda expression? Can we do this in such a way that we use the computation rule of lambda calculus in order to compute plus one?
+**Activity:** How can we write `plus_one` as a lambda expression? Can we do this in such a way that we use the [computation rule](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB#Beta-reduction) of lambda calculus in order to compute plus one? 
 
 **Outcome:** `(\ x . S x)`
 
