@@ -168,7 +168,7 @@ Let us go through this step by step
 
   - We can use the grammar
   
-      e ::= \ x. e | e e | x | 0 | S e
+        e ::= \ x. e | e e | x | 0 | S e
 
     where now `S` can be followed by any expression.
 
