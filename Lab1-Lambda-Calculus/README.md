@@ -162,6 +162,20 @@ Let us go through this step by step
 
 - How can we fix it? We need to change the grammar so that `S` can be followed by a variable, or, any expression. There are different possibilities here.
 
+  - We can use the grammar
+  
+      e ::= \ x. e | e e | x | 0 | S e
+
+    where now `S` can be followed by any expression.
+
+  - We can use the grammar
+
+        e ::= \ x . e | e e | x | 0 | S
+
+    where `S` is now a new constant and `S 0` is parsed as an application.
+
+  - Maybe even more ... give it a try ...
+
 ## Homework: From LambdaNat1 to LambdaNat2
 
 Try to pick up everything from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
