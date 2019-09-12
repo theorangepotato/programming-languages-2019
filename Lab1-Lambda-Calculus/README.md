@@ -129,7 +129,7 @@ Let us look at what we have in the folder `LambdaNat1`.
 
 Referring to the Work Cycle above (with 0 instantiating 42 and 1 instantiating 43), steps 1-5 have been performed already. Nevertheless, if you want to do step 6, you mave have to run `make` in the folder `grammar` in order to produce a parser that is actually executable on your machine.
 
-Now you should be able to run, for example,
+Now you should be able to run, for example, 
 
     echo "(\x.x) S 0" | ./TestLambdaNat
 
