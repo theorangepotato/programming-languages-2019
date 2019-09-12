@@ -147,11 +147,28 @@ We can now test the interpreter, for example by running
 
 **Activity:** Why does the following not work?
 
-        echo "(\x.S x) S 0" | stack exec LambdaNat-exe
+    echo "(\x.S x) S 0" | stack exec LambdaNat-exe
+
+    Parse Failed...
 
 
+What breaks? Why? How can we fix it?
 
-## From LambdaNat1 to LambdaNat2
+Let us go through this step by step
+
+- What breaks? Judging from the output the parsing.
+
+- Why? For this we need to go to the grammar [LambdaNat1.cf](). There we see that an `S` must be followed by a number, and not a variable or a more general expression. 
+
+- How can we fix it? 
+
+  - We need to change the grammar accordingly.
+
+## Homework: From LambdaNat1 to LambdaNat2
+
+Try to pick up everything from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
+
+
 
 ## The different programming languages
 
