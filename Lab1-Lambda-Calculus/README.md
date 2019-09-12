@@ -166,6 +166,11 @@ Let us go through this step by step
 
 Try to pick up everything from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
 
+    echo "(\x.S x) S 0" | stack exec LambdaNat-exe
+
+    Output:
+    S S 0
+
 
 
 ## The different programming languages
