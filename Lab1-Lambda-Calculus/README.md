@@ -158,7 +158,7 @@ Let us go through this step by step
 
 - What breaks? Judging from the output the parsing.
 
-- Why? For this we need to go to the grammar LambdaNat1.cf. There we see that an `S` must be followed by a number, and not a variable or a more general expression. 
+- Why? For this we need to go to the grammar `LambdaNat1.cf`. There we see that an `S` must be followed by a number, and not a variable or a more general expression. 
 
 - How can we fix it? We need to change the grammar so that `S` can be followed by a variable, or, any expression. There are different possibilities here.
 
