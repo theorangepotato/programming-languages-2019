@@ -121,9 +121,9 @@ Before going to write some code, we need a specification.
 
 **Activity:** How can we write `plus_one` as a lambda expression? Can we do this in such a way that we use the computation rule of lambda calculus in order to compute plus one?
 
-**Outcome:** $$(\lambda x. Sx)$$
+**Outcome:** `(\ x . S x)`
 
-**Example:** According to the computation rule of lambda calculus, if we apply the function $\lambda x.Sx$ to, say, $S0$, we obtain $SS0$.
+**Example:** According to the computation rule of lambda calculus, if we apply the function `\ x . S x` to, say, `S 0`, we obtain `S S 0`.
 
 Let us look at what we have in the folder `LambdaNat1`. 
 
@@ -145,7 +145,13 @@ We can now test the interpreter, for example by running
 
 **Exercise:** Do Step 10 of the Work Cycle.
 
+**Activity:** Why does the following not work?
 
+        echo "(\x.S x) S 0" | stack exec LambdaNat-exe
+
+
+
+## From LambdaNat1 to LambdaNat2
 
 ## The different programming languages
 
