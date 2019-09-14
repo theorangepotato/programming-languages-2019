@@ -1,5 +1,7 @@
 ## Syntax of LambdaNat 
 
+(Read in [HackMD](https://hackmd.io/JIrbYii2QteCRrxPP-Dxqw).)
+
 Later in the course we will see why lambda calculus is Turing complete. Despite only having abstraction and application, a rich repertoire of data and control can be encoded, including data types such as Booleans, numbers, and lists as well as control flow operations such as if-then-else and loops/recursion.
 
 For now, we go into a different direction. Instead of encoding the above in the lambda calculus, we extend the lambda calculus by further primitives. 
