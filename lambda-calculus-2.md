@@ -5,42 +5,132 @@
 - explain and perform capture avoiding substitution, 
 - interpret (=execute) lambda calculus programs.
 
-## Syntax of LambdaNat 
-
-Later in the course we will see why lambda calculus is Turing complete. Despite only having abstraction and application, a rich repertoire of data and control can be encoded, including data types such as Booleans, numbers, and lists as well as control flow operations such as if-then-else and loops/recursion.
-
-For now, we go into a different direction. Instead of encoding the above in the lambda calculus, we extend the lambda calculus by further primitives. 
-
-We start by extending the lambda calculus by natural numbers and we call this programming language **LambdaNat**.
-
-The idea of how to add numbers is simple. If we restrict ourselves to the natural numbers, that is, the non-negative integers, we simply add one basic program and one rule to our definition of the lambda calculus. 
-
-Numbers are special programs but not every program is a number. Numbers are defined as follows. 
-
-- **Zero:** There is one basic number which we write as $0$ and pronounce as "zero". 
-- **Successor:** If $n$ is a number, then $S n$ is a number.
-
-**Remark:** It is important to understand that at the moment $0$ does not mean zero. It is just a symbol, which we could replace by any other symbol. We are defining a language here and are free to choose the syntax that we like. Similarly, $S$ is not a function that computes "plus one", even if we can think of it like this from the point of view of a user. From the point of view of the programming language, or from the point of view of the machine, $S$ is just a symbol and $S 0$, $SS0$, $SSS0$ etc are just a strings.
-
-Now we can define the syntax of the programming language LambdaNat via the BNFC grammar
-
-    EAbs.   Exp ::= "\\" Id "." Exp ;  
-    EApp.   Exp2 ::= Exp2 Exp3 ; 
-    EVar.   Exp3 ::= Id ;
-    ENat.   Exp4 ::= Nat ; 
-    Nat0.   Nat ::= "0" ;
-    NatS.   Nat ::= "S" Nat ; 
-
-    coercions Exp 4 ;
-    
-The full BNFC grammar is in the file [LambdNat.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/LambdaNat.cf). 
-
 
 ## Semantics of the Lambda Calculus
 
-From the previous section, we know how to write a lambda calculus program. 
+From the previous section, we know how to write a lambda calculus program. In this section, we will learn how to execute it.
 
-In this section, we will learn how to execute a well-formed lambda calculus program.
+### An Example of Substitution
+
+Before getting into the technicalities, let us start with an example. For this, we add addition and multiplication to the lambda calculus.
+
+  $$e ::= \lambda x.e \mid e\, e \mid x \mid 0 \mid S\, e \mid e+e \mid e*e$$
+  
+**Exercise:** Write in the syntax above the familiar mathematical function $f(x)=2*x +1$.
+
+Now let us see how a computation in arithmetic would work. If we want to apply the function $f$ from the previous exercise to an argument such as 3, we compute
+
+\begin{align}
+f(3) & = 2*3 + 1 \\
+& = 6+1 \\
+& = 7
+\end{align}
+
+In this lecture we are working to generalise the first computation step 
+
+$$f(3) \to 2*3 + 1$$
+
+to lambda calculus. We write $\rightarrow$ now instead of = to emphasise that computation runs in time and that, typically, computations cannot be run backwards. (Btw, reversible computing is a very interesting topic, let me know if you want to know more.) 
+
+**Remark:** The computation step $f(3) \to 2*3 + 1$ merely substitutes 3 for $x$ in $f$, which we will write as $f[3/x]$. Next week, we will see that even the computation steps $2*3+1\to 6+1\to 7$ can be performed by substitution only.
+
+So how would the substitution $f(3) \to 2*3 + 1$ look in lambda calculus? 
+
+Not much different actually:
+
+$$(\lambda x. SS0*x+S0)\, SSS0 \to SS0 * SSS0 + S0$$
+
+or, if we allow ourselves from now on to abbreviate numbers by their familiar decimal notation,
+
+$$(\lambda x. 2*x+1)\, 3 \to 2 * 3 + 1$$
+
+The only visible difference now is that we replaced $f$ by $\lambda x. 2*x+1$.
+
+To summarize, substitution so far is is only replacing a placeholder (formal parameter) by an argument.
+
+### An Example of a Function with Two Arguments
+
+The function that adds two numbers can be written as
+
+$$\lambda x. \lambda y. x+y$$
+
+and we apply it to two arguments as follows
+
+$$(\lambda x.\lambda y. x+y) \ 2 \ 3 $$
+
+Do we need a new substitution rule that can deal with simultaneously substituting two arguments? 
+
+No, we just keep everything as it is and apply the  substitution rule twice.
+
+\begin{align}
+(\lambda x.\lambda y. x+y) \ 2 \ 3
+& \to (\lambda y. 2+y) \ 3\\
+& \to 2+3 \\
+\end{align}
+
+Note that we applied the "inner substitution" 
+
+$$ (\lambda x.\lambda y. x+y) \ 2 
+\to (\lambda y. 2+y) $$
+
+first. 
+
+The result of the inner substitution is again a function, which in turn is applied to the second argument.
+
+**Exercise:** Reduce the following. 
+\begin{gather}
+(\lambda x.\lambda y. x+y) \ 2 \ 3 \\
+(\lambda x.\lambda y. y+x) \ 2 \ 3 \\
+(\lambda x.\lambda y. x+x) \ 2 \ 3 \\
+(\lambda x.\lambda y. y+y) \ 2 \ 3 \\
+(\lambda x.\lambda y. z+z) \ 2 \ 3 
+\end{gather}
+
+### An Example of Capture Avoiding Substitution
+
+The only way two lambda calculus programs $M$ and $N$ communicate with each other is via an application $(\lambda x.M) N$ . But what happens if there are name clashes between $M$ and $N$? Here is an example:
+
+$$(\lambda x.\lambda y. x + y)\ y \ 2$$
+
+Here the $y$ in $M=\lambda y. x + y$ means something differnt from the $y$ in $N=y$. We say that the $y$ in $M$ is *bound* and the $y$ in $N$ is *free*. We will learn more about free and bound variables later in the course. For now it is enough to understand that bound variables are formal parameters (and thus are mere place holders that do not have a meaning), whereas free variables have a meaning determined by the larger context in which the program exists.
+
+**Exercise:** Keeping in mind that the meaning of the free occurrence of $y$ is determined by the larger context in which the program exists, what is wrong with the following computation? What would be the correct result?
+
+\begin{align}
+(\lambda x.\lambda y. x + y)\ y \ 2 
+& \to 
+(\lambda y. y + y)\ 2 \\
+& \to 
+2 + 2 \\
+& \to 
+4
+\end{align}
+
+The problem with the computation above is that we started with a free $y$ (typeset in bold for emphasis) in 
+
+$$(\lambda x.\lambda y. x + y)\ \bf y$$
+
+and that this free $\bf y$ became bound in 
+
+$$\lambda y. {\bf y} + y$$
+
+after the first substitution. The solution to this problem is to define substitution in such a way that variables cannot be captured, that is, we want a *capture avoiding substitution*.
+
+But if substitution must be capture avoiding, how do we compute 
+$$(\lambda x.\lambda y. x + y)\  y \quad?$$
+
+To answer this question, we recall that we can rename formal parameters. So we compute
+
+\begin{align}
+(\lambda x.\lambda y. x + y)\  y 
+& = 
+(\lambda x.\lambda z. x + z)\  y \\
+& \to  \lambda z. y + z
+\end{align}
+
+where the first step only renames the formal parameter (=bound variable) $y$ into $z$.
+
+### Renaming Formal Parameters
 
 First, we need to make sure that we know how to rename formal parameters. For example, we have that
 
@@ -52,18 +142,47 @@ Since formal parameters can be renamed, we can always make them different from a
 
 This is important to define how lambda calculus programs compute. There is only one computation rule in the lambda calculus. It goes as follows.
 
-If $\lambda x. e$ is a lambda term and $e'$ is another lambda term, then
-
-$$(\lambda x. e) e'.$$ 
+### The Computation Rule: $\beta$-Reduction
 
 
-computes to $$e[e'/x]$$ which is our notation for the term $e$ where each occurrence of $x$ is substituted by $e'$.
+If $\lambda x. M$ is a lambda term and $N$ is another lambda term, then
 
-For this computation step to be allowed, we assume that $x$ does not occur in $e'$. (If it did, we could rename $x$ in $\lambda x. e$ as $x$ is a formal parameter.)
+$$(\lambda x. M) N$$ 
 
-To summarise, if $x$ does not occur in $e'$, then
-$$(\lambda x. e) e' \ \rightarrow \ e[e'/x]$$
-In words, we say that $(\lambda x. e) e'$ ***reduces to*** $e[e'/x]$.
+
+computes to $$M[N/x]$$ which is our notation for the term $M$ where each occurrence of $x$ is substituted by $N$. 
+
+For this computation step to be allowed, we assume that 
+
+  - the formal parameters of $M$ do not occur in $N$,
+  
+  - the formal parameters of $M$ are all different.
+  
+(If this is not the case we can rename the formal prameters.)
+
+
+In short we write
+
+$$(\lambda x. M) N \ \rightarrow \ M[N/x]$$ 
+
+and say this as
+
+$$\textrm{Replace} \  x \ \textrm{in} \ M \ \textrm{by} N$$
+
+or also 
+
+    Replace the formal parameter in the body of the function
+    by the argument.
+
+To remember this as a text can make finding the right pattern matching for the substitution easier:
+
+**Example:** In
+$(\lambda x. \lambda y. x) a b$ the formal parameter is $x$ and the argument is $a$. So we replace $x$ in $\lambda y.x$ by $a$ and get $(\lambda y. a) b$ in the first computation step. Now the formal parameter is $y$ and the argument is $b$. Since $b$ does not occur in the body $a$, replacing $y$ in $a$ by $b$ does not change $a$ and the result is simply $a$ itself.
+
+
+
+
+
 
 
 **Exercise:** Reduce the following:
@@ -74,12 +193,12 @@ In words, we say that $(\lambda x. e) e'$ ***reduces to*** $e[e'/x]$.
 **Exercise:** Explain why we need to rename variables before being able to reduce $\ (\lambda x. (\lambda y. x)) y$. 
 
 
-#### Example: 
+### Another Example on Capture Avoiding Substitution 
 
 This example illustrates a subtle point about renaming variables. If you find it confusing right now rest assured that we will come back to it later.
 
 \begin{align}
-((\lambda x.(\lambda y. x)M)N & \to (\lambda y. M)N \\
+(\lambda x.\lambda y. x)\,M\,N & \to (\lambda y. M)N \\
 & \to M
 \end{align}
 
@@ -93,13 +212,18 @@ $$((\lambda x.(\lambda y. x))M)N\to (\lambda y. M)N$$
   - the binder $\lambda y$ does not capture free variables in $M$,
   - $y$ is not free in $M$,
   - $y$ is fresh for $M$.
+  
+## Solution to selected Exercises
+
+$f(x)=2*x +1$ can be written as $\lambda x.SS0*x+ S0$.
 
 ## Homework 
 
 - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
 
+- Run the [LambdaNat parser](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/README.md) on some programs. Find different programs that have the same abstract syntax tree. 
 
- - **(IMPORTANT)** Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as described [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/README.md).
+ - (We will do this next week:) Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as described [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/README.md).
  
 
  
