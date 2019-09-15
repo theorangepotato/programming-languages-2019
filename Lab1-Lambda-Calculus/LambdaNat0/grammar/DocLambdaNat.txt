@@ -43,8 +43,7 @@ All other symbols are terminals.
   | //Exp2// | -> | //Exp2// //Exp3//
   |  |  **|**  | //Exp3//
   | //Exp3// | -> | //Id//
-  |  |  **|**  | //Exp4//
+  |  |  **|**  | ``(`` //Exp// ``)``
   | //Exp// | -> | //Exp1//
-  | //Exp4// | -> | ``(`` //Exp// ``)``
 
 

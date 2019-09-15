@@ -13,7 +13,6 @@ import ErrM
 %name pExp2 Exp2
 %name pExp3 Exp3
 %name pExp Exp
-%name pExp4 Exp4
 -- no lexer declaration
 %monad { Err } { thenM } { returnM }
 %tokentype {Token}
@@ -36,11 +35,9 @@ Exp1 : '\\' Id '.' Exp { AbsLambdaNat.EAbs $2 $4 } | Exp2 { $1 }
 Exp2 :: { Exp }
 Exp2 : Exp2 Exp3 { AbsLambdaNat.EApp $1 $2 } | Exp3 { $1 }
 Exp3 :: { Exp }
-Exp3 : Id { AbsLambdaNat.EVar $1 } | Exp4 { $1 }
+Exp3 : Id { AbsLambdaNat.EVar $1 } | '(' Exp ')' { $2 }
 Exp :: { Exp }
 Exp : Exp1 { $1 }
-Exp4 :: { Exp }
-Exp4 : '(' Exp ')' { $2 }
 {
 
 returnM :: a -> Err a
