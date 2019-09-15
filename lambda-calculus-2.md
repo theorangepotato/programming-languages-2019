@@ -12,9 +12,9 @@ From the previous section, we know how to write a lambda calculus program. In th
 
 ### An Example of Substitution
 
-Before getting into the technicalities, let us start with an example. For this, we add addition and multiplication to the lambda calculus.
+Before getting into the technicalities, let us start with an example. For this, we add addition and multiplication and as many numbers as we want to the lambda calculus.
 
-  $$e ::= \lambda x.e \mid e\, e \mid x \mid 0 \mid S\, e \mid e+e \mid e*e$$
+  $$e ::= \lambda x.e \mid e\, e \mid x \mid e+e \mid e*e \mid 0 \mid 1 \mid 2 \mid 3 \mid 6 \mid 7$$
   
 **Exercise:** Write in the syntax above the familiar mathematical function $f(x)=2*x +1$.
 
@@ -32,19 +32,15 @@ $$f(3) \to 2*3 + 1$$
 
 to lambda calculus. We write $\rightarrow$ now instead of = to emphasise that computation runs in time and that, typically, computations cannot be run backwards. (Btw, reversible computing is a very interesting topic, let me know if you want to know more.) 
 
-**Remark:** The computation step $f(3) \to 2*3 + 1$ merely substitutes 3 for $x$ in $f$, which we will write as $f[3/x]$. Next week, we will see that even the computation steps $2*3+1\to 6+1\to 7$ can be performed by substitution only.
+**Remark:** The computation step $f(3) \to 2*3 + 1$ merely **substitutes 3 for $x$ in $f$**, which we will write as $f[3/x]$. Next week, we will see that even the computation steps $2*3+1\to 6+1\to 7$ can be performed by substitution only.
 
 So how would the substitution $f(3) \to 2*3 + 1$ look in lambda calculus? 
 
 Not much different actually:
 
-$$(\lambda x. SS0*x+S0)\, SSS0 \to SS0 * SSS0 + S0$$
-
-or, if we allow ourselves from now on to abbreviate numbers by their familiar decimal notation,
-
 $$(\lambda x. 2*x+1)\, 3 \to 2 * 3 + 1$$
 
-The only visible difference now is that we replaced $f$ by $\lambda x. 2*x+1$.
+The only visible difference is that we replaced the name $f$ by its denotation $\lambda x. 2*x+1$.
 
 To summarize, substitution so far is is only replacing a placeholder (formal parameter) by an argument.
 
@@ -58,9 +54,11 @@ and we apply it to two arguments as follows
 
 $$(\lambda x.\lambda y. x+y) \ 2 \ 3 $$
 
-Do we need a new substitution rule that can deal with simultaneously substituting two arguments? 
+**Reminder:** According to the rules fordropping parentheses, this is short for $$((\lambda x.(\lambda y. x+y)) \ 2) \ 3$$
 
-No, we just keep everything as it is and apply the  substitution rule twice.
+**Question:** Do we need a new substitution rule that can deal with simultaneously substituting two arguments? 
+
+No, we just keep everything as it is and apply the  substitution rule twice:
 
 \begin{align}
 (\lambda x.\lambda y. x+y) \ 2 \ 3
@@ -73,9 +71,25 @@ Note that we applied the "inner substitution"
 $$ (\lambda x.\lambda y. x+y) \ 2 
 \to (\lambda y. 2+y) $$
 
-first. 
+first, while leaving the "3" untouched. 
 
-The result of the inner substitution is again a function, which in turn is applied to the second argument.
+**Remark:** A familiar idea here is to perform reductions inside bigger expressions. For example, above, in 
+\begin{align}
+f(3) & \to 2*3 + 1 \\
+& \to 6+1 \\
+& \to 7
+\end{align}
+the second "$\to$" reduces $2*3$ to $6$ inside a bigger expression.
+
+**Remark:** A new idea here is that expressions can reduce to functions. For example, above, in 
+\begin{align}
+(\lambda x.\lambda y. x+y) \ 2 \ 3
+& \to (\lambda y. 2+y) \ 3\\
+& \to 2+3 \\
+\end{align}
+the result of the inner substitution is the function $\lambda y.2+y$, which in turn is applied to the second argument.
+
+**Terminology (Currying):** To replace a function in two arguments by a function that takes one argument and returns a function that takes the second argument is called "currying" after the mathematician and logician [Haskell Curry](https://en.wikipedia.org/wiki/Haskell_Curry).
 
 **Exercise:** Reduce the following. 
 \begin{gather}
@@ -88,14 +102,15 @@ The result of the inner substitution is again a function, which in turn is appli
 
 ### An Example of Capture Avoiding Substitution
 
-The only way two lambda calculus programs $M$ and $N$ communicate with each other is via an application $(\lambda x.M) N$ . But what happens if there are name clashes between $M$ and $N$? Here is an example:
+The only way two lambda calculus programs $M$ and $N$ communicate with each other is via an application $(\lambda x.M) N$ . But what happens if there are [name clashes](https://en.wikipedia.org/wiki/Name_collision) between $\lambda x.M$ and $N$? Here is an example:
 
 $$(\lambda x.\lambda y. x + y)\ y \ 2$$
 
-Here the $y$ in $M=\lambda y. x + y$ means something differnt from the $y$ in $N=y$. We say that the $y$ in $M$ is *bound* and the $y$ in $N$ is *free*. We will learn more about free and bound variables later in the course. For now it is enough to understand that bound variables are formal parameters (and thus are mere place holders that do not have a meaning), whereas free variables have a meaning determined by the larger context in which the program exists.
+The $y$ in $M=\lambda y. x + y$ means something differnt from the $y$ in $N=y$. We say that the $y$ in $M$ is *bound* and the $y$ in $N$ is *free*. We will learn more about free and bound variables later in the course. For now it is enough to understand that bound variables are formal parameters (and thus are mere place holders that do not have a meaning), whereas free variables have a meaning determined by the larger context in which the program exists.
 
 **Exercise:** Keeping in mind that the meaning of the free occurrence of $y$ is determined by the larger context in which the program exists, what is wrong with the following computation? What would be the correct result?
 
+**Example** of a **wrong** computation:
 \begin{align}
 (\lambda x.\lambda y. x + y)\ y \ 2 
 & \to 
@@ -106,17 +121,16 @@ Here the $y$ in $M=\lambda y. x + y$ means something differnt from the $y$ in $N
 4
 \end{align}
 
-The problem with the computation above is that we started with a free $y$ (typeset in bold for emphasis) in 
+The problem with the computation above becomes apparent if we typeset the free $y$ in bold and compute
+\begin{align}
+(\lambda x.\lambda y. x + y)\ \mathbf y \ 2 
+& \to (\lambda y. {\bf y} + y) \ 2
+\end{align}
+highlighting that the bold roman $\bf y$ is different from the italic $y$.
 
-$$(\lambda x.\lambda y. x + y)\ \bf y$$
+The solution to the problem then is to define substitution in such a way that variable $\bf y$ cannot be captured by the $\lambda y$, that is, we want a *capture avoiding substitution*.
 
-and that this free $\bf y$ became bound in 
-
-$$\lambda y. {\bf y} + y$$
-
-after the first substitution. The solution to this problem is to define substitution in such a way that variables cannot be captured, that is, we want a *capture avoiding substitution*.
-
-But if substitution must be capture avoiding, how do we compute 
+But if substitution must be capture avoiding, how do we compute, for example,
 $$(\lambda x.\lambda y. x + y)\  y \quad?$$
 
 To answer this question, we recall that we can rename formal parameters. So we compute
@@ -215,13 +229,24 @@ $$((\lambda x.(\lambda y. x))M)N\to (\lambda y. M)N$$
   
 ## Solution to selected Exercises
 
-$f(x)=2*x +1$ can be written as $\lambda x.SS0*x+ S0$.
+$f(x)=2*x +1$ can be written as $\lambda x.2*x+ 1$.
+
+The following computation is correct:
+\begin{align}
+(\lambda x.\lambda y. x + y)\ y \ 2 
+& \to 
+(\lambda z. y + z)\ 2 \\
+& \to 
+y + 2 
+\end{align}
 
 ## Homework 
 
 - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
 
-- Run the [LambdaNat parser](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/grammar/README.md) on some programs. Find different programs that have the same abstract syntax tree. 
+- Run the [LambdaNat parser and interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/README.md) on some programs. Find different programs that have the same abstract syntax tree. 
+
+
 
  - (We will do this next week:) Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as described [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/README.md).
  
