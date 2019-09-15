@@ -5,9 +5,9 @@
 The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with the pure and untyped lambda calculus, available in the folder [LambdaNat0](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
 
 Recall that the syntax of the lambda caclulus has only variables, abstraction (function definition) and 
-function application. The semantics only has one computation rule, known as capture avoiding substitution or beta-reduction.
+function application. The semantics only has one [computation rule](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB#The-Computation-Rule-beta-Reduction), known as capture avoiding substitution or beta-reduction.
 
-This is a really small programming language and the learning outcome of this lab is to teach how to extend this very basic language with new features.
+This is a really small programming language and the learning outcome of this lab is to teach how to extend this very basic language with new features. There are two main steps: Add the new feature to the parser and then to the interpreter.
 
 ## Preliminary preparations
 
