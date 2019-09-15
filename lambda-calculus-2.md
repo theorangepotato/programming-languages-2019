@@ -244,11 +244,24 @@ y + 2
 
 - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
 
-- Run the [LambdaNat parser and interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/README.md) on some programs. Find different programs that have the same abstract syntax tree. 
+- Run the [LambdaNat parser and interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/README.md) on the following programs, see also [exercises.lc](). Run the program only after predicting the result. Compare your prediction with actual result.
+
+      (\x.x) a          
+      \x.x a            
+      (\x.\y.x) a b     
+      (\x.\y.y) a b     
+      (\x.\y.x) a b c   
+      (\x.\y.x) a (b c) 
+      (\x.\y.y) a (b c) 
+      (\x.\y.x) (a b) c 
+      (\x.\y.y) (a b) c 
+      (\x.\y.x) (a b c) 
+      (\x.\y.y) (a b c) 
 
 
 
- - (We will do this next week:) Write a program `plus_one.lc` in LambdaNat that adds +1 to a number. Test your program using the interpreter as described [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lambda-Calculus/LambdaNat/README.md).
+
+ - (We will answer this next week in detail:) Think about how you would write a program `plus_one.lc` in LambdaNat that adds +1 to a number. 
  
 
  
