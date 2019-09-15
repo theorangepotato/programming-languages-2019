@@ -183,7 +183,7 @@ Let us go through this step by step
 
   - Maybe even more ... give it a try ...
 
-## Homework: From LambdaNat1 to LambdaNat2
+## Homework: From LambdaNat1 to LambdaNat2 (successor)
 
 Try to pick up everything from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
 
@@ -192,7 +192,7 @@ Try to pick up everything from the last observation. Work yourself through the W
     Output:
     S S 0
 
-## Solution: From LambdaNat1 to LambdaNat2
+## Solution: From LambdaNat1 to LambdaNat2 
 
 We deal with the case where we use the grammar
 
@@ -219,7 +219,7 @@ and similarly in the code for substitution
     subst id s (ENatS e) = ENatS (subst id s e) 
     subst id s ENat0 = ENat0 
 
-With these changes, and keeping to the steps in the Work cycle, you should be able to build the interpeter and then run a program like in
+With these changes, and keeping to the steps in the Work Cycle, you should be able to build the interpeter and then run a program like in
 
     echo "(\ x . S x) S S 0" | stack exec LambdaNat-exe
 
@@ -229,14 +229,38 @@ and obtain
 
 as output.
 
+## From LambdaNat2 to LambdaNat3 (conditionals)
+
+We go through the Work Cycle to add if-then-else. As abstract syntax we may choose (fill in the dots)
+
+        e ::= \ x. e | e e | x | 0 | S e | ...
+
+If you want to take my solution, you can look at my grammar in LambdaNat3. To modify the interpreter so that it can deal with if-then-else, we only need to know that in the definition of the abstact syntax in [AbsLambdaNat](), there is one new case now, namely 
+
+        EIf Exp Exp Exp Exp
+
+The trick is to use Haskell's if-then-else in order to implement the interpreter for this case. Can you guess how to do this? I will tell you that Haskell's syntax for a conditional is
+
+     "if" Exp "==" Exp "then" Exp "else" Exp
+
+As in the previous section, `subst` may also need modification. And don't forget the other steps in the Work Cycle.
+
+## From LambdaNat3 to LambdaNat4 (recursion)
+
+
 
 ## The different programming languages
 
-[LambdaNat0](): The pure lambda calculus.
+LambdaNat0: The pure lambda calculus.
 
-[LambdaNat1](): Natural numbers added as data. 
+LambdaNat1: Natural numbers added as data. 
 
-...
+LambdaNat2: Making plus one work.
+
+LambdaNat3: Adding conditionals.
+
+LambdaNat4: Adding recursion.
+
 
 
 
