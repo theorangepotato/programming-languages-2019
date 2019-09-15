@@ -90,7 +90,10 @@ Here we assume that we have `LambdaNat42` and want to build a new language calle
 
 4) Change `LambdaNat43.cf` according to what you want to achieve. 
 
-5) Run `bnfc -m -haskell LambdaNat43.cf` followed by `make`. 
+5) To build the parser:
+
+  a) Run `bnfc -m -haskell LambdaNat43.cf`.
+  b) Run `make`. 
 
 6) Write programs and parse them in the new language as explained. 
    If not all tests run according to what you expect go back to 4).
