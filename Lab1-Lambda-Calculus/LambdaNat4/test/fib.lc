@@ -7,5 +7,5 @@ let rec fib = \n. if n=0 then 0 else if n = S 0 then S 0 else plus (fib (minus_o
 //fib S S S 0 //Answer: 2
 //fib S S S S 0 //Answer: 3
 //fib S S S S S 0 //Answer: 5
-//fib S S S S S S 0 //Answer: 8 ... here is CBN already slower
+//fib S S S S S S 0 //Answer: 8 ... here is CBN already slow
 

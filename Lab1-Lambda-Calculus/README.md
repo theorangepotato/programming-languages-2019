@@ -370,7 +370,7 @@ and, putting things together, more complicated functions such as fibonacci:
                                          (fib (minus_one (minus_one n))) in 
             fib S S S S 0 
 
-These and similar definitions can be found in [test.lc]() and [fib.lc]().
+These and similar definitions can be found in [test.lc](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat4/test/test.lc) and [fib.lc](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat4/test/fib.lc).
 
 Can you interpreter execute these programs?
 
