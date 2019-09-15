@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-09-15 02:10:34.300522 UTC
+2019-09-15 02:28:40.743115 UTC
 
 interface main:Main 8064
-  interface hash: 8a62b03ab93138f7ce18252825e8e252
-  ABI hash: 6e7db2c3828798545215b0de910e00d3
+  interface hash: 02126929bc5f3e32d03b3d9e1f706610
+  ABI hash: c00a13eddb0a0fa567e568979834a7fe
   export-list hash: c57cffe296d2b17ad64c1a31fea7133f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 9b9b88ea603db797a5e3562ae468d079
@@ -33,10 +33,10 @@ family instance modules: base-4.12.0.0:Control.Applicative
                          containers-0.6.0.1:Data.Map.Internal
                          containers-0.6.0.1:Data.Set.Internal
 import  -/  LambdaNat-0.1.0.0:AbsLambdaNat fef7ae85c00204a17ac697482075387e
-import  -/  LambdaNat-0.1.0.0:ErrM 891511a0d247a63f97006997da116fd7
+import  -/  LambdaNat-0.1.0.0:ErrM cbab9480c9c97e575481814910c92ab0
 import  -/  LambdaNat-0.1.0.0:Interpreter e35ed36a8aa4ab6eda74f4cd5529f45d
 import  -/  LambdaNat-0.1.0.0:LexLambdaNat dfb9ace5c8c8e0195b53d60ad3a49ac9
-import  -/  LambdaNat-0.1.0.0:ParLambdaNat 63a9e2b7036861764e7095a9fb590592
+import  -/  LambdaNat-0.1.0.0:ParLambdaNat 41cd7c8e682aa76370e1a01e852cac5c
 import  -/  LambdaNat-0.1.0.0:PrintLambdaNat 8eddb530879cbc4430f0afbe261061a5
 import  -/  base-4.12.0.0:Control.Monad 07eaec7fd256019b318d048d00f45b1c
 import  -/  base-4.12.0.0:Data.Foldable efb37371da929e7bc88d896298d2d979
@@ -68,16 +68,16 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-78b10955165b1203fe7a19f6681ef33b
+33bc97366b0875725a5f3043af468952
   type ParseFun a = [LexLambdaNat.Token] -> ErrM.Err a
 4accfb08b3f50eab5f429c59d8e6b699
   type Verbosity = GHC.Types.Int
-81314e102357f9e2ecbfab3589b0fabb
+b337f24f14a7aa556f7a1f0436eca708
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-e15682cd42a874ca64748df3b3c30f3b
+2c386550f84ee9ee9fc6e6c57b58f1ea
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -146,7 +146,7 @@ c26642c73b5b0bf03b027ef0fff76b15
 15afd4a775bf0f6176a60da88b7d7f05
   main7 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
-76223f8025de15962b9c2be9b1344245
+8136829f98254db878261f9b28ea5301
   main8 ::
     Main.Verbosity
     -> Main.ParseFun AbsLambdaNat.Program
@@ -154,7 +154,7 @@ c26642c73b5b0bf03b027ef0fff76b15
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 4, Strictness: <L,1*U(U)><C(S),1*C1(U)><L,U><S,U> -}
-f217d4943a4ea0f2a0a5b118401da078
+1ea8bdb4e0d8c57cd2be3a03836c555d
   main9 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

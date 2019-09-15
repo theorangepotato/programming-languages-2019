@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-09-15 02:10:31.278836 UTC
+2019-09-15 02:28:37.728068 UTC
 
 interface LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t:ErrM 8064
-  interface hash: 9c0ebf2719258a566ad16a780ed71dc8
-  ABI hash: 891511a0d247a63f97006997da116fd7
+  interface hash: be6ec0bbbc52355428ab8ad84ca49694
+  ABI hash: cbab9480c9c97e575481814910c92ab0
   export-list hash: 6a1a683d2b1212de37fcd511d370fe9e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 304d54461d9c82d343c8527b06b0f850
@@ -35,7 +35,7 @@ import  -/  base-4.12.0.0:Text.ParserCombinators.ReadPrec 9773f55573a0fca144b696
 import  -/  base-4.12.0.0:Text.Read.Lex cc2610206b1ce0c49789637e16412aa1
 import  -/  ghc-prim-0.5.3:GHC.Classes 0f6fd7d7db53fc48f6e1f01803cc6c9d
 import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr :: GHC.Base.Alternative ErrM.Err
   DFunId
   {- Strictness: m, Inline: CONLIKE,
@@ -46,7 +46,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                   ErrM.$fAlternativeErr_$cmplus
                   ErrM.$fAlternativeErr_$csome
                   ErrM.$fAlternativeErr_$cmany -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr1 :: ErrM.Err [a]
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (\ @ a -> ErrM.Ok @ [a] (GHC.Types.[] @ a)) -}
@@ -57,7 +57,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
 97f40c776fe3985ec33b18436a390bca
   $fAlternativeErr3 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("Err.mzero"#) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr_$cmany :: ErrM.Err a -> ErrM.Err [a]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
      Unfolding: InlineRule (1, True, False)
@@ -72,17 +72,17 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                        ErrM.Bad s -> ErrM.$fAlternativeErr1 @ a }
                  } in
                  many_v) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr_$cmplus :: ErrM.Err a -> ErrM.Err a -> ErrM.Err a
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U>,
      Unfolding: InlineRule (2, True, False)
                 (\ @ a (ds :: ErrM.Err a) (y :: ErrM.Err a) ->
                  case ds of wild { ErrM.Ok ipv -> wild ErrM.Bad ds1 -> y }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr_$cmzero :: ErrM.Err a
   {- Strictness: m2,
      Unfolding: (\ @ a -> ErrM.Bad @ a ErrM.$fAlternativeErr2) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fAlternativeErr_$csome :: ErrM.Err a -> ErrM.Err [a]
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
      Unfolding: (\ @ a (v :: ErrM.Err a) ->
@@ -97,7 +97,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                        ErrM.Bad s -> ErrM.Bad @ [a] s }
                  } in
                  some_v) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fApplicativeErr :: GHC.Base.Applicative ErrM.Err
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
@@ -109,14 +109,14 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                   ErrM.$fApplicativeErr_$cliftA2
                   ErrM.$fApplicativeErr_$c*>
                   ErrM.$fApplicativeErr_$c<* -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fApplicativeErr_$c*> :: ErrM.Err a -> ErrM.Err b -> ErrM.Err b
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U>,
      Unfolding: InlineRule (2, True, False)
                 (\ @ a @ b (a1 :: ErrM.Err a) (a2 :: ErrM.Err b) ->
                  case a1 of wild {
                    ErrM.Ok a4 -> a2 ErrM.Bad s -> ErrM.Bad @ b s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fApplicativeErr_$c<* :: ErrM.Err a -> ErrM.Err b -> ErrM.Err a
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U>,
      Unfolding: InlineRule (2, True, False)
@@ -126,7 +126,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case ds of wild1 {
                         ErrM.Ok a2 -> ErrM.Ok @ a a1 ErrM.Bad s -> ErrM.Bad @ a s }
                    ErrM.Bad s -> ErrM.Bad @ a s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fApplicativeErr_$c<*> ::
     ErrM.Err (a -> b) -> ErrM.Err a -> ErrM.Err b
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U>,
@@ -137,7 +137,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case ds1 of wild1 {
                         ErrM.Ok a1 -> ErrM.Ok @ b (f a1) ErrM.Bad s -> ErrM.Bad @ b s }
                    ErrM.Bad s -> ErrM.Bad @ b s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fApplicativeErr_$cliftA2 ::
     (a -> b -> c) -> ErrM.Err a -> ErrM.Err b -> ErrM.Err c
   {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><L,1*U>,
@@ -154,7 +154,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case ds1 of wild1 {
                         ErrM.Ok a1 -> ErrM.Ok @ c (f a1) ErrM.Bad s -> ErrM.Bad @ c s }
                    ErrM.Bad s -> ErrM.Bad @ c s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fEqErr :: GHC.Classes.Eq a => GHC.Classes.Eq (ErrM.Err a)
   DFunId
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
@@ -163,7 +163,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                   @ (ErrM.Err a)
                   (ErrM.$fEqErr_$c== @ a v)
                   (ErrM.$fEqErr_$c/= @ a v) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fEqErr_$c/= ::
     GHC.Classes.Eq a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Bool
   {- Arity: 3, HasNoCafRefs,
@@ -189,7 +189,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                         -> case GHC.Base.eqString a1 b1 of wild2 {
                              GHC.Types.False -> GHC.Types.True
                              GHC.Types.True -> GHC.Types.False } } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fEqErr_$c== ::
     GHC.Classes.Eq a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Bool
   {- Arity: 3, HasNoCafRefs,
@@ -207,38 +207,41 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case ds1 of wild1 {
                         ErrM.Ok ipv -> GHC.Types.False
                         ErrM.Bad b1 -> GHC.Base.eqString a1 b1 } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fFunctorErr :: GHC.Base.Functor ErrM.Err
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
      Unfolding: DFun:.
                   @ ErrM.Err ErrM.$fFunctorErr_$cfmap ErrM.$fFunctorErr_$c<$ -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fFunctorErr_$c<$ :: a -> ErrM.Err b -> ErrM.Err a
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
      Unfolding: InlineRule (2, True, False)
                 (\ @ a @ b (x :: a) (eta :: ErrM.Err b) ->
                  case eta of wild {
                    ErrM.Ok a1 -> ErrM.Ok @ a x ErrM.Bad s -> ErrM.Bad @ a s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fFunctorErr_$cfmap :: (a -> b) -> ErrM.Err a -> ErrM.Err b
   {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><S,1*U>,
      Unfolding: InlineRule (2, True, False)
                 (\ @ a @ b (f :: a -> b) (m1 :: ErrM.Err a) ->
                  case m1 of wild {
                    ErrM.Ok a1 -> ErrM.Ok @ b (f a1) ErrM.Bad s -> ErrM.Bad @ b s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fMonadErr :: GHC.Base.Monad ErrM.Err
   DFunId
-  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+  {- Strictness: m, Inline: CONLIKE,
      Unfolding: DFun:.
                   @ ErrM.Err
                   ErrM.$fApplicativeErr
                   ErrM.$fMonadErr_$c>>=
                   ErrM.$fMonadErr_$c>>
                   ErrM.Ok
-                  ErrM.Bad -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+                  (\ @ a ->
+                   GHC.Err.errorWithoutStackTrace
+                     @ 'GHC.Types.LiftedRep
+                     @ (ErrM.Err a)) -}
+142e4d00aabcd4c7b4bda224107ea00f
   $fMonadErr_$c>> :: ErrM.Err a -> ErrM.Err b -> ErrM.Err b
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U>,
      Inline: (sat-args=2),
@@ -246,14 +249,14 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                 (\ @ a @ b (m1 :: ErrM.Err a) (k :: ErrM.Err b) ->
                  case m1 of wild {
                    ErrM.Ok a1 -> k ErrM.Bad s -> ErrM.Bad @ b s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fMonadErr_$c>>= :: ErrM.Err a -> (a -> ErrM.Err b) -> ErrM.Err b
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*C1(U)>,
      Unfolding: InlineRule (2, True, False)
                 (\ @ a @ b (ds :: ErrM.Err a) (f :: a -> ErrM.Err b) ->
                  case ds of wild {
                    ErrM.Ok a1 -> f a1 ErrM.Bad s -> ErrM.Bad @ b s }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fMonadPlusErr :: GHC.Base.MonadPlus ErrM.Err
   DFunId
   {- Strictness: m, Inline: CONLIKE,
@@ -263,7 +266,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                   ErrM.$fMonadErr
                   ErrM.$fAlternativeErr_$cmzero
                   ErrM.$fAlternativeErr_$cmplus -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr :: GHC.Classes.Ord a => GHC.Classes.Ord (ErrM.Err a)
   DFunId
   {- Arity: 1, HasNoCafRefs,
@@ -280,7 +283,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                   (ErrM.$fOrdErr_$c>= @ a v)
                   (ErrM.$fOrdErr_$cmax @ a v)
                   (ErrM.$fOrdErr_$cmin @ a v) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$c< ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Bool
   {- Arity: 3, HasNoCafRefs,
@@ -298,7 +301,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case b of wild1 {
                         ErrM.Ok ipv -> GHC.Types.False
                         ErrM.Bad b1 -> GHC.Classes.$fOrd[]_$s$c<1 a2 b1 } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$c<= ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Bool
   {- Arity: 3, HasNoCafRefs,
@@ -321,7 +324,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                         ErrM.Bad b1
                         -> case GHC.Classes.$fOrd[]_$s$ccompare1 a2 b1 of wild2 {
                              DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$c>= ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Bool
   {- Arity: 3, HasNoCafRefs,
@@ -344,7 +347,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                         ErrM.Bad b1
                         -> case GHC.Classes.$fOrd[]_$s$ccompare1 a2 b1 of wild2 {
                              DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$ccompare ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> GHC.Types.Ordering
   {- Arity: 3, HasNoCafRefs,
@@ -362,7 +365,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    -> case b of wild1 {
                         ErrM.Ok ipv -> GHC.Types.GT
                         ErrM.Bad b1 -> GHC.Classes.$fOrd[]_$s$ccompare1 a2 b1 } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$cmax ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> ErrM.Err a
   {- Arity: 3, HasNoCafRefs,
@@ -384,7 +387,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                         ErrM.Bad b1
                         -> case GHC.Classes.$fOrd[]_$s$ccompare1 a1 b1 of wild2 {
                              DEFAULT -> wild GHC.Types.LT -> wild1 } } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$cmin ::
     GHC.Classes.Ord a => ErrM.Err a -> ErrM.Err a -> ErrM.Err a
   {- Arity: 3, HasNoCafRefs,
@@ -406,7 +409,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                         ErrM.Bad b1
                         -> case GHC.Classes.$fOrd[]_$s$ccompare1 a1 b1 of wild2 {
                              DEFAULT -> wild1 GHC.Types.LT -> wild } } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fOrdErr_$cp1Ord ::
     GHC.Classes.Ord a => GHC.Classes.Eq (ErrM.Err a)
   {- Arity: 1, HasNoCafRefs,
@@ -414,7 +417,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
      Unfolding: InlineRule (1, True, False)
                 (\ @ a ($dOrd :: GHC.Classes.Ord a) ->
                  ErrM.$fEqErr @ a (GHC.Classes.$p1Ord @ a $dOrd)) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fReadErr :: GHC.Read.Read a => GHC.Read.Read (ErrM.Err a)
   DFunId
   {- Arity: 1, Strictness: <L,U(A,A,C(C1(U)),A)>m, Inline: CONLIKE,
@@ -430,7 +433,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                                      a>_R)) ; Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                                        <ErrM.Err a>_R))
                   (ErrM.$fReadErr_$creadListPrec @ a v) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fReadErr1 ::
     GHC.Read.Read a =>
     Text.ParserCombinators.ReadPrec.Prec
@@ -557,7 +560,7 @@ d0595bf4416b66b70973786907902cdb
 63c3625a30c3d40aeaffe817cb907ed8
   $fReadErr6 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fReadErr_$creadList ::
     GHC.Read.Read a => Text.ParserCombinators.ReadP.ReadS [ErrM.Err a]
   {- Arity: 1, Strictness: <L,U(A,A,C(C1(U)),A)>,
@@ -582,7 +585,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                       @ [ErrM.Err a]
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ [ErrM.Err a]))) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fReadErr_$creadListPrec ::
     GHC.Read.Read a =>
     Text.ParserCombinators.ReadPrec.ReadPrec [ErrM.Err a]
@@ -598,7 +601,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                                    <ErrM.Err
                                       a>_R)) ; Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                                         <ErrM.Err a>_R))) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fReadErr_$creadsPrec ::
     GHC.Read.Read a =>
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS (ErrM.Err a)
@@ -614,7 +617,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                       @ (ErrM.Err a)
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ (ErrM.Err a)))) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fShowErr :: GHC.Show.Show a => GHC.Show.Show (ErrM.Err a)
   DFunId
   {- Arity: 1, Strictness: <L,U(C(C1(C(U))),A,A)>m, Inline: CONLIKE,
@@ -642,7 +645,7 @@ cb5486bb16aea8c7c592afb1222be0c2
                    @ GHC.Types.Char
                    GHC.Show.$fShow(,)3
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fShowErr_$cshow ::
     GHC.Show.Show a => ErrM.Err a -> GHC.Base.String
   {- Arity: 2, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S,1*U>,
@@ -665,7 +668,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                            @ GHC.Types.Char
                            GHC.Show.$fShow(,)3
                            (GHC.Show.showLitString b1 ErrM.$fShowErr5)) }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fShowErr_$cshowList ::
     GHC.Show.Show a => [ErrM.Err a] -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
@@ -679,7 +682,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                    (ErrM.$fShowErr_$cshowsPrec @ a $dShow ErrM.$fShowErr1)
                    ls
                    s) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $fShowErr_$cshowsPrec ::
     GHC.Show.Show a => GHC.Types.Int -> ErrM.Err a -> GHC.Show.ShowS
   {- Arity: 3,
@@ -768,7 +771,7 @@ c8d6f7c4e3feb360b44f01e65e08332a
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs,
      Unfolding: ("LambdaNat-0.1.0.0-4B7roTwwXlI2zWJKCli09t"#) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   $w$cshowsPrec ::
     GHC.Show.Show a => GHC.Prim.Int# -> ErrM.Err a -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><S,U><S,1*U>,
@@ -827,7 +830,7 @@ ad25ec2d2de5d10f1e5da8cacfc24ac4
                                             @ GHC.Types.Char
                                             GHC.Show.$fShow(,)2
                                             x))))) } }) -}
-ad25ec2d2de5d10f1e5da8cacfc24ac4
+142e4d00aabcd4c7b4bda224107ea00f
   data Err a = Ok a | Bad GHC.Base.String
 instance [safe] GHC.Base.Alternative [ErrM.Err]
   = ErrM.$fAlternativeErr
