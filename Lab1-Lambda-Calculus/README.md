@@ -219,7 +219,7 @@ and similarly in the code for substitution
     subst id s (ENatS e) = ENatS (subst id s e) 
     subst id s ENat0 = ENat0 
 
-With these changes, and keeping to the steps in the Work cycle, you should be able to build and then run
+With these changes, and keeping to the steps in the Work cycle, you should be able to build the interpeter and then run a program like in
 
     echo "(\ x . S x) S S 0" | stack exec LambdaNat-exe
 
