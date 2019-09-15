@@ -9,7 +9,7 @@ EVar.   Exp3 ::= Id ;
 
 coercions Exp 4 ;
 
-token Id (letter (letter | digit | '_')*) ;
+token Id (letter (letter | digit | '_')*) ; -- Identifiers start with a letter followed by any number of letters, digits, or underscores
 
 comment "//" ; 
 comment "/*" "*/" ;
@@ -20,6 +20,7 @@ comment "/*" "*/" ;
 --   ./TestLambdaNat test.lc 
 -- in the terminal in the directory where you have TestLambdaNat
 -- and where test.lc contains any one of the expressions below.
+--
 -- Verify that the following statements are correct:
 --
 -- ((x y) z) equals x y z
