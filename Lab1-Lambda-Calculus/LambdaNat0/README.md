@@ -1,13 +1,22 @@
 # README
 
-To run a program in the language LambdaNat:
+To parse and run a program in the language LambdaNat:
 
-- download this directory
+- if you have not done so already, 
 
-- run `stack build` in this directory from a terminal (needs Haskell)
+  - install the Haskell platform
+  
+  - clone this repository 
 
-- run `stack exec LambdaNat-exe test/test-xxyz.lc` to execute the program `test-xxyz.lc` in the directory `test`
+        git clone https://github.com/alexhkurz/programming-languages-2019.git
 
-If you just want to parse a program in the language Lambda Nat, see [here](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lambda-Calculus/LambdaNat/grammar#readme).
+- cd into this directory
+
+- run `stack build` in this directory from the command line (needs Haskell)
+
+- choose or write a `mypgrogram.lc` in the folder `test`
+
+- run `stack exec LambdaNat-exe test/myprogram.lc` 
+
 
   
