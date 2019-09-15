@@ -33,11 +33,10 @@ run v p s = let ts = myLexer s in case p ts of
                           putStrLn s
                           exitFailure
            Ok  tree -> do 
-                          -- putStrLn "\nParse Successful!"
-                          -- showTree v tree
                           putStrLn "\n Input:"
                           putStrLn $ printTree tree
-                          -- putStrLn "\n Result computed using call by name:"
+                          -- putStrLn "\nParse Successful!"
+                          showTree v tree
                           putStrLn "\n Output:"
                           putStrLn $ printTree $ execCBN tree
                           -- putStrLn "\n Result computed using call by value:"
@@ -48,7 +47,7 @@ showTree :: (Show a, Print a) => Int -> a -> IO ()
 showTree v tree
  = do
       putStrV v $ "\n[Abstract Syntax]\n\n" ++ show tree
-      putStrV v $ "\n[Linearized tree]\n\n" ++ printTree tree
+      -- putStrV v $ "\n[Linearized tree]\n\n" ++ printTree tree
 
 
 usage :: IO ()
