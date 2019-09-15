@@ -124,7 +124,7 @@ Before going to write some code, we need a specification.
 
 **Activity:** How can we write `plus_one` as a lambda expression? Can we do this in such a way that we use the [computation rule](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB#Beta-reduction) of lambda calculus in order to compute plus one? 
 
-**Outcome:** `(\ x . S x)`
+**Outcome:** `\ x . S x`
 
 **Example:** According to the computation rule of lambda calculus, if we apply the function `\ x . S x` to, say, `S 0`, we obtain `S S 0`.
 
@@ -328,7 +328,7 @@ Similarly, `let rec` is interpreted
     
 The right hand side of the rule for `let rec` can be implemented in much the same as the right hand side of the rule for `let`.
 
-### Minus One or the **Predecessor**
+### **Minus One or the Predecessor**
 
 In order to write more interesting programs, we need a way to make expressions smaller as in 
 
