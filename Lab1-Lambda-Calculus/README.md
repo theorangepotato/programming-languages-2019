@@ -192,6 +192,42 @@ Try to pick up everything from the last observation. Work yourself through the W
     Output:
     S S 0
 
+## Solution: From LambdaNat1 to LambdaNat2
+
+We deal with the case where we use the grammar
+
+        e ::= \ x. e | e e | x | 0 | S e
+
+and encourage students to do the other cases as further a exercise.
+
+Adding `0 | S e` to BNFC leads us to add to the following, see [`LambdaNat2.cf`]() for the full grammar.
+
+    Prog.   Program ::= Exp ; 
+    EAbs.   Exp1 ::= "\\" Id "." Exp ;  
+    EApp.   Exp2 ::= Exp2 Exp3 ; 
+    ENat0.  Exp3 ::= "0" ;
+    ENatS.  Exp3 ::= "S" Exp3 ; 
+    EVar.   Exp4 ::= Id ; 
+
+This means that compared to [`LambdaNat0.cf`](), we have to more rules named `ENat0` and `ENatS`. Accordingly, we need to add to the [interpreter of LambdaNat0]() two cases. 
+
+    evalCBN (ENatS e') = ENatS (evalCBN e')
+    evalCBN ENat0 = ENat0
+
+and similarly in the code for substitution
+
+    subst id s (ENatS e) = ENatS (subst id s e) 
+    subst id s ENat0 = ENat0 
+
+With these changes, and keeping to the steps in the Work cycle, you should be able to build and then run
+
+    echo "(\ x . S x) S S 0" | stack exec LambdaNat-exe
+
+and obtain
+
+    S S S 0
+
+as output.
 
 
 ## The different programming languages
