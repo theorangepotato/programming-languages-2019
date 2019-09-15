@@ -4,8 +4,8 @@
 
 The purpose of this folder is to teach a basic way how to extend and modify a small programming language. We start with the pure and untyped lambda calculus, available in the folder [LambdaNat0](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-Lambda-Calculus/LambdaNat0). 
 
-Recall that the syntax of the lambda caclulus has only variables, abstraction (function definition) and 
-function application. The semantics only has one [computation rule](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB#The-Computation-Rule-beta-Reduction), known as capture avoiding substitution or beta-reduction.
+Recall that the [syntax](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/grammar/LambdaNat0.cf) of the lambda caclulus has only variables, abstraction (function definition) and 
+function application. The [semantics](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB#The-Computation-Rule-beta-Reduction) only has one computation rule, known as capture avoiding substitution or beta-reduction.
 
 This is a really small programming language and the learning outcome of this lab is to teach how to extend this very basic language with new features. There are two main steps: Add the new feature to the parser and then to the interpreter.
 
@@ -93,17 +93,15 @@ Here we assume that we have `LambdaNat42` and want to build a new language calle
 5) To build the parser:
 
     a) Run `bnfc -m -haskell LambdaNat43.cf`.
+    
     b) Run `make`. 
 
 6) Write programs and parse them in the new language as explained. 
    If not all tests run according to what you expect go back to 4).
 
-7) Run `cd ../src`. Study `AbsLambdaNat.hs`. This contains the constructors used by the parser to create the abstract syntax tree. 
-Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to run
-the abstract syntax trees. (Instead of "run", one can also say "evaluate", "execute", "interprete".)
+7) Run `cp *.hs ../src`. This copies the files produced by bnfc into the `src` folder that will contain the new interpreter. Run `cd ../src`.
 
-8) Run `mv ../grammar/*.hs .`. This copies the files produced by bnfc. 
-Study how `AbsLambdaNat.hs` changed now. Adapt the interpreter accordingly (this can take a while and is the item that may require the largest amount of work).
+8) Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to evaluate the abstract syntax trees. Modify the old interpreter so that it can evaluate the new constructors of the new `AbsLambdaNat.hs` (this can take a while and is the item that may require the largest amount of work).
 
 9) Run `../stack build`. Debug the interpreter if it does not compile. 
 
@@ -112,9 +110,11 @@ If not all tests run according to what you expect go back to 7).
 
 11) Release your new programming language.
 
+**Remark:** In the exercises below, **Steps 1-5a** have already been taken care of for you. But I would encourage you to also play around with your own grammars.
+
 ## From `LambbdaNat0` to `LambdaNat1`
 
-This section assumes that we can run the parser and interpreter for the LambdaNat0.
+This section assumes that we can run the parser and interpreter for LambdaNat0.
 
 Learning outcome of this section is a basic understanding of how to add a feature to a programming language.
 
@@ -185,7 +185,7 @@ Let us go through this step by step
 
 ## Homework: From LambdaNat1 to LambdaNat2 (successor)
 
-Try to pick up everything from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
+Try to pick up from the last observation. Work yourself through the Work Cycle to produce a new version `LambdaNat2` and see whether you can get the following output
 
     echo "(\x.S x) S 0" | stack exec LambdaNat-exe
 
@@ -198,20 +198,16 @@ We deal with the case where we use the grammar
 
         e ::= \ x. e | e e | x | 0 | S e
 
-and encourage students to do the other cases as further a exercise.
+and encourage you to explore other possibilities as further exercises.
 
 Adding `0 | S e` to BNFC leads us to add to the following, see [`LambdaNat2.cf`]() for the full grammar.
 
-    Prog.   Program ::= Exp ; 
-    EAbs.   Exp1 ::= "\\" Id "." Exp ;  
-    EApp.   Exp2 ::= Exp2 Exp3 ; 
     ENat0.  Exp3 ::= "0" ;
     ENatS.  Exp3 ::= "S" Exp3 ; 
-    EVar.   Exp4 ::= Id ; 
 
 This means that compared to [`LambdaNat0.cf`](), we have to more rules named `ENat0` and `ENatS`. Accordingly, we need to add to the [interpreter of LambdaNat0]() two cases. 
 
-    evalCBN (ENatS e') = ENatS (evalCBN e')
+    evalCBN (ENatS e) = ENatS (evalCBN e)
     evalCBN ENat0 = ENat0
 
 and similarly in the code for substitution
