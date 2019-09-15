@@ -1,5 +1,7 @@
 # Lambda Calculus 2
 
+(To be [read in HackMD](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB).)
+
 **Learning Outcomes:** After having worked through the exercises and homework, students will be able to
 
 - explain and perform capture avoiding substitution, 
@@ -199,7 +201,7 @@ $(\lambda x. \lambda y. x) a b$ the formal parameter is $x$ and the argument is 
 
 
 
-**Exercise:** Reduce the following:
+**Exercise:** Reduce the following (where "S" is a new constant (think of $S$ as "successor" or "plus one")):
 - $(\lambda x. S x) S0$
 - $(\lambda x. S x) Sx$
 - $(\lambda x. (\lambda y. x)) y$
@@ -246,17 +248,19 @@ y + 2
 
 - Run the [LambdaNat parser and interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/README.md) on the following programs, see also [exercises.lc](). Run the program only after predicting the result. Compare your prediction with actual result.
 
-      (\x.x) a          
-      \x.x a            
-      (\x.\y.x) a b     
-      (\x.\y.y) a b     
-      (\x.\y.x) a b c   
-      (\x.\y.x) a (b c) 
-      (\x.\y.y) a (b c) 
-      (\x.\y.x) (a b) c 
-      (\x.\y.y) (a b) c 
-      (\x.\y.x) (a b c) 
-      (\x.\y.y) (a b c) 
+      (\x.x) a         
+      \x.x a           
+      (\x.\y.x) a b    
+      (\x.\y.y) a b    
+      (\x.\y.x) a b c  
+      (\x.\y.y) a b c  
+      (\x.\y.x) a (b c)
+      (\x.\y.y) a (b c)
+      (\x.\y.x) (a b) c
+      (\x.\y.y) (a b) c
+      (\x.\y.x) (a b c)
+      (\x.\y.y) (a b c)
+           
 
 
 
