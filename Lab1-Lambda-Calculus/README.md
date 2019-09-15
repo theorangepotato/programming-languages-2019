@@ -356,22 +356,18 @@ You see how elegant pattern matching here is. In fact, if we had pattern matchin
 
 Nice, isn't it? But anyway, `minus_one` works as well. For example we can do `plus` now as
 
-    let rec plus = \x.\y. if x=0 
-                          then y 
+    let rec plus = \x.\y. if x=0 then y 
                           else S (plus (minus_one x) y) in 
         plus S 0 S S 0
 
 and, putting things together, more complicated functions such as fibonacci:
 
-    let rec plus = \x.\y. if x=0 
-                          then y 
+    let rec plus = \x.\y. if x=0 then y 
                           else S (plus (minus_one x) y) in 
-        let rec fib = \n. if n=0 
-                          then 0 
-                          else if n = S 0 
-                                then S 0 
-                                else plus (fib (minus_one n)) 
-                                          (fib (minus_one (minus_one n))) in 
+        let rec fib = \n. if n=0 then 0 
+                          else if n = S 0 then S 0 
+                               else plus (fib (minus_one n)) 
+                                         (fib (minus_one (minus_one n))) in 
             fib S S S S 0 
 
 These and similar definitions can be found in [test.lc]() and [fib.lc]().
