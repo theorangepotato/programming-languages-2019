@@ -358,21 +358,31 @@ Nice, isn't it? But anyway, `minus_one` works as well. For example we can do `pl
 
     let rec plus = \x.\y. if x=0 then y 
                           else S (plus (minus_one x) y) in 
-        plus S 0 S S 0
 
-and, putting things together, more complicated functions such as fibonacci:
+    plus S 0 S S 0
 
-    let rec plus = \x.\y. if x=0 then y 
-                          else S (plus (minus_one x) y) in 
-        let rec fib = \n. if n=0 then 0 
-                          else if n = S 0 then S 0 
-                               else plus (fib (minus_one n)) 
-                                         (fib (minus_one (minus_one n))) in 
-            fib S S S S 0 
+**Exercise:** Explain the definition of `plus` above. Can you formulate it as a mathematical equation? The mathematical equation should prove the correctness of the program in the sense that if the program terminates it must give the correct result. Why does `plus` terminate on all inputs?
+
+
+Putting things together, we can now also define more complicated functions such as fibonacci:
+
+    let rec plus = \x.\y. 
+        if x=0 then y 
+        else S (plus (minus_one x) y) in 
+        
+    let rec fib = \n. 
+        if n=0 then 0 
+        else if n = S 0 then S 0 
+             else plus (fib (minus_one n)) 
+                        (fib (minus_one (minus_one n))) in
+
+    fib S S S S 0 
 
 These and similar definitions can be found in [test.lc](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat4/test/test.lc) and [fib.lc](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat4/test/fib.lc).
 
-Can you interpreter execute these programs?
+**Exercise:** Why is `fib` correct? Why does it terminate?
+
+**Exercise:** Can your interpreter execute these programs? Make your own examples.
 
 ## The different programming languages
 
