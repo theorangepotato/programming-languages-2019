@@ -37,7 +37,7 @@ After calling `make` I get a long list of output finishing with
 
            make: *** [internal-tests] Error 1
         
-As far as I understand the missing dependencies and the error can be ignored as long as the executable `bnfc` was generated. If not a `cabal update` an
+As far as I understand the missing dependencies and the error can be ignored as long as the executable `bnfc` was generated. 
 
 Use your file browser to find where the exectuable `bnfc` is. I found it as `bnfc/source/dist/build/bnfc` (the first occurrence of `bnfc` refers to the directory cloned from github, the second occurrence refers to the executable).
 
