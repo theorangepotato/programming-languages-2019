@@ -101,9 +101,9 @@ Here we assume that we have `LambdaNat42` and want to build a new language calle
 
 7) 
 
-    a) Run `cp *.hs ../src`. (Do a `mkdir ../src` before if necessary.) This copies the files produced by bnfc into the `src` folder that will contain the new interpreter. Run `cd ../src`.
+  a) Run `cp *.hs ../src`. (Do a `mkdir ../src` before if necessary.) This copies the files produced by bnfc into the `src` folder that will contain the new interpreter. Run `cd ../src`.
     
-    b) Copy the old interpreter  in `LambdaNat42/src/Interpreter.hs` to `LambdaNat43/src/Interpreter.hs` in the new `src` folder. 
+  b) Copy the old interpreter  in `LambdaNat42/src/Interpreter.hs` to `LambdaNat43/src/Interpreter.hs` in the new `src` folder. 
 
 8) Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to evaluate the abstract syntax trees. Modify the old interpreter so that it can evaluate the new constructors of the new `AbsLambdaNat.hs` (this can take a while and is the item that may require the largest amount of work).
 
