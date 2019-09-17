@@ -109,7 +109,7 @@ Here we assume that we have `LambdaNatOLD` and want to build a new language call
 
 9) Run `stack build`. Debug the interpreter if it does not compile. 
 
-10) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNewfeature-exe ../test/test.lc'. 
+10) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNat-exe ../test/test.lc'. 
 If not all tests run according to what you expect go back to 7).
 
 11) Release your new programming language.
