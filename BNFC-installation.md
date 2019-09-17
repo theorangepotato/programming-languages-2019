@@ -8,7 +8,7 @@ I don't use Windows, so I am dependent on your feedback to put more information 
 
 Install Linux from the Windows store and continue to follow the instructions for Linux/MacOS in the next section ... this maybe preferable as it puts us all on the same page ... specifically there is the Windows Subsystem for Linux (WSL). Any Windows 10 user can install WSL on their pc. 
 
-This video may help to install the [Haskell Platform in WSL](https://www.youtube.com/watch?v=aC3-Ur-mNM0):
+This video may help to install the [Haskell Platform in WSL](https://www.youtube.com/watch?v=aC3-Ur-mNM0). The short version is:
 
     sudo apt update
     sudo apt upgrade
@@ -37,7 +37,7 @@ After calling `make` I get a long list of output finishing with
 
            make: *** [internal-tests] Error 1
         
-As far as I understand the missing dependencies and the error can be ignored as long as the executable `bnfc` was generated.
+As far as I understand the missing dependencies and the error can be ignored as long as the executable `bnfc` was generated. If not a `cabal update` an
 
 Use your file browser to find where the exectuable `bnfc` is. I found it as `bnfc/source/dist/build/bnfc` (the first occurrence of `bnfc` refers to the directory cloned from github, the second occurrence refers to the executable).
 
