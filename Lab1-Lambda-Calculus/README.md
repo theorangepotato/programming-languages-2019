@@ -78,36 +78,36 @@ The Work Cycle that was used to produce all the different programming languages 
 
 (If you find this boring, feel free to jump to the next section and come back here for reference as needed.)
 
-Here we assume that we have `LambdaNat42` and want to build a new language called `LambdaNat43`.
+Here we assume that we have `LambdaNatOLD` and want to build a new language called `LambdaNatNEW`.
 
-1) Choose a subdirectory, that is, an already existing programming language. For the sake of concreteness, let us assume that this language is in a folder called `LambdaNat42`.
+1) Choose a subdirectory, that is, an already existing programming language. For the sake of concreteness, let us assume that this language is in a folder called `LambdaNatOLD`.
 
-2) Copy the directory `LambdaNat42` and all its content to a new folder called `LambdaNat43`.
+2) Copy the directory `LambdaNatOLD` and all its content to a new folder called `LambdaNatNEW`.
 
-3) Go to `LambdaNat43/grammar` and rename the grammar `LambdaNat42.cf` to `LambdaNat43.cf`. 
+3) Go to `LambdaNatNEW/grammar` and rename the grammar `LambdaNatOLD.cf` to `LambdaNatNEW.cf`. 
 
-   (You have to be careful if you want to choose a more descriptive name. The reason is that bnfc produces files and the names of these files need to be known to `stack` when you build the interpreter. You could use `LambdaNat.NewFeature.cf`.)
+   - (You have to be careful if you want to choose a more descriptive name. The reason is that bnfc produces files and the names of these files need to be known to `stack` when you build the interpreter. You could use `LambdaNat.NewFeature.cf`.)
 
-4) Change `LambdaNat43.cf` according to what you want to achieve. 
+   - (This step is only needed if you want to make your own grammar. In the exercises for this lab, the new grammars are already given.)
+
+4) Change `LambdaNatNEW.cf` according to what you want to achieve. 
 
 5) To build the parser:
 
-    a) Run `bnfc -m -haskell LambdaNat43.cf`.
+    a) Run `bnfc -m -haskell LambdaNatNEW.cf`.
     
     b) Run `make`. 
 
 6) Write programs and parse them in the new language as explained. 
    If not all tests run according to what you expect go back to 4).
 
-7) 
-
-  a) Run `cp *.hs ../src`. (Do a `mkdir ../src` before if necessary.) This copies the files produced by bnfc into the `src` folder that will contain the new interpreter. Run `cd ../src`.
-    
-  b) Copy the old interpreter  in `LambdaNat42/src/Interpreter.hs` to `LambdaNat43/src/Interpreter.hs` in the new `src` folder. 
+7) Now we need to copy the old interpreter and the new grammar into the folder of the new interpreter. `cd` into `LambdaNatNEW`.
+  a) Run `cp grammar/*.hs src`. (Do a `mkdir src` before if necessary.) This copies the Haskell-files produced by bnfc into the `src` folder that will contain the new interpreter. 
+  b) Copy the old interpreter  in `../LambdaNatOLD/src/Interpreter.hs` to `src/Interpreter.hs`. 
 
 8) Study how the interpreter `Interpreter.hs` uses the constructors of `AbsLambdaNat.hs` in order to evaluate the abstract syntax trees. Modify the old interpreter so that it can evaluate the new constructors of the new `AbsLambdaNat.hs` (this can take a while and is the item that may require the largest amount of work).
 
-9) Run `../stack build`. Debug the interpreter if it does not compile. 
+9) Run `stack build`. Debug the interpreter if it does not compile. 
 
 10) Write a test program and save it in test/test.lc. Run the test program via `../stack exec LambdaNewfeature-exe ../test/test.lc'. 
 If not all tests run according to what you expect go back to 7).
