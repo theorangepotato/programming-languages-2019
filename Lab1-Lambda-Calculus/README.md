@@ -42,8 +42,28 @@ To **view the interpreter** find the folder `src` and open [interpreter.hs](http
 To **compile the interpreter** run (in the folder `Lab1-Lambda-Calculus/LambdaNat0`)
 
     stack build
-    
-On some installations where `stack build` fails, `cabal build` works. 
+
+If stack build fails:
+
+- In case you get something that looks like 
+
+      AesonException "Error in $.packages.cassava.constraints.flags['bytestring--lt-0_10_4']: Invalid flag name: \"bytestring--lt-0_10_4\""
+
+  run `stack upgrade`, which should tell you sth like
+
+      WARNING: Installation path /home/USERNAME/.local/bin not found on the PATH environment variable
+      New stack executable available at /home/USERNAME/.local/bin/stack
+
+   run `which stack` telling you where the current version of `stack` is. For example,
+   
+       which stack
+       /usr/bin/stack
+   
+   Copy the new version to the old version:
+
+       cp /home/USERNAME/.local/bin /usr/bin/stack
+       
+- On some installations where `stack build` fails, `cabal build` works. 
     
 To **write a program** open a text editor and save the file in the folder `test` as, say, `myprogram.lc`. Or use one of the programs already available in the folder `test`.
 
