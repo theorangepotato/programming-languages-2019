@@ -53,7 +53,7 @@ The next step is to create an interpreter that is able to perform computations s
   
 (You may want to open `Interpreter.hs` in a text editor ... if you have never seen Haskell before, I hope you are impressed by how simple it is ... essentially just 5 lines of code.)
 
-Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it is interpreting the code, we obtain the file [`Calculator.hs`](https://github.com/alexhkurz/programming-languages-2019/blob/master/Calculator.hs). <sup>[[3]](#footnote)</sup> It is important to import the interpreter and replace the main function (also consider that indentation can make a difference in Haskell).
+Modifying `TestCalc.hs` so that instead of printing the abstract syntax tree it is interpreting the code, we obtain the file [`Calculator.hs`](https://github.com/alexhkurz/programming-languages-2019/blob/master/Calculator/Calculator.hs). <sup>[[3]](#footnote)</sup> It is important to import the interpreter and replace the main function (also consider that indentation can make a difference in Haskell).
   
     ghc --make Calculator.hs
     echo "1 + 2 * 3" | ./Calculator
