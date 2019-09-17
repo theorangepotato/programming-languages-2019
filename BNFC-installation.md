@@ -6,7 +6,7 @@ The [BNFC homepage](http://bnfc.digitalgrammars.com/) is the first place to go, 
 
 I don't use Windows, so I am dependent on your feedback to put more information here ...
 
-Install Linux from the Windows store and continue to follow the instructions for Linux/MacOS in the next section ... this maybe preferable as it puts us all on the same page ... specifically there is the Windows Subsystem for Linux (WSL). Any Windows 10 user can install WSL on their pc. 
+Install Linux from the Windows store and continue to follow the instructions for Linux/MacOS in the next section ... this maybe preferable as it puts us all on the same page ... specifically there is the Windows Subsystem for Linux (WSL). Any Windows 10 user can install WSL on their pc. This video may help to install the [Haskell Platform in WSL](https://www.youtube.com/watch?v=aC3-Ur-mNM0).
 
 ## Working under Linux/MacOS
 
