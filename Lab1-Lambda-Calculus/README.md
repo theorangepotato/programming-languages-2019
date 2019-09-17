@@ -209,12 +209,18 @@ Adding `0 | S e` to BNFC leads us to add to the following, see [`LambdaNat2.cf`]
     ENat0.  Exp3 ::= "0" ;
     ENatS.  Exp3 ::= "S" Exp3 ; 
 
-This means that compared to [`LambdaNat0.cf`](), we have to more rules named `ENat0` and `ENatS`. Accordingly, we need to add to the [interpreter of LambdaNat0]() two cases. 
+This means that compared to [`LambdaNat0.cf`](), we have to more rules named `ENat0` and `ENatS`. Accordingly, we need to add to the old interpreter two cases. 
 
     evalCBN (ENatS e) = ENatS (evalCBN e)
     evalCBN ENat0 = ENat0
 
-and similarly in the code for substitution
+These need to be inserted before
+
+    evalCBN x = x
+
+which is a catch-all clause.
+
+Similarly in the code for substitution
 
     subst id s (ENatS e) = ENatS (subst id s e) 
     subst id s ENat0 = ENat0 
