@@ -259,7 +259,7 @@ as output.
 
 We go through the Work Cycle to add if-then-else. 
 
-Start at Work Cycle 5b. `LambdaNatOld` is `LambdaNat2`.
+Start at Work Cycle 5b. `LambdaNatOld` is `LambdaNat2`. You can start from [`../Lab1-solutions/LambdaNat2](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-solutions/LambdaNat2).
 
 As abstract syntax we may choose (fill in the dots)
 
