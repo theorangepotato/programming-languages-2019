@@ -14,10 +14,15 @@ evalCBN :: Exp -> Exp
 evalCBN (EApp e1 e2) = case (evalCBN e1) of
     (EAbs i e1') -> evalCBN (subst i e2 e1')
     e1' -> EApp e1' e2
+evalCBN (EIf e1 e2 e3 e4) = if (evalCBN e1) == (evalCBN e2) then evalCBN e3 else evalCBN e4
+evalCBN (ELet i e1 e2) = evalCBN (EApp (EAbs i e2) e1) 
+evalCBN (ERec i e1 e2) = evalCBN (EApp (EAbs i e2) (EFix (EAbs i e1)))
+evalCBN (EFix e) = evalCBN (EApp e (EFix e)) -- can we do this without adding EFix to the grammar?
+evalCBN (EMinusOne e) = case (evalCBN e) of
+    ENat0 -> ENat0
+    (ENatS e) -> e
 evalCBN (ENatS e') = ENatS (evalCBN e')
-evalCBN ENat0 = ENat0
 evalCBN x = x
-
 
 -- A quick and dirty way of getting fresh names. Rather inefficient for big terms...
 fresh_ :: Exp -> String
@@ -40,6 +45,11 @@ subst id s e@(EAbs id' e') =
     let f = fresh e 
         e'' = subst id' (EVar f) e' in 
         EAbs f $ subst id s e''
+subst id s (ENat0) = ENat0 
 subst id s (ENatS e) = ENatS (subst id s e) 
-subst id s ENat0 = ENat0 
+subst id s (EIf e1 e2 e3 e4) = (EIf (subst id s e1) (subst id s e2) (subst id s e3) (subst id s e4))
+subst id s (ELet i e1 e2) = subst id s (EApp (EAbs i e1) e2)
+subst id s (ERec i e1 e2) = subst id s (EApp (EAbs i e2) (EFix (EAbs i e1)))
+subst id s (EFix e) = EFix (subst id s e)
+subst id s (EMinusOne e) = EMinusOne (subst id s e)
 
