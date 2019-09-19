@@ -257,13 +257,17 @@ as output.
 
 ## From LambdaNat2 to LambdaNat3 (conditionals)
 
-We go through the Work Cycle to add if-then-else. As abstract syntax we may choose (fill in the dots)
+We go through the Work Cycle to add if-then-else. 
 
-        e ::= \ x. e | e e | x | 0 | S e | ...
+Start at Work Cycle 5b. `LambdaNatOld` is `LambdaNat2`.
 
-If you want to see my grammar you find it in the usual place. You will need to know the grammar, when are going to write an actual program in the language. 
+As abstract syntax we may choose (fill in the dots)
 
-But to modify the interpreter so that it can deal with if-then-else, we only need to know that in the definition of the abstact syntax in [AbsLambdaNat](), there is one new case now, namely 
+        e ::= \ x. e | e e | x | 0 | S e | ... 
+
+If you want to see my grammar you find it in `LambdaNat3/grammar`. You will need to know the grammar, when are going to write an actual program in the language. 
+
+But to modify the interpreter so that it can deal with if-then-else, we only need to know that in the definition of the abstact syntax in `LambdaNat3/grammar/AbsLambdaNat.hs`, there is one new case now, namely 
 
         EIf Exp Exp Exp Exp
 
