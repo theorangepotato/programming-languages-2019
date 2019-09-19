@@ -10,7 +10,7 @@ Let me know if there are any questions ...
 
 ### Instructions
 
-You may form groups of up to 3 students. If you think you have a reason for an exception let me know.
+You may form groups of up to 4 students. If you think you have a reason for an exception let me know.
 
 Each group submits their answer by sending me a link to a github repository via [email using this link](mailto:akurz@chapman.edu?subject=CPSC-354-Assignment-1). This repository needs to contain a folder Assignment 1 which must be identical which the one [here](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1), with the exeption of the following:
 
