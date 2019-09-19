@@ -197,7 +197,7 @@ Let us go through this step by step
   
         e ::= \ x. e | e e | x | 0 | S e
 
-    where now `S` can be followed by any expression.
+    where now `S` can be followed by any expression. This is the grammar available in [`LambdaNat2`](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat2/grammar/LambdaNat2.cf).
 
   - We can use the grammar
 
