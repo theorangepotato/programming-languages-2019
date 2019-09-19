@@ -15,7 +15,7 @@ You can also use the MACOS Finder to search for system files. For example, searc
 If you cannot locate `bnfc` or `alex` or `happy` in any way, 
 try the following.
 
-`cd` into this directory.
+`cd` into (your git clone of) this directory.
 
 Run `./bnfc` etc to check that these executables run on your machine.
 
