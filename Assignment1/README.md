@@ -10,9 +10,7 @@ Deadline for hand-in is Friday, September 27.
 
 You may form groups of up to 3 students. If you think you have a reason for an exception let me know.
 
-Each group submits their answer by sending me a link to a github repository via [email using this link](mailto:akurz@chapman.edu?subject=CPSC-354-Assignment-1).
-
-This repository needs to contain a folder Assignment 1 which must be identical which the one [here](), with the exeption of the following:
+Each group submits their answer by sending me a link to a github repository via [email using this link](mailto:akurz@chapman.edu?subject=CPSC-354-Assignment-1). This repository needs to contain a folder Assignment 1 which must be identical which the one [here](), with the exeption of the following:
 
 - You may create and modify the file `/src/Interpreter.hs`.
 
