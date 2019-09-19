@@ -1,0 +1,47 @@
+------------------------------------------------------------------
+-- Lambda Calculus 5.2 with numbers, conditional, recursion, lists
+------------------------------------------------------------------
+-- this grammar can handle 
+--     hd tl tl hd (a:b:c:#):# 
+-- which should reduce to c, if the interpreter is correct
+-- this grammar cannot handle
+--     (hd l) : (append (tl l) l2)
+-- because the definition below forces every List to end with a "#"
+-- consequently the parser would expect 
+--     (hd l) : (append (tl l) l2) : #
+-- btw, tempting as it was to inlcude the checking that every list ends with "#" into the grammar,
+-- this also had a negative effect for the grammar, namely that it created an unavoidable reduce/reduce conflict
+-- between Exp9 -> List and List ::= Exp9 ":" List if the parser tries to reduce List and "Exp9 :" is on the stack.
+
+
+Prog.      Program ::= Exp ;  
+EList.     Exp9 ::= List ; 
+ENil.      List ::= "#" ; -- EndOfList, aka empty list
+ECons.     List ::= Exp9 ":" List ;
+EAbs.      Exp1 ::= "\\" Id "." Exp ;   
+EIf.       Exp2 ::= "if" Exp "=" Exp "then" Exp "else" Exp ; 
+ELet.      Exp3 ::= "let" Id "=" Exp "in" Exp ;  
+ERec.      Exp4 ::= "let rec" Id "=" Exp "in" Exp ;
+EFix.      Exp5 ::= "fix" Exp ; 
+EHd.       Exp6 ::= "hd" Exp ;
+ETl.       Exp6 ::= "tl" Exp ;
+EMinusOne. Exp7 ::= "minus_one" Exp ;
+EApp.      Exp8 ::= Exp8 Exp9 ;  
+ENat0.     Exp10 ::= "0" ; 
+ENatS.     Exp10 ::= "S" Exp10 ; 
+
+EVar.      Exp11 ::= Id ;  
+
+coercions Exp 11 ;
+
+token Id (letter (letter | digit | '_')*) ;
+
+comment "//" ;
+comment "/*" "*/" ;
+
+---------------------------------
+-- how are the following parsed? 
+-- f a:#
+-- a: b c : #
+-- a: (b c) : #
+----------------------------------

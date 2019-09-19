@@ -1,0 +1,14 @@
+// If you build the interpreter with the file `Interpreter.hs` of `LambdaNat4 
+// then all of the programs below should execute with
+// stack exec LambdaNat-exe test/test-interpreter.lc
+// after uncommenting exactly one of the lines below:
+
+//minus_one S S S S 0 
+//let f = \x. if x=0 then a else S (minus_one x) in (f 0) 
+//let f = \x. if x=0 then a else S (minus_one x) in (f S S 0) 
+//let identity = \x. if x=0 then 0 else S ( identity (minus_one x)) in identity 0 
+//let identity = \x. if x=0 then 0 else S ( identity (minus_one x)) in identity S 0 
+//let rec identity = \x. if x=0 then 0 else S ( identity (minus_one x)) in identity S 0 
+//let rec plus = \x.\y. if x=0 then y else S (plus (minus_one x) y) in plus S S 0 S S S 0
+//let rec plus = \x.\y. if x=0 then y else S (plus (minus_one x) y) in plus S S 0 S S S 0
+//let rec plus = \x.\y. if x=0 then y else S (plus (minus_one x) y) in let rec fib = \n. if n=0 then 0 else if n = S 0 then S 0 else plus (fib (minus_one n)) (fib (minus_one (minus_one n))) in fib S S S 0

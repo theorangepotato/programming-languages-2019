@@ -1,0 +1,12 @@
+// After building the parser all of the following programs should parse.
+// You can also use these and similar programs to test your interpreter.
+// Uncomment exactly one line below at a time and parse this program.
+
+//\ l1 . \ l2 . if l1 = # then l2 else (hd l1) : (f (tl l1) l2)
+//\ l . if l = # then # else (hd l) : (f (tl l))
+//let rec f = \ l . if hd l = 0 then 0 else S 0 in f a:#
+//let rec f = \ l . if l = # then 0 else f (tl l) in f a:b:#
+//let rec f = \ l . if l = # then 0 else if l = # then f (tl l) else S 0 in f a:b:#
+//Plus:(N1:#):(Times:(N2:#):(N3:#):#):#
+//Plus:N1:(Times:N2:N3)
+
