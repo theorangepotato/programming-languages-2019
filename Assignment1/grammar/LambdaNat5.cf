@@ -1,5 +1,5 @@
 ------------------------------------------------------------------
--- Lambda Calculus 5.3 with numbers, conditional, recursion, lists
+-- Lambda Calculus 5 with numbers, conditional, recursion, lists
 ------------------------------------------------------------------
 
 Prog.      Program ::= Exp ;  
