@@ -16,5 +16,5 @@ Office Hours Tue and Thu 2pm to 3.30pm in Hashinger 208 or by appointment.
 
 [Lab 3.1 and 3.2 and 4.1 and 4.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/README.md): Programming the Lambda Calculus.
 
-[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Friday Sept 27. A Haskell tutorial: [Learn you a Haskell](http://learnyouahaskell.com/). An encyclopedia on Haskell libraries is [Hoogle](https://hoogle.haskell.org/).
+[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Friday Sept 27. A Haskell tutorial: [Learn you a Haskell](http://learnyouahaskell.com/). Documetation on Haskell libraries is at [Hoogle](https://hoogle.haskell.org/).
 
