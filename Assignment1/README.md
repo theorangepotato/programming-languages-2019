@@ -8,7 +8,7 @@ Deadline for hand-in is Friday, September 27.
 
 Let me know if there are any questions ... I list some resources that may be helpful:
 
-- I also added more comments to the [LambdaNat0 interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs). 
+- I added more comments to the [LambdaNat0 interpreter](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/LambdaNat0/src/Interpreter.hs). 
 
 - A Haskell tutorial: [Learn you a Haskell](http://learnyouahaskell.com/). But I don't think you need to know Haskell to do the assignment. Just three or four new cases in the function `evalCBN` of the interpreter. Once you get the logic right, you should be able to guess the Haskell syntax by comparing with the code that is already there. If you get stuck let me know ...
 
