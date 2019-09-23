@@ -28,14 +28,14 @@ evalCBN (EApp e1 e2) = case (evalCBN e1) of
 ----------------------------------------------------
 --- here goes your code for extending the interpreter
 ----------------------------------------------------
-evalCBN x = x -- this is a catch all clause, currently only for variables
+evalCBN x = x -- this is a catch all clause, currently only for variables, must be the clause of the eval function
 
 -- fresh generates fresh names for substitutions, can be ignored for now
 -- A quick and dirty way of getting fresh names. Rather inefficient for big terms...
 fresh_aux :: Exp -> String
 fresh_aux (EVar (Id i)) = i ++ "0"
-fresh_aux (EApp e1 e2) = fresh_ e1 ++ fresh_ e2
-fresh_aux (EAbs (Id i) e) = i ++ fresh_ e
+fresh_aux (EApp e1 e2) = fresh_aux e1 ++ fresh_aux e2
+fresh_aux (EAbs (Id i) e) = i ++ fresh_aux e
 --fresh_aux _ = "0"
 
 fresh = Id . fresh_aux -- for Id see AbsLamdaNat.hs
