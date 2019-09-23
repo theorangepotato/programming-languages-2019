@@ -67,7 +67,7 @@ According to the rules `ENil` and `ECons` we can build lists such as
      hd a:b:c:#   --->   a
      tl a:b:c:#   --->   b:c:#
 
-Note that this specification does not specify what will happen if you call `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to throw a runtime exception.
+Note that this does not specify what will happen if you call `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to throw a runtime exception.
 
 
 **Remark on the side:** Lists can also be nested in order to form trees as in 
