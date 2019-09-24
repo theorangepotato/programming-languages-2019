@@ -62,6 +62,10 @@ According to the rules `ENil` and `ECons` we can build lists such as
 
     a:b:c:#
 
+For the exercise below, recall that abstract syntax is defined in 
+[AbsLambdaNat.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/AbsLambdaNat.hs), which in turn is derived from the grammar
+[LambdaNat5.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/LambdaNat5.cf).
+
 **Exercise:** (not necessary to hand this, but should help to see how to implement the two rules above in `Interpreter.hs`) What is the abstract syntax tree of `a:b:c:#`? Write the answer down on paper. Run `a:b:c:#` in the parser and compare with your pen-and-paper answer.
 
 `hd` and `tl` are pronounced "head" and "tail", respectively. The first task is to adapt the interpreter of `LambdaNat4` in such a way that head and tail compute as 
@@ -71,9 +75,9 @@ According to the rules `ENil` and `ECons` we can build lists such as
 
 Note that this does not specify what will happen if your computation reaches `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to have something like a runtime exception.
 
-**Exercise:** (not necessary to hand this in, but should help to see how to implement the two rules above in `Interpreter.hs`) The computation rule `hd a:b:c:#   --->   a` is written in concrete syntax. Translate it to abstract syntax. Recall that abstract syntax is defined in 
-[AbsLambdaNat.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/AbsLambdaNat.hs), which in turn is derived from the grammar
-[LambdaNat5.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/LambdaNat5.cf).
+**Exercise:** (not necessary to hand this in, but should help to see how to implement the two rules above in `Interpreter.hs`) The computation rule `hd a:b:c:#   --->   a` is written in concrete syntax. Translate it to abstract syntax. Also run it in the parser and compare.
+
+
 
 
 **Remark on the side:** Lists can also be nested in order to form trees as in 
