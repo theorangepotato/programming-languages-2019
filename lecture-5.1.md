@@ -237,7 +237,7 @@ Also read the Wikipedia article on [Tarski's High School Algebra Problem](https:
  - (Recommended.) Going back to our discussion of the Calculator, you can also implement the language and interpreter from this lecture by modifying the [grammar and interpreter](https://github.com/alexhkurz/programming-languages-2019/tree/master/Calculator) of the Calculator.
 
 
-- (Optional, for this who like further reading.) Read up to (and excluding) Section 1.1 of the [article by Burris and Yeats](https://www.math.uwaterloo.ca/~snburris/htdocs/MYWORKS/PREPRINTS/saga.ps). Can you summarise its contents? (I don't expect you to understand all of it and we will explain everything in detail later on ... but if you try to understand the main ideas now, you will understand better what follows.)
+- (Optional, for those who like further reading.) Read up to (and excluding) Section 1.1 of the [article by Burris and Yeats](https://www.math.uwaterloo.ca/~snburris/htdocs/MYWORKS/PREPRINTS/saga.ps). Can you summarise its contents? (I don't expect you to understand all of it and we will explain everything in detail later on ... but if you try to understand the main ideas now, you will understand better what follows.)
 
 ### Summary of big ideas
  - terms are trees (maybe only a small idea? But it is of fundamental importance)
