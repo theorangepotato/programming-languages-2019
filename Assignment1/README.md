@@ -107,7 +107,7 @@ Implement and run the following functions in LambdNat5. Save the program answeri
     plus 0 y = y
     plus (S x) y = S (plus x y)
 
-It is recommended to first write down similar equational definitions for the functions `even, length, member, append, reverse, le, insert, sort`. Once you have these equations, the implementation in LambdaNat5 is much easier.
+It is recommended to first write down similar equational definitions for the functions `even, length, member, append, reverse, le, insert, sort`. Once you have these equations, the implementation in LambdaNat5 should be much easier.
 
 #### Assignment1.B.even (1 out of 15)
 
