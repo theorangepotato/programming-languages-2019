@@ -100,7 +100,14 @@ Write an interpreter for LambdaNat5 by modifying the code of the [LambdaNat4 Int
 
 ### Assignment1.B
 
-Implement and run the following functions in LambdNat5. Save the program answering question Assignment1.B.xyz as `solutions/xyz.lc`. All programs must be executable by the interpreter. You cannot get credit for a program that does not run.
+Implement and run the following functions in LambdNat5. Save the program answering question Assignment1.B.xyz as `solutions/xyz.lc`. All programs must be executable by the interpreter of part A. You cannot get credit for a program that does not run.
+
+**Hint:** For example, the function [plus](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-solutions/LambdaNat4/test/fib.lc) can be described by the equations
+
+    plus 0 y = y
+    plus (S x) y = S (plus x y)
+
+It is recommended to first write down similar equational definitions for the functions `even, length, member, append, reverse, le, insert, sort`. Once you have these equations, the implementation in LambdaNat5 is much easier.
 
 #### Assignment1.B.even (1 out of 15)
 
