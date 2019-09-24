@@ -62,6 +62,8 @@ According to the rules `ENil` and `ECons` we can build lists such as
 
     a:b:c:#
 
+**Exercise:** (not necessary to hand this, but should help to see how to implement the two rules above in `Interpreter.hs`) What is the abstract syntax tree of `a:b:c:#`?
+
 `hd` and `tl` are pronounced "head" and "tail", respectively. The first task is to adapt the interpreter of `LambdaNat4` in such a way that head and tail compute as 
 
      hd a:b:c:#   --->   a
