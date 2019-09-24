@@ -15,6 +15,41 @@ Students will be able to
 
 - appreciate how important the invention of algebra in the history of science was
 
+## Recap from Lambda Calculus
+
+Let us compute by hand the following
+
+    let rec plus = \x.\y. 
+        if x=0 then y 
+        else S (plus (minus_one x) y) in 
+    plus S S 0 S S S 0
+
+I simplify the notation a little to sace space and make it more readable, but this is what is going on:
+
+    plus S S 0 S S S 0 -->
+    S (plus (minus_one S S 0) S S S 0) -->
+    S (plus S 0 S S S 0) -->
+    S S (plus (minus_one S 0) S S S 0) -->
+    S S (plus 0 S S S 0) -->
+    S S S S S 0 
+
+**Exercise:** Justify all computation steps.
+
+**Remark:** Here are a few important observations.
+
+- There is no memory and no side effects.
+- All the information is in the data.
+- Computation proceeds by rewriting data.
+- Rewriting data proceed by matching rules to the data.
+- The rules are the ones defined by `evalCBN` of `Interpreter.hs`
+- At each point of the computation the next step is determined by the rules and the data only. There is no state, nothing to remember.
+- The computation stops when there is no further rule to apply.
+
+For the next few lectures we will study this model of computation. It is also known as Term Rewriting and goes back to mathematicians such as Church and Post.
+
+In order to simplify the presentation, we explain everything at the hand of high-school algebra. This is simpler than lambda calculus but all the main ideas can be explained there as well. (Btw, this is similar to parsing where all the essential ideas could be illustrated with parsing strings like `1+2*3`).
+    
+
 ## Models of computation
 
 Before presenting our first model of computation in the standard mathematical style, let us pretend we we were researchers a hundred years ago.
@@ -108,7 +143,11 @@ How far did we go in our quick tour of school mathematics? Roughly primary schoo
 
 Algebra induces a radical new big idea: instead of thinking of variables as place holders for terms/numbers: variables as "first class citizens"
 
-Historically, this did not come easy. The first time the method of algebra appears fully developed in most of its basic ideas is a turning point in history. Please have a look at [Descartes' Geometry](http://www.gutenberg.org/ebooks/26400), first published in 1637. (It is always worth looking at Wikipedia so read up on [Descartes](https://en.wikipedia.org/wiki/René_Descartes) who led a very interesting live that is full of amusing anecdotes and his books, the [Discourse on the Method](https://en.wikipedia.org/wiki/Discourse_on_the_Method) and its appendix, the [Geometry](https://en.wikipedia.org/wiki/La_Géométrie), are, in (not only) my opinion the most important publications in philosophy and mathematics of all time. A great resource on  philosophy and logic and some areas of mathematics is the Stanford Encyclopedia of Philosophy which also has an article on [Descartes mathematics](https://plato.stanford.edu/entries/descartes-mathematics/).) Even if you don't read French, just by browsing through the pages, you see that Descartes, who just escaped the middle ages, did write in a style that is still readable today and that looks like modern mathematics. You can also look at a facsimile of the original. Even without trying to understand the maths in detail, I found for example [page 301 of the original](https://fr.wikisource.org/wiki/Page:Descartes_La_Géométrie.djvu/11) worth looking at. We see that he didnt use "=" (which, in fact, was introduced already earlier by [Robert Recorde](https://en.wikipedia.org/wiki/Robert_Recorde) in 1557 but not widely used yet), but that otherwise all the basic ideas of algebra are already there. 
+Historically, this did not come easy. The first time the method of algebra appears fully developed in most of its basic ideas is a turning point in history. Please have a look at [Descartes' Geometry](http://www.gutenberg.org/ebooks/26400), first published in 1637. (It is always worth looking at Wikipedia so read up on [Descartes](https://en.wikipedia.org/wiki/René_Descartes) who led a very interesting live that is full of amusing anecdotes and his books, the [Discourse on the Method](https://en.wikipedia.org/wiki/Discourse_on_the_Method) and its appendix, the [Geometry](https://en.wikipedia.org/wiki/La_Géométrie), are, in (not only) my opinion the most important publications in philosophy and mathematics of all time. 
+
+It is well worth to spend a few minutes and quote the four steps of [Desacrtes' scientific method](https://en.wikipedia.org/wiki/Discourse_on_the_Method#Part_II:_Principal_rules_of_the_Method).
+
+A great resource on  philosophy and logic and some areas of mathematics is the Stanford Encyclopedia of Philosophy which also has an article on [Descartes mathematics](https://plato.stanford.edu/entries/descartes-mathematics/).) Even if you don't read French, just by browsing through the pages, you see that Descartes, who just escaped the middle ages, did write in a style that is still readable today and that looks like modern mathematics. You can also look at a facsimile of the original. Even without trying to understand the maths in detail, I found for example [page 301 of the original](https://fr.wikisource.org/wiki/Page:Descartes_La_Géométrie.djvu/11) worth looking at. We see that he didnt use "=" (which, in fact, was introduced already earlier by [Robert Recorde](https://en.wikipedia.org/wiki/Robert_Recorde) in 1557 but not widely used yet), but that otherwise all the basic ideas of algebra are already there. 
 
 		Little research project: Why did Descartes use a symbol for "=" that is not symmetric? 
 		Could there be a connection to the idea of rewriting that we mentioned above?
