@@ -1,4 +1,4 @@
-# Lecture 5.1
+# (provisional write up of) Lecture 5.1
 
 ## Learning Outcomes
 
@@ -132,7 +132,7 @@ where `x` ranges of a set of "variables".
 
 What about associativity of multiplication `X * ( Y * Z ) = ( X * Y ) * Z` ?
 
-And are the equations above really enough? What equations need to be added if we take seriously that `+1` is different from the binary `+` ?
+And are the equations above really enough? What equations need to be added if we want `+1` to a unary operation different and not composed from  the binary `+` and `1`?
 
 ## Algebra
 
