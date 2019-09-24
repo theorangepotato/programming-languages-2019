@@ -84,9 +84,11 @@ For the exercise below, recall that abstract syntax is defined in
 
 Note that this does not specify what will happen if your computation reaches `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to have something like a runtime exception.
 
-**Hint:** The code in the interpreter for 
+**Hint:** The code in the interpreter for `EHd e` needs to 
+- evaluate `e`
+- in case `evalCBN e` is of the form `ECons e1 e2` the result is to evaluate the head of the list represented by `ECons e1 e2`
 
-**Exercise:** (not necessary to hand this in, but should help to see how to implement the two rules above in `Interpreter.hs`) Translate the computation rule `hd a:b:c:#   --->   a` from concrete syntax to abstract syntax. Also run ``hd a:b:c:#` in the parser and compare.
+**Exercise:** (not necessary to hand this in, but should help to see how to implement the two rules above in `Interpreter.hs`) Translate the computation rule `hd a:b:c:#   --->   a` from concrete syntax to abstract syntax. Also run `hd a:b:c:#` in the parser and compare.
 
 
 
