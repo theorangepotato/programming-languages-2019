@@ -142,7 +142,7 @@ Implement and run the following functions in LambdNat5. Save the program answeri
 
 #### Assignment1.B.le (1 out of 15)
 
-`le n m ` returns `S 0` if as numbers `n` is smaller or equal to `m` and returns `0` if `n` is bigger than `m`. For example,
+`le n m ` returns `S 0` if, as numbers, `n` is smaller or equal to `m` and returns `0` if `n` is greater than `m`. For example,
 
     le S S 0 S 0 --> 0
     le S 0 S 0 --> S 0
