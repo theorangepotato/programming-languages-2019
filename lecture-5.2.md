@@ -19,37 +19,46 @@ Students will be able to explain two concepts central to the field of Programmin
 - How do we give meaning to a sequence of (apparently meaningless) symbols?
 - If computation consists of the blind application of formal rules, then how can computations mean anything?
 
+## Recap from the previous lecture
+
+**Homework from the last lecture:** For the grammar with multiplication 
+
+       exp ::= num | exp + exp | exp * exp
+
+we can do the computation 
+
+      (1+1)*((1+1)+1) = (1+1)*(1+1)+(1+1)*1
+                      = (1+1)*(1+1)+(1+1)
+                      = ((1+1)*1+(1+1)*1)+(1+1)
+                      = ((1+1)*1+(1+1))+(1+1)
+                      = ((1+1)+(1+1))+(1+1)
+                      = (((1+1)+1)+1)+(1+1)
+                      = ((((1+1)+1)+1)+1)+1
+
+if we have the equations/computation rules/rewrite rules
+
+	X * 1 = X
+	X * ( Y + Z ) = X * Y + X * Z
+    
+Can you think of an example that needs the following equation?
+
+    X + Y = Y + X
+    X * Y = Y * X
+    X * ( Y * Z ) = ( X * Y ) * Z 
+
+How do we know when we have enough equations? What equations need to be added if we want a unary operation `+1`?
+
+
 ## Syntax
  
-Recall that we started with an example of a formal language given by 
-
-
-        num ::= 1 | num + 1
-        exp ::= num | exp + exp | exp * exp
-         
-Of course, this language was intended to be a language for arithmetic. We build "numbers" by starting at `1` and doing `+1` if we want to get "one more". And we build expressions by doing "addition" `+` and "multiplication" `*`.
-
-Actually, in the following, I may slip into the shorter form of
+Recall the grammar 
 
         exp ::= 1 | exp + exp | exp * exp
-
-The longer form has the advantage that it has a "type" `num` for numbers, where as the shorter one leaves it up to interpretation which expressions should be considered as numbers. We will agree that numbers are represented by expressions that are bracketed to the left as in $((1+1)+1)$ and not by expresssions that are bracketed to the right as in $(1+(1+1))$. This is really an arbitrary decision coming down to our convention to read from left to right. But while the longer, many-sorted, or multi-typed, version with the two types `num` and `exp` is more principled, the shorter version will be more convenient to present in the following.
-
-In any case, note that on its own, these grammars do not tell us that the languages are about arithmetic (this is why I put "numbers", "one more", "addition", "multiplication" in quotes). A grammar only defines a formal language, which is just the set of terms that can be formed according to its rules. For example, we can use these rules to deduce that
-
-        (1+1)+1
-
-is a `num` and similarly that
-
-        ((1+1)+1)+(1+1)
-
-is an `exp`. (**Exercise:** Write down the corresponding deductions/derivations.)
-
-In other words, on its own, these terms do not have meaning. We say that they are just syntax. We may think of the term `(1+1)+1` as 3. But for the moment this is just how we think about the formal language. It is not part of the definition. (And this is important, because we want to be able to use the formal language to make machines---which cannot think---to perform arithmetic.)
+         
 
 ## Equations and Computations
 
-Next we added equations
+Next we added equations ... we now take the full list for `+` and `*`
 
         X + ( Y + Z ) = ( X + Y ) + Z
         X * 1 = X
@@ -58,15 +67,11 @@ Next we added equations
         X + Y  = Y + X
         X * Y  = Y * X
         
-We have seen how to use the equations to compute, for example, what we think of as 3+2=5. Formally, we compute
-
-        ((1+1)+1)+(1+1) = (((1+1)+1)+1)+1)
-
-applying the rule of associativity for `+` once. We have also seen that 2+3=5 needs two applications of associativity. Therefore, in some sense, 3+2 is different from 2+3. But in another sense, both are the same because they both evaluate to 5. 
+We have seen how to use the equations to compute. We have also seen that we can give a direction to the equations to implement an interpreter. 
 
 **Remark:** Note that the variables `X, Y, Z` are not part of our language of arithmetic. They are merely place holders for the terms (ie expressions) of the language. 
 
-How can we make sense of these different notions of equality?
+**Question:** Equations introduce a philosophical problem. On the one hand, 3+2=5. On the other hand, 3+2 and 5 are certainly different expressions. How can we make sense of these different notions of equality?
 
 And can we make sense of the following two questions:
 
@@ -109,14 +114,16 @@ We can now define the meaning function $\sem{-}$ as
 
 \begin{align}
 \sem{\color{blue}1}& =\color{red}1\\
-\sem{\color{blue}{t+1}}& =\sem{\color{blue}t}\color{red}{+1 }\\
+%\sem{\color{blue}{t+1}}& =\sem{\color{blue}t}\color{red}{+1 }\\
 \sem{\color{blue}{t+t'}}&=\sem{\color{blue}t}\color{red}+\sem{\color{blue}{t'} }\\
 \sem{\color{blue}{t*t'}}&=\sem{\color{blue}t}\color{red}\cdot\sem{\color{blue}{t'} }
 \end{align}
 
-To understand this definition, remember what you learned about induction on natural numbers in discrete mathematics. For natural numbers, we have two operations, the constant "0" and the successor "+1". This is similar to the first two cases in the definition of $\sem{-}$ above. In addition, expressions `exp` also have two binary operations. This just means that an inductive definition over expressions also needs to have two cases for those. (For more details see [the lecture on induction](https://hackmd.io/s/H1panO_um).)
+To understand this definition, remember what you learned about induction on natural numbers in discrete mathematics. For natural numbers, we have two operations, the constant "0" and the successor "+1". In our case, the first equation is the base case, wherease the 2nd and 3rd are the ones that build bigger terms. Since expressions `exp` have two binary operations, an inductive definition over expressions  needs to have two cases for those. 
 
-**Remark:** Note that the definition of the function $\sem{-}$ is what we call ***structure preserving***: The $\color{blue}{+}$ on the left is mapped to a $\color{red}{+}$ on the right, etc. This principle is key to all of engineering in general. It is what allows us to build big systems from small systems and to control how the small systems interact. Here this general principle is visible in the simple fact that an equation such as $\quad\sem{\color{blue}{t+t'}}=\sem{\color{blue}t}\color{red}+\sem{\color{blue}{t'} }\quad$ explains the meaning of the "big system" $\;\sem{\color{blue}{t+t'}}\;$ as a function of the meanings of the "small systems" $\;\sem{\color{blue}t}\;$ and $\;\sem{\color{blue}{t'} }\;$. This principle is also called ***compositional semantics***. It plays a major role not only in computer science and other engineering disciplines but also in linguistics as it is used to explain the meaning of natural languages.
+<!--(For more details see [the lecture on induction](https://hackmd.io/s/H1panO_um).)-->
+
+**Remark:** Note that the definition of the function $\sem{-}$ is what we call ***structure preserving***: The $\color{blue}{+}$ on the left is mapped to a $\color{red}{+}$ on the right, etc. This principle is key to all of engineering in general. It is what allows us to build big systems from small systems and to control how the small systems interact. Here this general principle is visible in the simple fact that an equation such as $\quad\sem{\color{blue}{t+t'}}=\sem{\color{blue}t}\color{red}+\sem{\color{blue}{t'} }\quad$ explains the meaning of the "big system" $\;\sem{\color{blue}{t+t'}}\;$ as a function of the meanings of the "small systems" $\;\sem{\color{blue}t}\;$ and $\;\sem{\color{blue}{t'} }\;$. This principle is also called ***compositional semantics***. It plays a major role not only in computer science and other engineering disciplines but also in linguistics to explain the meaning of natural languages.
 
 
 To get a feeling for how such an inductive definition works we do a little computation where we inductively/recursively decompose terms (**Exercise:** fill in the dots in the equational reasoning below.) until we can apply the base case and finally add up in the natural numbers.
@@ -221,6 +228,13 @@ Alternatively, we can give meaning  to expressions by axiomatising their structu
 
 Computations then capture meaning, because computations rely on the same equations that axiomatise the structure. 
 
+## Homework: 
+
+- (Essential.) Read the notes carefully and check that you can do all of the exercises.
+
+- (Recommended.) Write a grammar and an interpreter for the language
+
+        exp ::= 1 | exp + exp | exp * exp
 
 
 
