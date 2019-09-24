@@ -171,7 +171,7 @@ It is recommended to first write down similar equational definitions for the fun
 If `l` is a list of numbers, then `sort l` returns a list that has the same elements as `l` but sorted from smaller to larger. `sort` can be specified mathematically as follows
 
     sort #  =  #
-    sort n:l  =  insert n l
+    sort n:l  =  insert n (sort l)
 
     insert n #  =  n:#
     insert n m:l  =  
