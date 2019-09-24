@@ -1,4 +1,4 @@
-# (provisional write up of) Lecture 5.1
+# Lecture 5.1
 
 ## Learning Outcomes
 
@@ -7,7 +7,7 @@ Students will be able to
 - explain the basic ideas of the two models of computation by Church and by Turing, respectively
 
 - explain in more detail Church's model of computation as rewriting to normal form
-  - build terms from operations (terms are trees)
+  - build terms from operations (terms are trees --- but while trees are easier to manipulate for machines, human computers will prefer strings)
   - rewrite terms by applying equations using pattern matching
   - equations are also called ***rewrite rules*** in this context
   - computation terminates if no rule applies
@@ -17,25 +17,81 @@ Students will be able to
 
 ## Recap from Lambda Calculus
 
-Let us compute by hand the following
+First, let us emphasize that the raison d'etre of `LambdaNat` is that, in my opinion, it is the smallest interesting programming language that can be fully defined in a specification just 17 lines long. To drive home this point, here is again the grammar, from [`LambdaNat4.cf`](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-solutions/LambdaNat4/grammar/LambdaNat4.cf)
+
+    EAbs.      Exp1 ::= "\\" Id "." Exp ;   
+    EIf.       Exp2 ::= "if" Exp "=" Exp "then" Exp "else" Exp ; 
+    ELet.      Exp2 ::= "let" Id "=" Exp "in" Exp ; 
+    ERec.      Exp2 ::= "let rec" Id "=" Exp "in" Exp ;
+    EMinusOne. Exp2 ::= "minus_one" Exp ;
+    EApp.      Exp3 ::= Exp3 Exp4 ;  
+    ENat0.     Exp4 ::= "0" ; 
+    ENatS.     Exp4 ::= "S" Exp4 ; 
+    EVar.      Exp5 ::= Id ;  
+
+and the semantics from [`Interpreter.hs`](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-solutions/LambdaNat4/src/Interpreter.hs)
+
+    evalCBN (EApp e1 e2) = case (evalCBN e1) of (EAbs i e1') -> evalCBN (subst i e2 e1') e1' -> EApp e1' e2
+    evalCBN (EIf e1 e2 e3 e4) = if (evalCBN e1) == (evalCBN e2) then evalCBN e3 else evalCBN e4
+    evalCBN (ELet i e1 e2) = evalCBN (EApp (EAbs i e2) e1) 
+    evalCBN (ERec i e1 e2) = evalCBN (EApp (EAbs i e2) (EFix (EAbs i e1)))
+    evalCBN (EFix e) = evalCBN (EApp e (EFix e)) 
+    evalCBN (EMinusOne e) = case (evalCBN e) of ENat0 -> ENat0 (ENatS e) -> e
+    evalCBN (ENatS e') = ENatS (evalCBN e')
+    evalCBN x = x
+
+These 17 lines of code answer all questions about `LambdaNat4` (ok, you could argue with this, but we won't go into this now unless you want to challenge me, which you are welcome to do, of course ...).
+
+But it is not always convenient to go down to this level of detail when doing computations by hand. So I want to show you a quick and fast way of interpreting programs pen-and-paper. 
+
+The main idea is to introduce an intermediate level of abstraction between the concrete syntax and the interpreter. This intermediate level of abstraction will use the language of mathematics.
+
+Let us first look at a piece of concrete syntax: 
 
     let rec plus = \x.\y. 
         if x=0 then y 
         else S (plus (minus_one x) y) in 
     plus S S 0 S S S 0
 
-I simplify the notation a little to sace space and make it more readable, but this is what is going on:
+The first step is to write this definition down in more mathematical way:
 
-    plus S S 0 S S S 0 -->
-    S (plus (minus_one S S 0) S S S 0) -->
-    S (plus S 0 S S S 0) -->
-    S S (plus (minus_one S 0) S S S 0) -->
-    S S (plus 0 S S S 0) -->
-    S S S S S 0 
+    plus 0 y = y
+    plus (S x) y = S (plus x y)
 
-**Exercise:** Justify all computation steps.
+This is a definition by cases. Two simple equations that (obviously?) completely specify the meaning of `plus`.
 
-**Remark:** Here are a few important observations.
+Now we can compute `plus S S 0 S S S 0` in way familiar from high-school algebra:
+
+    plus S S 0 S S S 0 = S (plus S 0 S S S 0)
+                       = S S (plus 0 S S S 0)
+                       = S S S S S 0 
+
+**Activity:** Let us try to understand how this introduces and intermediate level of abstraction between us and the interpreter. Let us focus on the first equation. How does the interpreter makes this computation? First of all the interpreter will use the rule for `ERec` because the root of the abstract syntax tree of 
+
+    let rec plus = \x.\y. if x=0 then y else S (plus (minus_one x) y) in plus S S 0 S S S 0
+
+is labelled `ERec`. (If you want to verify this run the parser on the above expression.) The rule for `ERec` introduces an `EFix`, so this is the next rule that is applied. After that we can pass in the arguments to `plus` using the rule for `EApp` twice. After this we can evaluate the `EIf` and the `EMinusOne` which leaves us with `S (plus S 0 S S S 0)`. To summarise the first equation 
+
+    plus S S 0 S S S 0 = S (plus S 0 S S S 0)
+
+corresponds to the rules for `ERec, EFix, EApp, EApp, EIf, EMinusOne`, not necessarily in this order. 
+
+**Remark:** To conclude what we learned from the activity above, we can confirm that equational reasoning with
+
+    plus 0 y = y
+    plus (S x) y = S (plus x y)
+
+mirrors faithfully the steps taken by the interpreter, but at a higher level of abstraction.
+
+**Exercise:** Justify the other equations by detailing the computation steps taken by the interpreter.
+
+**Remark:** Here are a few important lessons we can draw from the computation
+
+    plus S S 0 S S S 0  -->  S (plus S 0 S S S 0)
+                        -->  S S (plus 0 S S S 0)
+                        -->  S S S S S 0 
+
+where we now write `-->` to emphasise that we think of the equations as computation steps.
 
 - There is no memory and no side effects.
 - All the information is in the data.
@@ -77,17 +133,23 @@ Let us simplify:
 		what equations do we need to calculate 2 + 3 = 5 ? Get out pen and paper and do this.
 			[Interlude: for a programmer terms are trees]
 			(1+1)+((1+1)+1) = ... = ((((1+1)+1)+1)+1)
-		what equations do we need to calculate 2 x 3 = 6 ? Get out pen and paper and do this.
+	
+    Get out pen and paper and do this.
 			[...]
+
 	Can we write down the equations?
-		associativity of +, distributivity of x
-		what about the other equations such as commutativity? Not needed so far ...
+
+		associativity of +
+
+		what about the other equations such as commutativity?
+        
+        Not needed so far ...
 			[maybe there is room for someinvestigation here ...]
     
 Stocktaking: What did we learn about computation from this?
 - terms are trees
 - computing with terms via rewriting terms using equations
-- very important question:
+- important question:
   - can we prove/disprove (decide) all equations?
   - [possible interlude/excursion on decidability]
 - which leads to the related question:
@@ -107,22 +169,13 @@ Stocktaking: What did we learn about computation from this?
 
 For the language given by
 
-        num ::= 1 | num + 1
-        exp ::= num | exp + exp 
+        num ::= 1 | exp + exp 
  
 the equation
 
         X + (Y + Z) = (X + Y) + Z
         
 is enough to calculate all additions. If we replace the definition of exp by 
-
-        exp ::= num | exp + exp | exp * exp
-
-we need to add equations
-
-	X * 1 = 1
-	X * Y = Y * X
-	X * ( Y + Z ) = X * Y + X * Z
 
 Note that we do not need `X + Y = Y + X`. This is only needed if we add variables, that is, if we replace the definition of exp by 
 
@@ -169,7 +222,22 @@ But first, we could use this opportunity to get used to consult research literat
 Also read the Wikipedia article on [Tarski's High School Algebra Problem](https://en.wikipedia.org/wiki/Tarski%27s_high_school_algebra_problem).
 
 ### Homework
-Read up to (and excluding) Section 1.1 of the [article by Burris and Yeats](https://www.math.uwaterloo.ca/~snburris/htdocs/MYWORKS/PREPRINTS/saga.ps). Can you summarise its contents? (I don't expect you to understand all of it and we will explain everything in detail ... but if you try to understand the main ideas now, you will understand better what follows.)
+- (Essential.) Read through the notes and explore some of the links in the text.
+
+- (Highly recommended.) Let us add multiplication to the grammar to
+
+       exp ::= num | exp + exp | exp * exp
+
+  This is completely analogous to adding new language features to `LambdaNat`. As before, we ask how to extend the interpreter, that is, what new equations do we need to add, in order to be able to fill in the dots of 
+
+      (1+1)*(1+1+1) = ...
+                    = ((((1+1)+1)+1)+1)+1
+
+
+ - (Recommended.) Going back to our discussion of the Calculator, you can also implement the language and interpreter from this lecture by modifying the [grammar and interpreter](https://github.com/alexhkurz/programming-languages-2019/tree/master/Calculator) of the Calculator.
+
+
+- (Optional, for this who like further reading.) Read up to (and excluding) Section 1.1 of the [article by Burris and Yeats](https://www.math.uwaterloo.ca/~snburris/htdocs/MYWORKS/PREPRINTS/saga.ps). Can you summarise its contents? (I don't expect you to understand all of it and we will explain everything in detail later on ... but if you try to understand the main ideas now, you will understand better what follows.)
 
 ### Summary of big ideas
  - terms are trees (maybe only a small idea? But it is of fundamental importance)
@@ -186,8 +254,6 @@ Read up to (and excluding) Section 1.1 of the [article by Burris and Yeats](http
   - pattern matching
   - syntax
   - abstract syntax
-  - BNF
-  - syntactic sugar
   - ... 
  
   
