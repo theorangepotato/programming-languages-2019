@@ -75,6 +75,8 @@ For the exercise below, recall that abstract syntax is defined in
 
 Note that this does not specify what will happen if your computation reaches `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to have something like a runtime exception.
 
+**Hint:** The code in the interpreter for 
+
 **Exercise:** (not necessary to hand this in, but should help to see how to implement the two rules above in `Interpreter.hs`) Translate the computation rule `hd a:b:c:#   --->   a` from concrete syntax to abstract syntax. Also run ``hd a:b:c:#` in the parser and compare.
 
 
@@ -142,7 +144,7 @@ Implement and run the following functions in LambdNat5. Save the program answeri
 
 `le n m ` returns `S 0` if as numbers `n` is smaller or equal to `m` and returns `0` if `n` is bigger than `m`. For example,
 
-    le S 0 S S 0 --> 0
+    le S S 0 S 0 --> 0
     le S 0 S 0 --> S 0
 
 #### Assignment1.B.sort (3 out of 15)
