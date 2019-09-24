@@ -35,14 +35,16 @@ is the standard notation for the natural numbers.
 
 ### Inductive definitions
 
-Above, I am taking $\mathbb N$ for granted, but we can also define it ourselves by saying that $0\in\mathbb N$ and if $n\in\mathbb N$ then also $n+1\in\mathbb N$. Note that this definition avoids the $\ldots$ and instead uses only two rules. We say then say that $\mathbb N$ is the smallest set *closed* under the rules. This style of defining sets is called definition by induction and we will see more about this in a [later lecture](https://hackmd.io/s/H1panO_um).
+Above, I am taking $\mathbb N$ for granted, but we can also define it ourselves by saying that $0\in\mathbb N$ and if $n\in\mathbb N$ then also $n+1\in\mathbb N$. Note that this definition avoids the "$\ldots$" and instead uses only two rules. We then say that $\mathbb N$ is the smallest set *closed* under the rules. This style of defining sets is called definition by induction and we will see more about this in a later lecture.
+
+<!--[later lecture](https://hackmd.io/s/H1panO_um).-->
 
 Defining infinite sets inductively is very common and we have seen another example of this when we defined the language `exp` of arithmetic expressions. 
 
 ### Set-comprehension
 Another way of defining sets is called *comprehension*. A definition by comprehension has the form
 
-$$A \ \stackrel{\rm def}{=} \ \{ \ldots \mid \ldots \}$$
+$$A \ \stackrel{\rm def}{=} \ \{ x\in X \mid \ldots \}$$
 
 For example, we may define the set of even numbers as
 
@@ -54,7 +56,7 @@ Here $\;\exists m\,.\,\ldots\;$ is short for "there is $m$ such that $\dots$"
 
 ### Cartesian Product
 
-We can also use comprehension to define the so-called *cartesian product*  [^cartesian]
+We can use comprehension to define the so-called *cartesian product*  [^cartesian]
 
 $$A\times B \ \stackrel{\rm def}{=} \ \{ (a,b) \mid a\in A, b\in B \}$$
 
@@ -62,7 +64,7 @@ which is just the set of pairs that can be built by taking elements of $A$ in th
 
 **Example:** Fractions $n/m$ are pairs $(n,m)$ where we use the special notation "$/$" just to indicate that we want to think of this pair of numbers as a fraction and not, eg, as the coordinates of a point in the plane.
 
-**More Notation** (not so important now, but useful later):  If in the above definition we have $A=B$ then we may abbreviate $A\times A$ as $A^2$. Similarly, we abbreviate $(A\times A)\times A$, usually written just as $A\times A\times A$, by $A^3$. This notation extends to $A^n$ for any $n\in\mathbb N$. The set $A^0$ is called the empty product and has exactly one element, often called the empty word. The empty word has not standardized notation and one may find different symbols for it such as $()$ and $[]$ and $\langle\rangle$ and $0$ and $\epsilon$ (epsilon) and $\lambda$ (lambda). The set $A^0$ always has exactly one element, whatever $A$ is. For this reason, $A^0$ is sometimes written just as $1$. We then obtain the equation $A^0=1$, which is similar to a familiar equation for numbers, namely that $a^0=1$ for all numbers $a$ (possibly restricted to $a\not=0$).
+**More Notation** (not so important now, but useful later):  If in the above definition we have $A=B$ then we may abbreviate $A\times A$ as $A^2$. Similarly, we abbreviate $(A\times A)\times A$, usually written just as $A\times A\times A$, by $A^3$. This notation extends to $A^n$ for any $n\in\mathbb N$. The set $A^0$ is called the empty product and has exactly one element, often called the empty word. The empty word has not standardized notation and one may find different symbols for it such as $()$ and $[]$ and $\langle\rangle$ and $0$ and $\epsilon$ (epsilon). The set $A^0$ always has exactly one element, whatever $A$ is. For this reason, $A^0$ is sometimes written just as $1$. We then obtain the equation $A^0=1$, which is similar to a familiar equation for numbers, namely that $a^0=1$ for all numbers $a$ (possibly restricted to $a\not=0$).
 
 ## Relations
 
@@ -131,7 +133,7 @@ $$A/R \ \stackrel{\rm def}{=} \ \{[a]_R \mid a\in A \}$$
 
 **Example:** Equality is an equivalence relation. In fact, equality is the smallest equivalence relation. There is also a largest equivalence relation (which is it?).
 
-**Notation and Terminology:** If $R$ is an equivalence relation it is often written as $\equiv$ or $\approx$ or any other symbol that emphasises the analogy with equality. The set $A/R$ is also called $A$ ***modulo*** $R$ or *$A$ quotiented by $R$* or ****the quotient of*** $A$ by $R$*. 
+**Notation and Terminology:** If $R$ is an equivalence relation it is often written as $\equiv$ or $\approx$ or any other symbol that emphasises the analogy (hence also difference) with equality. The set $A/R$ is also called $A$ ***modulo*** $R$ or *$A$ quotiented by $R$* or ****the quotient of*** $A$ by $R$*. 
 
 **Example:** On the integers $\mathbb Z$, the relation $a\equiv b\ ({\rm mod} \  n)$ of congruence modulo $n$ is an equivalence relation. The set of equivalence classes is denoted by $\mathbb Z/n\mathbb Z$. The operation of "dividing by $n\mathbb Z$" has some properties similar to division, see eg the [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem)  which explains some of the terminology just introduced.
 
