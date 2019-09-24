@@ -7,7 +7,7 @@ To generate a **parser** from the grammar run
     bnfc -m -haskell Calc.cf
     make
 
-To generate an **interpreter** from the grammar run
+To generate the **interpreter** run
 
     ghc --make Calculator
 
