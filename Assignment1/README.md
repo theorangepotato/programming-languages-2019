@@ -69,6 +69,8 @@ According to the rules `ENil` and `ECons` we can build lists such as
 
 Note that this does not specify what will happen if your computation reaches `hd #` or `tl #`. In my implementation the computation will just get stuck at `hd #` or `tl #`, in more sophisticated implementations, you would probably want to have something like a runtime exception.
 
+**Exercise:** (not necessary to hand this, but should help to see how to implement the two rules above in `Interpreter.hs`) The computation rule `hd a:b:c:#   --->   a` is written in concrete syntax. Translate it to abstract syntax.
+
 
 **Remark on the side:** Lists can also be nested in order to form trees as in 
 
