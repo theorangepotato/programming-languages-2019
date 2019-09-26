@@ -15,6 +15,12 @@ This video may help to install the [Haskell Platform in WSL](https://www.youtube
     sudo apt install haskell-platform
     sudo apt install haskell-stack
 
+## Working with Docker
+
+Jonathan Burns produced a setup that may simplify installation for some using Docker, see [here](https://github.com/alexhkurz/programming-languages-2019/blob/master/LambdaNat-with-Docker/README.md) for details.
+
+Scott Weller wrote up a [VM tutorial]( https://docs.google.com/document/d/17nty9Se19jSxUnQc2G2I635hvn12izD9a77ujF4yamk/edit?usp=sharing) of how to install a Linux VM on Windows to work with Docker.
+
 ## Working under Linux/MacOS
 
 Installing BNFC under Linux/MacOS requires installing the programming language [Haskell](https://www.haskell.org/) first. You also need the package management system [Cabal](https://www.haskell.org/cabal/), but it is already part of the Haskell platform. So the first step should be:
@@ -28,6 +34,8 @@ Create a directory in which you want to clone the BNFC github directory and `cd`
     make
     
 If you don't have `make` try `sudo apt install make`.
+
+If make doesn't find `alex` or `happy' look [here].
 
 After calling `make` I get a long list of output finishing with
 
