@@ -140,7 +140,7 @@ It is recommended to first write down similar equational definitions for the fun
 `member x l` returns 1 if `x` is a member of the list `l` and 0 if it is not. For example,
 
     member a a:b:#        --->   S 0
-    member S 0  0:S 0:#   --->   0
+    member S 0  0:S S 0:#   --->   0
 
 #### Assignment1.B.append (1 out of 15)
 
