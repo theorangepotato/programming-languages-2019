@@ -1,5 +1,7 @@
 # LambdaNatInc
 
+(Written and contributed by Jonathan Burns.)
+
 This is my way to build and run LambdaNat, using docker fully. [Here](https://apiumhub.com/tech-blog-barcelona/top-benefits-using-docker/)
 are some reason to use it. A major advantage in this project is the fact that it only takes 2 command to build ans execute
 the whole project respectively. I also use multi-stage builds to make workflow much smoother.
