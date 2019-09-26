@@ -151,6 +151,8 @@ It is recommended to first write down similar equational definitions for the fun
     append # a:b:#         --->   a:b:#
     append 0:S 0:# a:b:#   --->   0:S 0:a:b:#
 
+*Hint:* Append is similar to plus in [fib.lc](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-solutions/LambdaNat4/test/fib.lc).
+
 #### Assignment1.B.reverse (2 out of 15)
 
 `reverse l ` returns the list obtained from reversing `l `. For example, 
