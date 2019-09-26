@@ -12,7 +12,7 @@ Office Hours Tue and Thu 2pm to 3.30pm in Hashinger 208 or by appointment.
 [Lecture 2.2](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB): Semantics of Lambda Calculus.   
 [Lab 3.1 - 4.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/README.md): Programming the Lambda Calculus. See also the [Lab1-solutions](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-solutions).   
 
-[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Friday Sept 27. 
+[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Thursday Oct 3. 
 
 [Lecture 5.1](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md): Introduction to Term Rewriting.   
 Lecture 5.2: [Syntax and Semantics](https://hackmd.io/r_6EY8pVR7OdijRAEFNKvg) and [Relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr)
