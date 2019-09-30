@@ -1,6 +1,6 @@
 $\newcommand{\sem}[1]{[\![#1]\!]}$
 
-# ARS1 Abstract Reduction Systems 1 : Examples
+# Abstract Reduction Systems 1 : Examples
 
 (in this lecture, we start learning the basic maths that is needed for our first model of computation; this material will be examinable in the "midterm" and the December exam)
 
