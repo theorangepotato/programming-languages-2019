@@ -1,6 +1,51 @@
+$\newcommand{\sem}[1]{[\![#1]\!]}$
+
 # Abstract Reduction Systems 1 : Examples
 
-(in this lecture, we will learn the basic maths that is needed for our first model of computation; this material will be examinable in the "midterm" and the December exam)
+(in this lecture, we start learning the basic maths that is needed for our first model of computation; this material will be examinable in the "midterm" and the December exam)
+
+## Recap from Lambda Calculus
+
+If we run a `LambdaNat` program such as on, say, our laptops, it is impossible for us to understand what exactly is going on in our machines. There are too many complicated mechanism involved such as theHaskell compiler, CPU, Cache, memory management, etc.
+
+Recall that we can describe the semantics of `LambdaNat` as a function
+
+$$\sem{-}:\cal L \to \cal L$$
+
+on lambda expressions $\cal L$ (recall that $\cal L$ is defined by the grammar of `LambdaNat`). This function is the interpreter of `LambdaNat`, which is defined by a set of equations, written in Haskell's abstract syntax as the by now familiar
+
+
+    evalCBN (EApp e1 e2) = case (evalCBN e1) of (EAbs i e1') -> evalCBN (subst i e2 e1') e1' -> EApp e1' e2
+    evalCBN (EIf e1 e2 e3 e4) = if (evalCBN e1) == (evalCBN e2) then evalCBN e3 else evalCBN e4
+    evalCBN (ELet i e1 e2) = evalCBN (EApp (EAbs i e2) e1) 
+    evalCBN (ERec i e1 e2) = evalCBN (EApp (EAbs i e2) (EFix (EAbs i e1)))
+    evalCBN (EFix e) = evalCBN (EApp e (EFix e)) 
+    evalCBN (EMinusOne e) = case (evalCBN e) of ENat0 -> ENat0 (ENatS e) -> e
+    evalCBN (ENatS e') = ENatS (evalCBN e')
+    evalCBN x = x
+
+
+
+Reading the equations from left to right, they define a rewrite relation. In the light of the previous lecture, the equations can also be understood as an equivalence relation identifying all lambda expressions with the same meaning.
+
+## Introduction
+
+The characterisation of the interpreter of `LambdaNat` as a virtual machine rewriting lambda-expressions, raises some important questions. In particular, there are many expressions in which more than one rule can be applied. In other words, the rewriting as defined by the equations is non-deterministic. This raises a number of questions, the most important of which is:
+
+- Does the order in which we apply the rules matter?
+
+In a good rewrite system the answer will be "No". This is important both for understanding and for efficiency. If we know that the result is independent of the order, then 
+
+- we can understand the computation using the order that looks easiest to us and
+
+- we can implement the computation using the order that runs fastest.
+
+Abstract Reduction Systems will allows us to examine such questions at the right level of abstraction. In particular, we will abstract away from
+
+ - the syntax of programs and
+ - computability questions
+ 
+and only be concerned with a set (of elements we want to rewrite) and a relation (we think of as defining the one-step rewrites).
 
 ## Models of computation
 
