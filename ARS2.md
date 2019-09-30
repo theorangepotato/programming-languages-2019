@@ -1,4 +1,4 @@
-# a Abstract Reduction Systems 2: Confluence and Normal Forms 
+# ab Abstract Reduction Systems 2: Confluence and Normal Forms 
 
 (continued from [ARS 1](https://hackmd.io/s/rkk0tgxu7))
 
