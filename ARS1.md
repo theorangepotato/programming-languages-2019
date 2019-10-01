@@ -2,17 +2,19 @@ $\newcommand{\sem}[1]{[\![#1]\!]}$
 
 # Abstract Reduction Systems 1 : Examples
 
-(in this lecture, we start learning the basic maths that is needed for our first model of computation; this material will be examinable in the "midterm" and the December exam)
+(in this lecture, we start learning the basic maths that is needed for our main model of computation; this material will be examinable in the "midterm" and the December exam)
 
 ## Recap from Lambda Calculus
 
-If we run a `LambdaNat` program such as on, say, our laptops, it is impossible for us to understand what exactly is going on in our machines. There are too many complicated mechanism involved such as theHaskell compiler, CPU, Cache, memory management, etc.
+If we run a `LambdaNat` program on our computer it is impossible for us to understand what exactly is going on in our machine. There are too many complicated mechanism involved: the Haskell compiler, CPU, Cache, memory management, etc. 
+
+Therefore, we need a model of computation, or a virtual machine, that allows us to execute programs on a higher level of abstraction.
 
 Recall that we can describe the semantics of `LambdaNat` as a function
 
 $$\sem{-}:\cal L \to \cal L$$
 
-on lambda expressions $\cal L$ (recall that $\cal L$ is defined by the grammar of `LambdaNat`). This function is the interpreter of `LambdaNat`, which is defined by a set of equations, written in Haskell's abstract syntax as the by now familiar
+on lambda expressions $\cal L$ (recall that $\cal L$ is defined by the grammar of `LambdaNat` as the set, or language, of all legal programs). This function is the interpreter of `LambdaNat`, which is defined by a set of equations, written in Haskell as the by now familiar (recall that Haskell manipulates abstract syntax)
 
 
     evalCBN (EApp e1 e2) = case (evalCBN e1) of (EAbs i e1') -> evalCBN (subst i e2 e1') e1' -> EApp e1' e2
@@ -61,7 +63,7 @@ This doesnt look very interesting at first sight. Just a relation on a set? What
 
 First note that the elements of $A$ can be all kind of different things: numbers, strings, lists, multisets, trees, ... all kind of data ... I am working with a graduate student on an example where $A$ is a set of diagrams ... but $A$ could also contain the memory of a computer or the cells of a cellular automata.
 
-Second, there are a number of important properties that we can express about ARSs in general. We already have seen the notion of a normal form, which is defined purely in terms of $(A,\to)$. Indeed, $a\in A$ is a normal form if there is no $(a,b)\in{\to}$, or, if there is no $a\to b$. Let us make a list of some interesting questions to ask (precise definitions follow the examples):
+Second, there are a number of important properties that we can express about ARSs in general. We already have seen the notion of a normal form, which is defined purely in terms of $(A,\to)$. Indeed, $a\in A$ is a ***normal form*** if there is no $(a,b)\in{\to}$, or, if there is no $a\to b$. Let us make a list of some interesting questions to ask (precise definitions follow the examples):
 
 - which elements are in normal form?
 - which elements reduce to normal form?
