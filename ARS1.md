@@ -4,6 +4,15 @@ $\newcommand{\sem}[1]{[\![#1]\!]}$
 
 (in this lecture, we start learning the basic maths that is needed for our main model of computation; this material will be examinable in the "midterm" and the December exam)
 
+## Learning Outcomes
+
+Students will be able to 
+understand (and illustrate with simple examples) that an ARS with a computable reduction relation in which each equivalence class has a unique normal form, can be understood as a non-deterministic algorithm for solving the computational problem of determining when two elements of the ARS are equivalent.
+
+Btw, the "virtual machine" on which this algorithm runs is extremely simple: Given an element of the ARS, red
+
+This is quite a mouthful, so ask me about it again, if you are not sure ...
+
 ## Recap from Lambda Calculus
 
 If we run a `LambdaNat` program on our computer it is impossible for us to understand what exactly is going on in our machine. There are too many complicated mechanism involved: the Haskell compiler, CPU, Cache, memory management, etc. 
@@ -59,11 +68,19 @@ This is sometimes called Abstract Reduction System.[^ARS] Other names that may b
 
 **Definition:** An abstract reduction system (ARS) is a set $A$ together with a relation ${\to}\subseteq A\times A$.
 
-This doesnt look very interesting at first sight. Just a relation on a set? What can we do with this? Certainly not all binary relations are models of computation, so we will be interested in the following in properties of binary relations that are interesting for relations that can be thought of as modelling some form of one-step comptuations.
+This doesnt look very interesting at first sight. Just a relation on a set? What can we do with this? In fact, there is an extremely simple virtual machine, which turns any ARS into an algorithm.
 
-First note that the elements of $A$ can be all kind of different things: numbers, strings, lists, multisets, trees, ... all kind of data ... I am working with a graduate student on an example where $A$ is a set of diagrams ... but $A$ could also contain the memory of a computer or the cells of a cellular automata.
+**The virtual machine running ARSs:** Let $(A,\to)$ be an ARS. Let $a\in A$. The virtual machine runs on input $A$ and $a$ as follows.
 
-Second, there are a number of important properties that we can express about ARSs in general. We already have seen the notion of a normal form, which is defined purely in terms of $(A,\to)$. Indeed, $a\in A$ is a ***normal form*** if there is no $(a,b)\in{\to}$, or, if there is no $a\to b$. Let us make a list of some interesting questions to ask (precise definitions follow the examples):
+1. **If** there is no $b\in A$ such that $a\to b$ **then** stop (and output $a$) **else** replace $a$ by $b$ and go to 1.
+
+Certainly there are many ARSs $(A,\to)$ for which the virtual machine will not compute anything interesting. In this lecture, we will exhibit some general structural properties of an ARS that guarantee that the ARS does compute something interesting.
+
+
+
+**Data:** To understand on what kind of data an ARS runs, note that the elements of $A$ can be all kind of different things: numbers, strings, lists, multisets, trees, ... all kind of data ... I am working with a graduate student on an example where $A$ is a set of diagrams ... but $A$ could also contain the memory of a computer or the cells of a cellular automata.
+
+**Properties of ARSs:** There are a number of important properties that we can express about ARSs in general. We already have seen the notion of a normal form, which is defined purely in terms of $(A,\to)$. Indeed, $a\in A$ is a ***normal form*** if there is no $(a,b)\in{\to}$, or, if there is no $a\to b$. Let us make a list of some interesting questions to ask (precise definitions follow the examples):
 
 - which elements are in normal form?
 - which elements reduce to normal form?
@@ -75,17 +92,54 @@ Second, there are a number of important properties that we can express about ARS
 
 **Terminology:** If $a\to b$ in an ARS, we say that $a$ *reduces* to $b$. This is a way of speaking that indicates that we think of $a\to b$ as a one-step computation that, as in equational reasoning, simplifies, or reduces, $a$ to $b$. But this expectation is not part of the definition of ARSs, which include examples where $b$ is "more complicated" than $a$. 
 
-## Examples
+## Examples and Exercises
 
 The examples below are not necessarily meant to illustrate the idea of an ARS as a model of computation. Rather they serve at illustrating what is captured by the definitions as they are. While it is not too much of an exaggeration to say that all models of computations are ARSs, the notion of an ARS is too abstract to make sure that all ARSs are models of computation. We will later refine ARSs to TRSs and then to lambda-calculus to get to a narrower class of mathematical models which can be considered satisfactory answers to the question "What is computation?".
 
+- Answer the following questions
+
+  - what are the normal forms?
+  - are normal forms unique?
+  - when are two numbers are joinable?
+  - which numbers are equivalent?
+  - is it confluent?
+  - is it terminating?
+
+for each of the examples below.
+
+The first two illustrate unique normal forms, but are not interesting from a computational point of view.
+
 - $A$ is the set of integers $> 1$ and  $m\to n$ is defined to hold if $m>n$ and $n$ divides $m$.
+
+- $A$ is the set of integers $\ge 1$ and  $m\to n$ is defined to hold if $m>n$ and $n$ divides $m$.
+
+The next one can be seen as implementing a non-determinstic algorithm. Which one?
+
+- A is the set of finite lists (aka words) over $\{a,b\}$, $wbav\to wabv$
+
+Another variation:
+
+- A is the set of multisets[^multisets] over $\{a,b\}$, $aa\to a$, $bb\to a$, $ab\to b$, $ba\to b$
+
+The next one seems very different at first sight as the coordinate plane is similar to the tape of a Turing machine, in other words, the rules of how the ant move modify external memory.
+
+- [Langton's Ant](https://kartoweb.itc.nl/kobben/D3tests/LangstonsAnt/). Exercise: Can you formalise what $(A,\to)$ is? 
+
+## Some Answers to the Exercises
+
+- $A$ is the set of integers $> 1$ and  $m\to n$ is defined to hold if $m>n$ and $n$ divides $m$.
+  - terminating (because numbers get smaller and are positive)
   - normal forms are primes
   - normal forms are not unique
   - two numbers are joinable iff they share a prime number (iff they are not relatively prime)
   - all numbers are equivalent
   - not confluent
+  
+- $A$ is the set of integers $\ge 1$ and  $m\to n$ is defined to hold if $m>n$ and $n$ divides $m$.
   - terminating
+  - unique normal form is 1
+  - all numbers are equivalent
+  - not confluent
 
 - A is the set of finite lists (aka words) over $\{a,b\}$, $wbav\to wabv$
   - normal forms are sorted lists (if we say that $a$ comes before $b$)
@@ -97,20 +151,20 @@ The examples below are not necessarily meant to illustrate the idea of an ARS as
 - A is the set of multisets[^multisets] over $\{a,b\}$, $aa\to a$, $bb\to a$, $ab\to b$, $ba\to b$
   - normal form?
   - joinable iff ?
-  - equivalent iff both an odd number of b's or both an even numbers of b's (CHECK)
+  - equivalent iff both an odd number of b's or both an even numbers of b's 
   - not confluent
   - terminating
 
-- [Langton's Ant](https://kartoweb.itc.nl/kobben/D3tests/LangstonsAnt/). Exercise: Can you formalise what $(A,->)$ is?
-  - normal form?
-  - joinable iff?
-  - confluent?
-  - terminating?
+
 
 
 [In the next lecture](https://hackmd.io/s/B1DPNGEdm) we will see that even on the abstract level of ARSs, there is a bit of interesting theory that helps to clarify what happens in the examples.
 
 **Notation:** We write $\to^\ast$ to mean the reflexive and transtitive closure of $\to$ and $\leftrightarrow^\ast$ (or maybe $\equiv$) for the symmetric, reflexive and transitive closure, that is the smallest equivalence relation containing $\to$. 
+
+## More examples
+
+If you think of an ARSs is like a very simple
 
 [^ARS]: When we looked at equational reasoning as in high-school algebra, we studied how equational reasoning progresses by term rewriting. This involved pattern matching in order to determine which rule (or equation) can be applied to any given term. An ARS $(A,\to)$ abstracts from this situation by forgetting the term structure and the pattern matching: While we may still think of the elements of $A$ as terms and of $\to$ as a set of rewrite rules, what we need now can be formulated just in terms of an "abstract" set $A$ and a relation $\to$.
 
