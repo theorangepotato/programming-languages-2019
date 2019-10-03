@@ -19,4 +19,4 @@ Lecture 5.2: [Syntax and Semantics](https://hackmd.io/r_6EY8pVR7OdijRAEFNKvg) an
 
 Lecture 6.1: [Syntax and Semantics, revisited](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH). Abstract Reduction Systems [Examples](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/r1D5VMedS) 
 
-Lecture 6.2: Abstract Reduction Systems [Basic Definitions](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS).
+Lecture 6.2: Abstract Reduction Systems [Basic Definitions](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS). [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).
