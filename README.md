@@ -6,6 +6,8 @@ Any questions, comments, etc send a mail to akurz at chapman.edu.
 
 Office Hours Tue and Thu 2pm to 3.30pm in Hashinger 208 or by appointment.
 
+The aim of the course is to have a look under the hood of your favourite programming language. How do programming languages work? Could you design your own programming language? I assume that you know at least one, ideally a few more, programming languages. It would also be good to have learned something about computer architecture. The topic of the course is how to bridge the gap between a programming language and the actual machine, so some awareness of how actual machines work is needed to fully appreciate the material.
+
 [Lecture 1.1](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.1.md): Overview and Organisation.    
 [Lecture 1.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.2.md): Short Introduction to Parsing.   
 [Lecture 2.1](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Skjdh1sSS): Syntax of Lambda Calculus.   
