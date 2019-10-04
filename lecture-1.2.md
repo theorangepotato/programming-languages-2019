@@ -9,6 +9,8 @@ From the article [Towards a Mathematical Science of Computation](http://www-form
 
 McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artificial ingelligence", shortly afterwards he invented LISP and garbage collection, [time-sharing systems](https://en.wikipedia.org/wiki/Time-sharing), and in 1962 he introduced, with the quote above, the idea of abstract syntax.
 
+Interesting for us, is that McCarthy emphasises that BNF makes it easy to generate, write and synthesize programs, whereas abstract syntax is designed to make it easy to analyse, translate, type check, interprete and compile programs. 
+
 Another influential article is [Ascribing mental qualities to machines](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
 
 ## Learning Outcomes
