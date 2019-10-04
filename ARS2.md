@@ -40,7 +40,9 @@ The second rule eliminates duplicates.
 
 This term rewriting system defines an ARS that we can run on the virtual machine. 
 
-**Remark:**  If the set of possible elements of the lists is $\{0,1,2\}$, then the first rule can be seen as an abbreviation for the three rules $10\to 01$, $20\to 02$ and $21\to 12$. Similarly, the second rule can be seen as an abbreviation for the rules $00\to 0$, $11\to 1$ and $22\to 2$. (In other words, from the point of view of ARSs, the two rules above can be seen as rules to build rules.)
+**Remark (rules to build rules):**  If the set of possible elements of the lists is $\{0,1,2\}$, then the first rule can be seen as an abbreviation for the three rules $10\to 01$, $20\to 02$ and $21\to 12$. Similarly, the second rule can be seen as an abbreviation for the rules $00\to 0$, $11\to 1$ and $22\to 2$. (In other words, from the point of view of ARSs, the two rules above can be seen as rules to build rules.)
+
+**Remark (notation):** Since ARSs are abstract, we are free to choose any notation we like for lists. Here I just write lists as a sequence of symbols without seperator, but you may prefer to write [2,0,1,1,1] or something else instead of 20111.
 
 
 **Example:** We can show that the lists 20112 and 122220 have the same elements by computing their normal forms as follows
