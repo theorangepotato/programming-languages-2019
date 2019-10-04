@@ -9,7 +9,7 @@ From the article [Towards a Mathematical Science of Computation](http://www-form
 
 McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artificial ingelligence", shortly afterwards he invented LISP and garbage collection, [time-sharing systems](https://en.wikipedia.org/wiki/Time-sharing), and in 1962 he introduced, with the quote above, the idea of abstract syntax.
 
-Another influential article is [Ascribing mental qualities to machines. In: Philosophical perspectives in artificial intelligence](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
+Another influential article is [Ascribing mental qualities to machines](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
 
 ## Learning Outcomes: After having worked through the exercises and homework, students will be able to
 
