@@ -1,6 +1,14 @@
 # Short Introduction to Parsing 
 
-Learning Outcomes: After having worked through the exercises and homework, students will be able to
+The form of syntax we shall now describe differs from the Backus normal form in two ways. First, it is analytic rather than synthetic; it tells how to take a program apart, rather than how to put it together. Second, it is abstract in that it is independent of the notation used to represent, say sums, but only affirms that they can be recognized and taken apart.
+
+From the article [Towards a Mathematical Science ofComputation](http://www-formal.stanford.edu/jmc/towards.ps) by [McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29).
+
+McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artificial ingelligence", shortly afterwards he invented LISP and garbage collection, [time-sharing systems](https://en.wikipedia.org/wiki/Time-sharing), and in 1962 he introduced, with the quote above, the idea of abstract syntax.
+
+Another influential article is [Ascribing mental qualities to machines. In: Philosophical perspectives in artificial intelligence](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
+
+## Learning Outcomes: After having worked through the exercises and homework, students will be able to
 
 - understand a context free grammar in BNFC for arithmetic expressions,
 - parse an arithmetic expression, that is, to transform an arithmetic expression into an abstract syntax tree,
