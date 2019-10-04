@@ -11,7 +11,9 @@ McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artifici
 
 Another influential article is [Ascribing mental qualities to machines](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
 
-## Learning Outcomes: After having worked through the exercises and homework, students will be able to
+## Learning Outcomes: 
+
+After having worked through the exercises and homework, students will be able to
 
 - understand a context free grammar in BNFC for arithmetic expressions,
 - parse an arithmetic expression, that is, to transform an arithmetic expression into an abstract syntax tree,
