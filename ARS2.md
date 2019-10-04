@@ -40,6 +40,8 @@ The second rule eliminates duplicates.
 
 This term rewriting system defines an ARS that we can run on the virtual machine. 
 
+**Remark:**  If the set of possible elements of the lists is $\{0,1,2\}$, then the first rule can be seen as an abbreviation for the three rules $10\to 01$, $20\to 02$ and $21\to 12$. Similarly, the second rule can be seen as an abbreviation for the rules $00\to 0$, $11\to 1$ and $22\to 2$. (In other words, from the point of view of ARSs, the two rules above can be seen as rules to build rules.)
+
 
 **Example:** We can show that the lists 20112 and 122220 have the same elements by computing their normal forms as follows
 
@@ -130,7 +132,29 @@ But how do we show that normal forms exist? By putting together the results from
 
 The last theorem and remark highlights the importance of termination. But termination is of course a very important topic in programming in general (ever since one learned about the while loop). So this is the topic of the next lecture.
 
+## Conclusion
+
+Recall that we can execute every ARS $(A,\to)$ on our virtual machine $\textsf{VM}$, where $\textsf{VM}$ is defined as follows.
+
+1. **If** there is no $b\in A$ such that $a\to b$ **then** stop (and output $a$) **else** replace $a$ by $b$ and go to 1.
+
+If the ARS is **terminating**, this is an algorithm and we can write $\textsf{VM}_{(A,\to)}(a)$ or simply $\textsf{VM}(a)$ for the result. 
+
+We also learned that if, in addition, the ARS is **confluent**, then we have an algorithm that decides whether two elements are equivalent. 
+
+Inputs are $(A,\to)$ and $a,b\in A$. 
+
+1. If $\textsf{VM}(a)=\textsf{VM}(b)$ then True else False.
+
+Note that while we cannot say anything in general about the time needed for the computation of $\textsf{VM}(a)$, we can say that the equality test "=" itself will typically be linear (or less) in the size of $a$.
+
+---
+
 (to be continued at [ARS 3](https://hackmd.io/JwKRqY1aSOa-bzxHnWZe0Q))
+
+---
+
+
 
 ## References:
 - Baader, Nipkow. Term Rewriting and All That. 1999
