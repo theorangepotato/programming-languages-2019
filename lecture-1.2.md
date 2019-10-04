@@ -114,6 +114,12 @@ By the way, this is the form in which you would write down the grammar in a theo
      
  `1+2+3+4` has 5 parse trees in the grammar `Exp ::= Integer | Exp "+" Exp | Exp "*" Exp` but only one in the full grammar above.
  
+ ## References
+ 
+ - Chapter 2.1-2.6 of [Implementing Programming Languages](http://www.cse.chalmers.se/edu/year/2012/course/DAT150/lectures/plt-book.pdf). To work throug the rest of this book is the aim of the course on Compiler Construction.
+ 
+ - To see how these methods can be applied to natural language look at Chapter 2 of [Grammatical Framework: Programming with Multilingual Grammars](http://www.grammaticalframework.org/gf-book/). If you don't have access to the book, try pages 63-98 of the [slides](http://www.grammaticalframework.org/gf-book/gf-book-slides.pdf).
+ 
  ## Homework
  
  - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
