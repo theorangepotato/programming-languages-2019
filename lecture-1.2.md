@@ -1,9 +1,9 @@
 # Short Introduction to Parsing 
 
-    The form of syntax we shall now describe differs from the Backus normal form in two ways. 
+    "The form of syntax we shall now describe differs from the Backus normal form in two ways. 
     First, it is analytic rather than synthetic; it tells how to take a program apart, 
     rather than how to put it together. Second, it is abstract in that it is independent of the notation 
-    used to represent, say sums, but only affirms that they can be recognized and taken apart.
+    used to represent, say sums, but only affirms that they can be recognized and taken apart."
 
 From the article [Towards a Mathematical Science ofComputation](http://www-formal.stanford.edu/jmc/towards.ps) by [McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29).
 
