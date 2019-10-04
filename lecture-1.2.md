@@ -5,7 +5,7 @@
     rather than how to put it together. Second, it is abstract in that it is independent of the notation 
     used to represent, say sums, but only affirms that they can be recognized and taken apart."
 
-From the article [Towards a Mathematical Science ofComputation](http://www-formal.stanford.edu/jmc/towards.ps) by [McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29).
+From the article [Towards a Mathematical Science of Computation](http://www-formal.stanford.edu/jmc/towards.ps) by [McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29).
 
 McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artificial ingelligence", shortly afterwards he invented LISP and garbage collection, [time-sharing systems](https://en.wikipedia.org/wiki/Time-sharing), and in 1962 he introduced, with the quote above, the idea of abstract syntax.
 
