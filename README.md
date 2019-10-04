@@ -15,12 +15,11 @@ Prerequisites: I assume that you know at least one, ideally a few more, programm
 [Lecture 2.1](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Skjdh1sSS): Syntax of Lambda Calculus.   
 [Lecture 2.2](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyDa-43BB): Semantics of Lambda Calculus.   
 [Lab 3.1 - 4.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/Lab1-Lambda-Calculus/README.md): Programming the Lambda Calculus. See also the [Lab1-solutions](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab1-solutions).   
-
-[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Thursday Oct 3. 
-
+[Assignment 1](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment1): Deadline Thursday Oct 3.   
 [Lecture 5.1](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md): Introduction to Term Rewriting.   
-Lecture 5.2: [Syntax and Semantics](https://hackmd.io/r_6EY8pVR7OdijRAEFNKvg) and [Equivalence Relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr)
+Lecture 5.2: [Syntax and Semantics](https://hackmd.io/r_6EY8pVR7OdijRAEFNKvg) and [Equivalence Relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr)   
+Lecture 6.1: [Syntax and Semantics, revisited](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH). Abstract Reduction Systems [Examples](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/r1D5VMedS)    
 
-Lecture 6.1: [Syntax and Semantics, revisited](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH). Abstract Reduction Systems [Examples](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/r1D5VMedS) 
+Lecture 6.2: ARS2 [Confluence and Normal Forms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS).    
 
-Lecture 6.2: ARS2 [Confluence and Normal Forms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS). ARS3 [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).
+Lecture 7.1: ARS3 [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).    
