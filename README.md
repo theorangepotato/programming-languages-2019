@@ -10,7 +10,7 @@ The aim of the course is to have a look under the hood of programming languages.
 
 Prerequisites: I assume that you know at least one, ideally a few more, programming languages. It would also be good to have learned something about computer architecture. One theme of the course is how to bridge the gap between a programming language and the actual machine, so some awareness of how actual machines work is needed to fully appreciate the material. Finally, I will introduce the  mathematics that we need to engineer our programming languages, but some ability in manipulating formal mathematical models as typically aquired in a discrete mathematics course will be needed.
 
-It is possible to read the following notes without doing the labs and the programming assignments, but it will make it more difficult to appreciate that the methods and tools presented in this course solve real, every day practical programming problems that are impossible to solve without this beautiful and powerful mathematics.
+It is possible to read the following notes without doing the labs and the programming assignments, but it will make it more difficult to appreciate that the methods and tools presented in this course solve real, every day practical programming problems that are impossible to solve without beautiful and powerful mathematics.
 
 [Lecture 1.1](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.1.md): Overview and Organisation.    
 [Lecture 1.2](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-1.2.md): Short Introduction to Parsing.   
