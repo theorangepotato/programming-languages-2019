@@ -1,6 +1,21 @@
 # Abstract Reduction Systems 4: Termination (Finitely Branching Systems)
 
-We continue from the [previous lecture](https://hackmd.io/s/BkXUkyw_Q).
+
+## Learning Outcomes
+
+- to understand that the methodology underlying the construction and verification of a mathematical proof is very similar to the methodology behind the design and execution of programs. It consists of 
+  
+  - analysing the problem into its basic constituents
+  - solving/translating the basic constituents
+  - synthesizing the solution from solutions of the smaller problem
+
+- to recognize that this pattern of analysis-base case-synthesis is exactly the pattern
+
+-  to appreciate that this pattern corresponds to items 2 to 4 of [Descartes' scientific method](https://en.wikipedia.org/wiki/Discourse_on_the_Method#Part_II:_Principal_rules_of_the_Method), see also our [Excursion on Algebra](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md#algebra) for some background.
+
+## Finitely Branching ARSs
+
+We continue from the [previous lecture]().
 
 **Definition:** An ARS $(A,\to)$, or sometimes its relation $\to$, is called finitely branching if for all $x$ there are only finitely many $y$ such that $x\to y$.
 
