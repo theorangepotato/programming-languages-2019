@@ -72,10 +72,10 @@ According to the rules `ENil` and `ECons` we can build lists such as
     a:b:c:#
 
 For the exercise below, recall that abstract syntax is defined in 
-[AbsLambdaNat.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/AbsLambdaNat.hs), which in turn is derived from the grammar
+[AbsLambdaNat.hs](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/AbsLambdaNat.hs), which in turn is generated automatically (by bnfc) from the grammar
 [LambdaNat5.cf](https://github.com/alexhkurz/programming-languages-2019/blob/master/Assignment1/grammar/LambdaNat5.cf).
 
-**Exercise:** (not necessary to hand this, but should help to implement the computation rules for `hd` and `tl` in the Interpreter) What is the abstract syntax tree of `a:b:c:#`? Write the answer down on paper. Run `a:b:c:#` in the parser and compare with your pen-and-paper answer.
+**Exercise:** (not necessary to hand this in, but should help to implement the computation rules for `hd` and `tl` in the interpreter) What is the abstract syntax tree of `a:b:c:#`? Write the answer down on paper. Run `a:b:c:#` in the parser and compare with your pen-and-paper answer.
 
 `hd` and `tl` are pronounced "head" and "tail", respectively. The first task is to adapt the interpreter of `LambdaNat4` in such a way that head and tail compute as 
 
