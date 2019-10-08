@@ -6,16 +6,29 @@ But remember that there also are exercises scattered throughout the lecture note
 
 The exercises you can hand in to me on pen and paper, send to me via email, discuss in my office hours (Tue/Thu 2-3.30 or by appointment).
 
+---
 
 ## Abstract Reduction Systems
 
 To do the exercises you need to use the material about [equivalence relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr) and [syntax and semantics](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH) and [abstract reduction systems](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS) and [termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).
 
----
+### Lambda Calculus
+
+Consider the ARS defined by your LambdaNat5 interpreter from Assignment 1. Reduce by pen and paper the programs you have handed in for Assignment 1.
+
+    even a:b:c:#
+    
+    le S S 0 S S S 0
+    
+    sort S 0 : 0 : #
+    
+**Hint:** Like in high-school, in the exercises above, you may apply more than rule per step to keep your computation reasonably simple. To see an example of what I have in mind read again [The Recap of Lambda Calculus](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md#recap-from-lambda-calculus) and understand the computation of `plus S S 0 S S S 0` given there.
 
 ### Basic examples
 
 The first exercise is meant to be easy. If it is not,  and assuming that you revised the material linked above, the reason must be that I didn't explain some background you need  ... let me know if this is case.
+
+**Note:** To make sure that you understand how exactly these ARSs work, only apply one rule per computation step.
 
 #### Exercise (String rewriting)
 In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a pattern or schema of rules that allows to reduce strings by replacing any occurrence of `w` by `w'`. The rule schema `w ->` allows us to erase `w` from any word in which `w` occurs.
@@ -124,7 +137,7 @@ Do the following exercises.
 - Give small examples of reductions for each of `min`, `max`, `sort`, `insert`. 
 - Discuss the properties of termination, confluence, unique normal forms in this example.
 - In what sense, if at all, is it appropriate to consider `min`, `max`, `sort`, `insert` as functions? Your answer should make use of what we learned about syntax and semantics.
-- Compare this example with the implentation of `sort` in Assignment 1. What are the similarities and what are the differences? Make two lists summarising your observations.
+- Compare this example with the implementation of `sort` in Assignment 1. What are the similarities and what are the differences? 
 
 ---
 
