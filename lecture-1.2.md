@@ -1,6 +1,21 @@
 # Short Introduction to Parsing 
 
-Learning Outcomes: After having worked through the exercises and homework, students will be able to
+    "The form of syntax we shall now describe differs from the Backus normal form in two ways. 
+    First, it is analytic rather than synthetic; it tells how to take a program apart, 
+    rather than how to put it together. Second, it is abstract in that it is independent of the notation 
+    used to represent, say sums, but only affirms that they can be recognized and taken apart."
+
+From the article [Towards a Mathematical Science of Computation](http://www-formal.stanford.edu/jmc/towards.ps) by [McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29).
+
+McCarthy was a pioneer of Computer Science. In 1955 he coined the term "artificial ingelligence", shortly afterwards he invented LISP and garbage collection, [time-sharing systems](https://en.wikipedia.org/wiki/Time-sharing), and in 1962 he introduced, with the quote above, the idea of abstract syntax.
+
+Interesting for us, is that McCarthy emphasises that BNF makes it easy to generate, write and synthesize programs, whereas abstract syntax makes it easy to analyse, translate, type check, interprete and compile programs. Another way to put it, is to say that concrete syntax is good for human readers and abstract syntax is good for automated processing.
+
+Another influential article is [Ascribing mental qualities to machines](http://cs.uns.edu.ar/~grs/InteligenciaArtificial/ascribing.pdf) from 1979.
+
+## Learning Outcomes
+
+After having worked through the exercises and homework, students will be able to
 
 - understand a context free grammar in BNFC for arithmetic expressions,
 - parse an arithmetic expression, that is, to transform an arithmetic expression into an abstract syntax tree,
@@ -98,6 +113,12 @@ By the way, this is the form in which you would write down the grammar in a theo
     Exp2 -> '(' Exp ')'                                 
      
  `1+2+3+4` has 5 parse trees in the grammar `Exp ::= Integer | Exp "+" Exp | Exp "*" Exp` but only one in the full grammar above.
+ 
+ ## References
+ 
+ - Chapter 2.1-2.6 of [Implementing Programming Languages](http://www.cse.chalmers.se/edu/year/2012/course/DAT150/lectures/plt-book.pdf). To work throug the rest of this book is the aim of the course on Compiler Construction.
+ 
+ - To see how these methods can be applied to natural language look at Chapter 2 of [Grammatical Framework: Programming with Multilingual Grammars](http://www.grammaticalframework.org/gf-book/). If you don't have access to the book, try pages 63-98 of the [slides](http://www.grammaticalframework.org/gf-book/gf-book-slides.pdf).
  
  ## Homework
  
