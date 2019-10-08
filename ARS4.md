@@ -9,7 +9,7 @@
   - solving/translating the basic constituents
   - synthesizing the solution from solutions of the smaller problem
 
-- to recognize that this pattern of analysis-base case-synthesis is exactly the pattern
+- to recognize that this pattern of (i) analysis, (ii) base case, (iii) synthesis is exactly the pattern that is used in recursion as a programming technique.
 
 -  to appreciate that this pattern corresponds to items 2 to 4 of [Descartes' scientific method](https://en.wikipedia.org/wiki/Discourse_on_the_Method#Part_II:_Principal_rules_of_the_Method), see also our [Excursion on Algebra](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md#algebra) for some background.
 
@@ -34,52 +34,73 @@ Let us first look at an argument as you might find it in a textbook.[^baader-nip
 Sometimes a more concise write-up can be easier to understand than an argument that provides all details. On the other hand, one cannot claim to fully understand an argument without being able to provide all details. I show you how such a more detailed write-up could look like.[^markdown] It is also an opportunity to learn the patterns that are used in proofs. And it is closer to what we have done in class.
 
 > Show: If $A$ is finitely branching and terminating, then there is a measure function $\phi:A\to\mathbb N$.
-
->> Assume that $A$ is finitely branching and terminating.
+>
+> Assume: that $A$ is finitely branching and terminating.
 >> Show that there is a measure function $\phi:A\to\mathbb N$. [^thereisphi][^defphi]
-
->>> Define $\;\phi(a)=|\{\,b\in A \mid a\stackrel{\ast}{\longrightarrow} b\}|$. [^lemma]
->>> Show that $\;a\to b\Rightarrow\phi(a)>\phi(b)$.
-
->>>> Assume $\;a\to b$.
->>>> Show $\;\phi(a)>\phi(b)$.
->>>> This, in turn, means that we have to show the following two statements.[^bydefofphi]
-
->>>>> (One) $\{\,c\in A \mid a\stackrel{\ast}{\longrightarrow} c\}\supseteq \{\,d\in A \mid b\stackrel{\ast}{\longrightarrow} d\}$ [^one]
->>>>> This follows from $\stackrel{\ast}{\longrightarrow}$ being transitive.[^bytransitivity]
-
->>>>> (Two) There is $\;x\in \{\,c\in A \mid a\stackrel{\ast}{\longrightarrow} c\}$ and $x\notin \{\,d\in A \mid b\stackrel{\ast}{\longrightarrow} d\}$.
->>>>> To show that such an $x$ exists means to show that
->>>>> there is $\; x \in A$ such that $a\stackrel{\ast}{\longrightarrow}x$ and not $b\stackrel{\ast}{\longrightarrow} x$. 
-
->>>>>> Define $\; x=a$.[^thereisx] We need to check two statements.
-
->>>>>>> (First) Show: $a\stackrel{\ast}{\longrightarrow}a$.
->>>>>>  This follows because $\stackrel{\ast}{\longrightarrow}$ is  reflexive by definition.
-
->>>>>>> (Second) Show: not $b\stackrel{\ast}{\longrightarrow}a$. 
->>>>>>> We argue by contradiction.[^contradiction]
->>>>>>>> Assume $b\stackrel{\ast}{\longrightarrow}a$.
->>>>>>>> Then[^nontermination] $a\stackrel{+}{\longrightarrow}a$.[^plustoo]
->>>>>>>> Which contradicts that $(A,\to)$ is terminating.
-
->>>>>>> We showed (Second): not $b\stackrel{\ast}{\longrightarrow}a$.
-
->>>>>> We showed (First) and (Second).
-
->>>>> We showed (Two).
-
->>>> We showed $\;a\to b\Rightarrow\phi(a)>\phi(b)$. 
-
+>> 
+>> Define: $\;\phi(a)=|\{\,b\in A \mid a\stackrel{\ast}{\longrightarrow} b\}|$. [^lemma]
+>> 
+>> Show: that $\;a\to b\Rightarrow\phi(a)>\phi(b)$.
+>>
+>> Assume: $\;a\to b$.
+>>> 
+>>> Show: $\;\phi(a)>\phi(b)$.
+>>> 
+>>>  This, in turn, means that we have to show the following two statements.[^bydefofphi]
+>>>
+>>> (One) $\{\,c\in A \mid a\stackrel{\ast}{\longrightarrow} c\}\supseteq \{\,d\in A \mid b\stackrel{\ast}{\longrightarrow} d\}$ [^one]
+>>> 
+>>> We showed (One).
+>>> 
+>>> This follows from $\stackrel{\ast}{\longrightarrow}$ being transitive.[^bytransitivity]
+>>>
+>>> (Two) There is $\;x\in \{\,c\in A \mid a\stackrel{\ast}{\longrightarrow} c\}$ and $x\notin \{\,d\in A \mid b\stackrel{\ast}{\longrightarrow} d\}$.
+>>> 
+>>> To show that such an $x$ exists means to show that
+>>> there is $\; x \in A$ such that $a\stackrel{\ast}{\longrightarrow}x$ and not $b\stackrel{\ast}{\longrightarrow} x$. 
+>>>
+>>> Define: $\; x=a$.[^thereisx] We need to check two statements.
+>>>
+>>> (First) Show: $a\stackrel{\ast}{\longrightarrow}a$.
+>>> 
+>>>  This follows because $\stackrel{\ast}{\longrightarrow}$ is  reflexive by definition.
+>>>
+>>> We showed (First).
+>>> 
+>>> (Second) Show: not $b\stackrel{\ast}{\longrightarrow}a$.
+>>> 
+>>> We argue by contradiction.[^contradiction]
+>>> 
+>>> Assume: $b\stackrel{\ast}{\longrightarrow}a$.
+>>>> Show: contradiction.
+>>>> 
+>>>>  We have[^nontermination] $a\stackrel{+}{\longrightarrow}a$.[^plustoo]
+>>>> 
+>>>>Which contradicts that $(A,\to)$ is terminating.
+>>>>
+>>> We showed (Second): not $b\stackrel{\ast}{\longrightarrow}a$.
+>>>
+>>> We showed (First) and (Second).
+>>>
+>>> We showed (Two).
+>>> 
 >>> We showed $\;\phi(a)>\phi(b)$.
-
+>>
+>> We showed $\;a\to b\Rightarrow\phi(a)>\phi(b)$. 
+>>
 >> We showed that there is a measure function $\phi:A\to\mathbb N$.
+>> 
+> We showed the theorem.
 
->We showed the theorem.
+**Remark:** Note how this is similar to programming.
+- First, the structure of the proof follows the structure of the parse-tree of the statement. For example, the parse-tree has $\Rightarrow$ at the top, so we start the proof with an assumption.
+- Second, the rules of logic we apply are similar to the rules of lambda calculus defining the interpreter of `LambdaNat`. For example, the rule for $\Rightarrow$ tells us that after assuming the assumptions, we need to prove the conclusion, which is in case of the outer $\Rightarrow$ the statement that there is a measure function.
+- Implications ($\Rightarrow$) are similar to function definitions in that we use indentation to mark assumptions. 
+- The "We showed P" statements are similar to return statements.
 
 We will have a look at the logic behind this argument in the [next lecture]().
 
-[^markdown]: I would not normally use indentation as below, but markdown conveniently provides this feature and I thought maybe it helps.
+[^markdown]: In a pen and paper proof, I would not normally use indentation as below, but markdown conveniently provides this feature and I think it helps emphasizing the analogy with programming.
 
 [^thereisphi]: We need an idea. In class, we drew a picture, picking an element $a\in A$, and drawing an example relation $\to$. After a while we found the idea that it follows from finitely branching and terminating that there are only finitely many elements reachable from $a$. This gave us the idea to define $\phi(a)$ as the number of elements reachable from $a$. That is, $\phi(a)=|\{\,b\in A \mid a\stackrel{\ast}{\longrightarrow} b\}|$.
 
