@@ -1,7 +1,21 @@
 # Abstract Reduction Systems 3: Termination
 
+## Recap
 
-Proving termination is of practicial significance to the programmer. Windows was known for crashing so often that serious  programmers or computer scientists would not touch it. One of the reasons was that device drivers would go into an infinite loop. This problem has been sorted out thanks to formal methods that could automatically detect such problems.
+Let us just quickly track back through what we have done so far.
+
+We started with developing our own small programming language, culminating in Assignment 1. This programming language was small enough so that we could give a complete and formal definition of its syntax and semantics that is both executable on a machine and understandable by a human. 
+
+Nevertheless, LambdaNat5 was already complicated enough to justify building mathematical models that abstract from its details and allow us to study certain of its aspects in a simplified framework. This was the reason to introduce the notion of an abstraction reduction system (ARS).
+
+We defined ARSs mathematically and studied some of their properties. In particular, we proved that an ARS that is confluent and terminating has unique normal forms. We also studied examples illustrating that this theorem justifies a general methodology that allows us to create complicated algorithms (such as the interpreter of LambdaNat5) by writing out a small set of relatively simple rules.
+
+The two key properties underlying this methodology are confluence and termination. We will not go deeply into refining our methodology in order to prove confluence for particular systems. But we will take the time to study proving termination in more detail, because this is a central concern in algorithms in general. We will learn valuable lessons that are not only important for ARSs and term rewriting, but for software engineering in general.
+
+
+## Proving Termination
+
+Proving termination is of practicial significance to the programmer. For many years, Windows was known for crashing so often that serious  programmers or computer scientists would not touch it. One of the reasons was that device drivers would go into an infinite loop. This problem has been sorted out thanks to [formal methods](https://web.archive.org/web/20120825085504/http://research.microsoft.com:80/en-us/um/cambridge/projects/terminator/) that could automatically detect such problems. If you are interested in learning more about this take a look at [Byron Cook's webpage](http://www0.cs.ucl.ac.uk/staff/b.cook/) who has a lot of introductory and advanced material these issues. A good starting point could be [this video](https://www.youtube.com/watch?time_continue=445&v=J9Da3VsLH44) followed by the [AmazonWebServices Probable Security](https://aws.amazon.com/security/provable-security/) website.
 
 Think of a while loop? How do you know that it terminates? Or maybe it doesnt? ... The technique that we learn now in order to show termination of ARSs will also apply to showing termination of loops in general. 
 
@@ -11,7 +25,7 @@ Find a measure function $\phi: A \to \mathbb N$ such that $a\to b$ implies $\phi
 
 Why does this prove termination?
 
-Recall [our examples](https://hackmd.io/NPrGI0XTSviEhw2KBAevrA#Examples), listed for convenience again below.
+Recall [our examples](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/r1D5VMedS#Examples-and-Exercises), listed for convenience again below.
 
 **Examples:**
 
@@ -27,7 +41,7 @@ Recall [our examples](https://hackmd.io/NPrGI0XTSviEhw2KBAevrA#Examples), listed
   
   - or what if you have both rules above?[^answerboth]
 
-  - what now about the first question where we have one rule allowint to rewrite $ba\to ab$? [^answerbaab]
+  - what now about the first question where we have one rule allowing to rewrite $ba\to ab$? [^answerbaab]
 
 - A is the set of multisets over $\{a,b\}$, $aa\to a$, $bb\to a$, $ab\to b$, $ba\to b$
 
@@ -64,7 +78,11 @@ Let us look at the following example. Working out some reductions (eg write down
 
 [^answerboth]: Add the two measure functions above. More formally, define $\phi(w)=\phi_1(w)+\phi_2(w)$.
 
-[^answerbaab]: Leaving this as an exercise for now, will see a simpler solution later when we learned about lexicographic orderings.
+[^answerbaab]: There are several elegant solutions here. 
 
-[^answer]: Answer: $\phi(i,j)=i^2+j$.
+    - First we can map $a\mapsto 1, b\mapsto 2$, for example $baab\mapsto 2112$, where we take 2112 as a number in decimal notation. (Show that this is a measure function.)
+    
+    - Second, we can map a word to the set of indeces of the a's, for example $abba\mapsto \{0,3\}$ and then map the set to the sum of its indeces for example $\{0,3\}\mapsto 4$. (Show that this is a measure function.)
+
+[^answer]: Answer: $\phi(i,j)=i^2+j$. (Show that this is a measure function.)
 
