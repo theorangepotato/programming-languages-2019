@@ -1,36 +1,15 @@
 # Exercises
 
-I collect here exercises to practice the material that will be the subject of the final exam.
+I collect here exercises to practice the material that will be the subject of the midterms and of the final exam.
 
 But remember that there also are exercises scattered throughout the lecture notes.
 
-Note that the following exercises below ask you to ***write a blog post about*** about each of the blog exercises below. They are part of the continuous assessment (remember that the blog is worth 40% of the total).
-
-#### Blog exercises
-
-- [Exercise on Term Rewriting](https://hackmd.io/s/HJQNfRbtX#Exercise-on-TRSs-blog)
-
-- [Exercise on Termination](https://hackmd.io/s/HJQNfRbtX#Exercise-on-Termination-blog)
-
-- [Exercise on Partial Correctness](https://hackmd.io/s/HJQNfRbtX#Exercise-on-partial-correctness-blog)
-
-
-The other exercises you can hand in to me on pen and paper, send to me via email, discuss in my office hours (Mon/Wed/Fri 10-11 or by appointment), or also post on your blog, as you prefer.
-
-#### Final exam
-
-The final exam will contain questions along the lines of the following exercises below.
-
-- [String rewriting](https://hackmd.io/s/HJQNfRbtX#Exercise-String-rewriting), see also [ORK](https://hackmd.io/s/HJQNfRbtX#Exercise-ORK)
-- Term rewriting: [Sorting](https://hackmd.io/s/HJQNfRbtX#Exercise-Sorting), see also [basic examples as TRSs](https://hackmd.io/s/HJQNfRbtX#The-basic-examples-as-TRSs)
-- [Termination](https://hackmd.io/s/HJQNfRbtX#Termination)
-- [Partial Correctness/Hoare logic](https://hackmd.io/s/HJQNfRbtX#Partial-correcteness-of-while-loops)
-- [Lambda Calculus](https://hackmd.io/s/HJQNfRbtX#Lambda-Calculus)
+The exercises you can hand in to me on pen and paper, send to me via email, discuss in my office hours (Tue/Thu 2-3.30 or by appointment).
 
 
 ## Abstract Reduction Systems
 
-To do the exercises you need to use the material about [relations](https://hackmd.io/s/B1gOX4lO7) and [syntax and semantics](https://hackmd.io/s/SyIA3Lx_Q) and [abstract reduction systems](https://hackmd.io/s/B1DPNGEdm) and [termination](https://hackmd.io/s/BkXUkyw_Q).
+To do the exercises you need to use the material about [equivalence relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr) and [syntax and semantics](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH) and [abstract reduction systems](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS) and [termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).
 
 ---
 
@@ -39,7 +18,7 @@ To do the exercises you need to use the material about [relations](https://hackm
 The first exercise is meant to be easy. If it is not,  and assuming that you revised the material linked above, the reason must be that I didn't explain some background you need  ... let me know if this is case.
 
 #### Exercise (String rewriting)
-In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a pattern or schema of rules that allows to reduce strings by replacing any occurrence of `w` by `w'`. The rule schema `w\to` allows us to erase `w` from any word in which `w` occurs.
+In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a pattern or schema of rules that allows to reduce strings by replacing any occurrence of `w` by `w'`. The rule schema `w ->` allows us to erase `w` from any word in which `w` occurs.
 
 - Consider the schemas of rules
 
@@ -70,7 +49,7 @@ In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a
      
 ---
         
-The purpose of the next exercise is for you to apply the new technical notions to an example you know well already.
+The purpose of the next exercise is for you to apply the new technical notions to an example you know well already. (We have done some of this exercise in class already, but it would be good to do it again at home.)
 
 #### Exercise (Fractions)
 
@@ -121,7 +100,7 @@ The next example is typical for a situation where the elements of the ARS are no
 
 
 #### Exercise (Sorting)
-Consider the ARS given by [^Dershowitz]
+Consider the ARS, from [Dershowitz: A Taste of Rewrite Systems](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=FC8676559B7A991F184EA8DA76458837?doi=10.1.1.31.6812&rep=rep1&type=pdf), given by 
 
     max(0,x) -> x
     max(x,0) -> x 
@@ -135,7 +114,7 @@ Consider the ARS given by [^Dershowitz]
     insert(x,[y|ys]) -> [min(x,y)|insert(max(x,y),ys)]
     
 where
-- operation symbols are [^lists]
+- operation symbols are 
   - constants: `[]` and `0`
   - unary:  `s` and `sort`
   - binary:  `[-|-]` and `min` and `max` and `insert`
@@ -145,24 +124,13 @@ Do the following exercises.
 - Give small examples of reductions for each of `min`, `max`, `sort`, `insert`. 
 - Discuss the properties of termination, confluence, unique normal forms in this example.
 - In what sense, if at all, is it appropriate to consider `min`, `max`, `sort`, `insert` as functions? Your answer should make use of what we learned about syntax and semantics.
-
----
-
-## Term Rewriting Systems
-
-#### The basic examples as TRSs
-
-Review the [Basic Examples](https://hackmd.io/_Ut9-vaCSsOpn9UFPf6agw#Basic-examples) above and describe them in terms of TRSs. What are the signature, variables and equations? [^signature]
-
-### Exercise on TRSs (blog)
-
-Choose a simple algorithm and formulate it as a rewriting system as in the exercise on sorting above. *Write a blog post about it.* Add in as much as you want and can of the material we learned so far, including the lectures on [TRSs](https://hackmd.io/s/BJLCzAKnQ).
+- Compare this example with the implentation of `sort` in Assignment 1. What are the similarities and what are the differences? Make two lists summarising your observations.
 
 ---
 
 ## Termination
 
-(The termination exercises are taken from Baader-Nipkow.)
+(The termination exercises are taken from the book by Baader and Nipkow.)
 
 **Exercise:** Show that whatever the test `<TEST>` the program below
 
@@ -186,11 +154,29 @@ and
 
 terminate. Are there any assumptions you need do make the argument work?
 
-### Exercise on Termination (blog)
+**Exercise:** Take a program with a while loop from on of your other courses and show termination by exhibiting a measure function. 
 
-Write a program in your programming language that contains a while loop or recursive calls and show termination by exhibiting a measure function. Write a blog post about it.
 
 ---
+---
+
+The exercises below relate to material that has not been taught yet.
+
+---
+
+## Term Rewriting Systems
+
+#### The basic examples as TRSs
+
+Review the Basic Examplesabove and describe them in terms of TRSs. What are the signature, variables and equations? [^signature]
+
+### Exercise on TRSs 
+
+(This exercise is optional.)
+
+Choose a simple algorithm and formulate it as a rewriting system as in the exercise on sorting above. Add in as much as you want and can of the material we learned so far, including the lectures on [TRSs]().
+
+
 
 ## Partial correcteness of while-loops
 
@@ -212,9 +198,7 @@ Write a program in your programming language that contains a while loop or recur
 
 
 
-### Exercise on Partial Correctness (blog)
-
-Go back to your on termination of a while loop. In your blog, discuss the partial correctness from the point of the loop. (Or, alternatively, choose another program with a while loop.)
+**Exercise:** Go back to your program and the exercise on termination of a while loop. Discuss the partial correctness of the loop. (Or, alternatively, choose another program with a while loop.)
 
 ## Abstract data types
 
@@ -288,6 +272,8 @@ that maps a good to its price. For our purposes, we can identify $Price$ here wi
 - Discuss different real world situations in which $price$ is a homomorphism or not.
 - Define the equivalence/congruence relation corresponding to $price$. 
 - Discuss ways to determine whether two goods have the same price in a society where there is no money. In other words, how do you define the equivalence relation without referring to the function?
+
+
 
 [^invariant]: A function $P:A\to B$ is an ***invariant*** for an ARS $(A,\to)$ if 
 $$ a\to b \ \Longrightarrow \ P(a)=P(b)$$ for all $a,b\in A$.
