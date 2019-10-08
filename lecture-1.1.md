@@ -38,6 +38,8 @@ The course will have a practical and a theoretical component.
  
  *Remark:* In class I gave a quick overview of what is a Turing machine, how it defines a model of computation, what is meant by a computable function and a programming language being Turing complete. I also indicated how to prove that Lambda Calculus is Turing complete and, conversely, how to prove that every Turing machine can be coded as a Lambda Calculus program. I also should have mentioned [Curch's Thesis](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) saying, very roughly, that all unrestricted models of computation are equivalent.
  
+ *Remark:* Turing machines have an infinite tape. This is important. With a finite tape, a Turing machine would just be a finite automaton. But in the real world no computer has infinite memory. What is going on here? I made some remarks on infinity as a mathematical modelling tool. In a slogan, we use actual infinity to model potential infinity. A nice example is the notion of line in Euclid. In Euclid, lines are always finite but extendable. Today, we take lines to infinite. This is a convenient modelling tool. For example, it is easier to say that two lines are parallel if they don't intersect, rather than two lines are parallel if no extension intersects. But we do not need actually infinite lines to do Euclidean geometry.
+ 
  The Lambda Calculus is important to this course for a number of reasons:
  
  - Because it is small it is easily explained and a good starting point for experimentation.
