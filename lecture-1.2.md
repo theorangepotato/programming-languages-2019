@@ -102,6 +102,8 @@ By the way, this is the form in which you would write down the grammar in a theo
  ## Homework
  
  - Read the lecture notes carefully. Work through all exercises. I would be grateful if you reported any typos or questions via [the issue tracker](https://github.com/alexhkurz/programming-languages-2019/issues).
+
+ - To know what we will need about LBNF (the input language for the parser generator  BNFC) read Sections 1, 2, 3, 4.3, 7.2  of the article [The Labelled BNF Grammar Formalism]().
  
  - Write down some arithmetic expressions (such as `1+2*(3+4)`, `1+2+3*4+5`, etc) and construct the parse tree using the rules of the grammar. Also write down the abstract syntax trees.
  
