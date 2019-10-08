@@ -25,3 +25,5 @@ Lecture 6.2: ARS2: [Confluence and Normal Forms](https://hackmd.io/@m5rnD-8SSPuu
 Lecture 7.1: ARS3: [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur). ARS4: [Finitely Branching ARSs](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkX-t-HdH).
 
 [Exercises](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH)
+
+Midterm: Thu, Oct 17.
