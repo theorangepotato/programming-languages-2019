@@ -2,11 +2,13 @@
 
 (under construction)
 
-My notes contain everything that is needed for the course and a bit more. There are also many references integrated in the text.
+My notes contain everything that is needed for the course and a bit more. There are also many references integrated in the text. Some are repeated here, others are new.
 
 ## General background
 
 The best general book on computing must be (let me know if you have other suggestions) [Goedel, Escher, Bach](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach). This book is fun, about music, art and computing. It will leave with a much deeper understanding of what computing "is", and you will find many themes that appear in this course presented in a very different way.
+
+...
 
 ## History
 
@@ -28,15 +30,14 @@ The best general book on computing must be (let me know if you have other sugges
 
 A blog on [dynamical vs lexical scoping](http://prl.ccs.neu.edu/blog/2019/09/05/lexical-and-dynamic-scope/).
 
+...
+
 ## Writing Parsers and Interpreters
 
 Some references here that contain ideas for projects related to the course.
 
-### Prolog
-
-Haskell is a good language to implement an interpreter, but [Prolog]() also is. Could be a fun project to develop the Assignments in Prolog and see how it compares.
-
-### Scheme
+Haskell is a good language to implement an interpreter, but [Prolog](https://gist.github.com/madidier/bfb9a936550c92d7d63fea49da90253d) also is. Could be a fun project to develop the Assignments in Prolog and see how it compares.
 
 Here is an [Interpreter for Lambda Calculus in Scheme](http://matt.might.net/articles/implementing-a-programming-language/). Looks cool as well and is not too far from the Haskell one. Could be a fun project to develop the Assignments in Scheme and see how it compares.
 
+A [A lambda-calculus interpreter in less than 300 lines of JavaScript](https://tadeuzagallo.com/blog/writing-a-lambda-calculus-interpreter-in-javascript/)
