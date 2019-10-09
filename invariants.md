@@ -1,14 +1,15 @@
 # Invariants
 
-(finished, but not polished)
+## Learning Outcomes
 
-## Aims 
-To answer the following questions:
+Students will be able to answer the following questions.
+
+- How to show that something is impossible?
+- How do you show that two elements are not equivalent?
 - What is meant by a "nice description" of equivalence classes in the exercises?
 - What is an invariant?
 - How to build more complicated invariants from simpler ones in a compositional way?
 - How to describe equivalence relations and partitions by invariants?
-- How to prove that something is impossible?
 
 ## Examples of Invariants
 
