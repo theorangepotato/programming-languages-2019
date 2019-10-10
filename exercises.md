@@ -33,7 +33,7 @@ The first exercise is meant to be easy. If it is not,  and assuming that you rev
 #### Exercise (String rewriting)
 In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a pattern or schema of rules that allows to reduce strings by replacing any occurrence of `w` by `w'`. The rule schema `w ->` allows us to erase `w` from any word in which `w` occurs.
 
-- Consider the schemas of rules
+- **(SR 1)** Consider the schemas of rules
 
         ab -> ba
         ba -> ab
@@ -41,11 +41,15 @@ In this exercise we rewrite strings over letters `a,b` and write `w -> w'` for a
         b ->
   - Reduce some example strings such as `abba` and `bababa`.
   - Why is the ARS not terminating?
-  - How many equivalence classes does $\stackrel{\ast}{\longleftrightarrow}$ have? Can you describe them in a nice way? What are the normal forms?
+  - How many equivalence classes does $\stackrel{\ast}{\longleftrightarrow}$ have? Can you describe them in a nice way? What are the normal forms? 
+     
+    [Hint: It may be easier to first answer the next question.]
   - Can you change the rules so that the ARS becomes terminating without changing its equivalence classes? Which measure function proves termination of your modified system?
   - Write down a question or two about strings that can be answered using the ARS. Think about whether this amounts to giving a semantics to the ARS.
   
-- Consider the schemas of rules
+    [Hint: The best answers are likely to involve a complete invariant.]
+  
+- **(SR 2)** Consider the schemas of rules
 
         ba -> bbaa
         aa ->
@@ -145,7 +149,7 @@ Do the following exercises.
 
 (The termination exercises are taken from the book by Baader and Nipkow.)
 
-**Exercise:** Show that whatever the test `<TEST>` the program below
+**Exercise (T1):** Show that whatever the test `<TEST>` the program below
 
     while ub > lb + 1 do
     begin r : = (ub + lb) div 2;
@@ -154,7 +158,7 @@ Do the following exercises.
 
 terminates. Are there any assumptions you need do make the argument work?
 
-**Exercise:** Show that the two programs
+**Exercise (T2):** Show that the two programs
 
     while m =/= n do
       if m > n then m := m — n else n := n — m
@@ -167,7 +171,7 @@ and
 
 terminate. Are there any assumptions you need do make the argument work?
 
-**Exercise:** Take a program with a while loop from on of your other courses and show termination by exhibiting a measure function. 
+**Exercise (T3):** Take a program with a while loop from on of your other courses and show termination by exhibiting a measure function. 
 
 
 ---
