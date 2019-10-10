@@ -1,12 +1,12 @@
 # Excursion on the rules of logic
 
-[Last lecture]() we looked in some detail at a proof stating that if a program is finitely branching then termination can always be shown by a measure function to the natural numbers. 
+[Last lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkX-t-HdH) we looked in some detail at a proof stating that if a program is finitely branching then termination can always be shown by a measure function to the natural numbers. 
 
 I want to use the opportunity to show you the patterns that arise when establishing an argument and then formalise them as rules of logic.
 
-## Aims of this lecture
+## Learning Outcomes
 
-- To help you understand better how proofs work, to learn how to navigate a proof without getting lost.
+- To understand better how proofs work, to learn how to navigate a proof without getting lost.
 
 - To understand that proofs are structured in the same way as programs, by nesting blocks:
 
@@ -17,7 +17,7 @@ I want to use the opportunity to show you the patterns that arise when establish
 
 - To train ourselves in the "double-think" between formalism (just following the rules) and meaning (being guided by what we want to achieve and understand). This double-think is as valuable a skill in programming as it is in maths.
 
-- To learn the [rules of logic](https://github.com/alexhkurz/programming-languages-2019/blob/master/Gentzen-natural-deduction-rules.png).
+- To learn the [rules of logic](https://github.com/alexhkurz/programming-languages-2019/blob/master/Gentzen-natural-deduction-rules.png), in the form of Gentzen's natural deduction.
 
 - To explain the idea that all of formal, deductive reasoning can be reduced to [this small set of rules](https://github.com/alexhkurz/programming-languages-2019/blob/master/Gentzen-natural-deduction-rules.png). 
 
