@@ -1,5 +1,5 @@
 $\newcommand{\sem}[1]{[\![#1]\!]}$
-$\newcommand{\nf}{\mathrm{nf}}
+$\newcommand{\nf}{\mathsf{nf}}$
 
 # Normalisation by Evaluation
 
@@ -87,21 +87,21 @@ In my experience, there is no one good answer. In programming one tends to not o
 The new idea is to, conversely, define a function
 
 \begin{align}
-nf : \mathbb N&\to \mathcal L\\\hline
-nf(1) & =1\\
-nf(n+1)& = nf(n)+1\\
+\nf : \mathbb N&\to \mathcal L\\\hline
+\nf(1) & =1\\
+\nf(n+1)& = \nf(n)+1\\
 \end{align}
 
-For example, $nf(4) = ((1+1)+1)+1)$, etc. [^one]
+For example, $\nf(4) = ((1+1)+1)+1)$, etc. [^one]
 
 **Exercise:** Show that 
 - $\sem{-}$ restricted to left-bracketed expressions such as $(1+1)+1$ is an inverse of $nf$.
-- $\sem{nf(n)}=n$
+- $\sem{\nf(n)}=n$
 
 We can now define the *semantic normal form* of an expression $e$ as
-$$nf(\sem{e})$$
+$$\nf(\sem{e})$$
 
-**Question:** Which equations between `exp`'s  are needed to guarantee that $$e\approx nf(\sem{e})$$
+**Question:** Which equations between `exp`'s  are needed to guarantee that $$e\approx \nf(\sem{e})$$
 
 for all expressions $e$?
 
@@ -111,13 +111,13 @@ We reason by induction on the three rules that make the definition of
 
         exp ::= 1 | exp + exp | exp * exp
 
-If $e$ is 1 then $1=nf(\sem{1})$. No equations needed. [^refl]
+If $e$ is 1 then $1=\nf(\sem{1})$. No equations needed. [^refl]
 
 If $e$ is $e_1+e_2$, we want to reason
 \begin{align}
-nf(\sem{e_1+e_2}) 
-& = nf(\sem{e_1}+\sem{e_2})\\
-& \approx nf(\sem{e_1})+ nf(\sem{e_2})\\
+\nf(\sem{e_1+e_2}) 
+& = \nf(\sem{e_1}+\sem{e_2})\\
+& \approx \nf(\sem{e_1})+ \nf(\sem{e_2})\\
 & \approx e_1+ e_2\\
 \end{align}
 
@@ -126,14 +126,14 @@ nf(\sem{e_1+e_2})
 
 Similarly, if $e$ is $e_1*e_2$, we reason
 \begin{align}
-nf(\sem{e_1*e_2}) 
-& = nf(\sem{e_1}\cdot\sem{e_2})\\
-& \approx nf(\sem{e_1})* nf(\sem{e_2})\\
+\nf(\sem{e_1*e_2}) 
+& = \nf(\sem{e_1}\cdot\sem{e_2})\\
+& \approx \nf(\sem{e_1})* \nf(\sem{e_2})\\
 & \approx e_1* e_2\\
 \end{align}
 
 To conclude, we have proved by induction on the definition of $\mathcal L$ that 
-$$nf(\sem{e})\approx e $$
+$$\nf(\sem{e})\approx e $$
 
 for all $e\in\mathcal L$.
 
@@ -152,7 +152,7 @@ for all $e\in\mathcal L$.
 \end{align}
 
 allows us deduce by equational reasoning the equations
-$$nf(\sem{e})\approx e $$
+$$\nf(\sem{e})\approx e $$
 
 for all expressions $e$ in the language $\mathcal L$ given by 
 
@@ -198,7 +198,7 @@ Completeness is the converse, namely
 $$\sem{e_1}=\sem{e_2} \quad \Longrightarrow \quad e_1\approx e_2$$
 
 This follows from
-$$e_1\approx nf(\sem{e_1}) =nf(\sem{e_2}) \approx e_2$$
+$$e_1\approx \nf(\sem{e_1}) =\nf(\sem{e_2}) \approx e_2$$
 
 where the "$\approx$" are due to Theorem 1 and "$=$" is due to the assumption.
 
@@ -294,13 +294,13 @@ This means that we do not yet fully capture $D$. What is lacking is to understan
 
 To solve this problem, we identify special terms, sometimes called "canonical terms" or "semantic normal forms", that we are going to use as "canonical representatives" of elements of $D$. In other words, we identify a function
 
-$$nf:D\to\mathcal L$$
+$$\nf:D\to\mathcal L$$
 
 which preserves the semantics in the sense that $\sem{nf(d)}=d$ for all $d\in D$.
 
 The interesting, and sometimes difficult, step is now to identify a nice set of equations on terms that allows us to prove (using the rules of equational logic) 
 
-$$ nf(d)\approx d$$
+$$ \nf(d)\approx d$$
 
 for all $d\in D$.
 
