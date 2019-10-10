@@ -106,28 +106,34 @@ Here we show how to build from invariant properties a complete set of invariants
         ab -> ba
         ba -> ab
         aa ->
-        bb ->
+        b -> bbb
 
 There are two invariant properties that come to mind immediately:
 
 - $P_a(w)\;$ if the number of `a` in $w$ is even
-- $P_b(w)\;$ if the number of `b` in $w$ is even
+- $P_b(w)\;$ if the number of `b` in $w$ is odd
+- $P_1(w)\;$ if the number of `b` in $w$ is $\ge 1$
 
-These two invariants are **complete** in the sense that they disinguish all words that are not equivalent. In other words, if two words agree on $P_a$ and $P_b$, then they must be equivalent. This can be stated more formally as follows.
+These two invariants are **complete** in the sense that they disinguish all words that are not equivalent. In other words, if two words agree on $P_a$ and $P_b$ and $P_1$, then they must be equivalent. This can be stated more formally as follows.
 
-- If $P_a(w)=P_a(v)$ and $P_b(w)=P_b(v)$, then $w\stackrel{\ast}{\leftrightarrow}v$.
+- If $P_a(w)=P_a(v)$ and $P_b(w)=P_b(v)$ and $P_1(w)=P_1(v)$, then $w\stackrel{\ast}{\longleftrightarrow}v$.
 
 The converse also holds by virtue of the the properties being invariant.
 
-**Exercise:** Show that the invariants being complete implies that $(A,\to)$ has at most 4 equivalence classes. What property of the invariants guarantees that in this example there are exactly 4 equivalence classes?
+**Exercise:** 
+- Show that the invariants being complete implies that $(A,\to)$ has at most $2^3$ equivalence classes.
+- A closer analysis reveals that $P_b(w)=true$ and $P_1(w)=false$ is impossible. (Because $w$ having an odd number of b's and $w$ having no b's cannot hold simultaneously.) How many equivalence classes does $(A,\to)$ have?
 
-We can also combine the two invariants into one invariant
-$$P:A\to\mathbb B\times\mathbb B$$ 
+
+We can also combine the three invariants into one invariant
+$$P:A\to\mathbb B\times\mathbb B\times\mathbb B$$ 
 
 where $\mathbb B$ stands for the set $\{true,false\}$ of Booleans by defining
-$$P(w) = (P_a(w),P_b(w)).$$
+$$P(w) = (P_a(w),P_b(w),P_1(w)).$$
 
-**Exercise:** Show that $P$ is complete for $(A,\to)$ in the sense that $w\stackrel{\ast}{\leftrightarrow}v$ if and only if $P(w)=P(v)$.
+**Exercise:** Show that $P$ is complete for $(A,\to)$ in the sense that $w\stackrel{\ast}{\longleftrightarrow}v$ if and only if $P(w)=P(v)$.
+
+[Hint: To show "only if", it is enough to verify that $P$ is an invariant, that is, that for all rules $w\to v$ we have $P(w)=P(v)$. For "if", you need to enumerate all equivalence classes and show that $P$ can distinguish all of them.]
 
 
 ## A Final Challenge
@@ -141,7 +147,7 @@ Take a chess board and tiles (or dominoes) that cover exactly two squares of the
 
 This puzzle indicates that invariants have a much wider range of  applications than our ARS examples. [^chesspuzzle] Invariants are one of the most powerful problem solving techniques.
 
-**Remark on Problem Solving:** Notice how we thought about the chess board puzzle by making it more general. Instead of just looking at one board shape and asking whether it can be tiled, we used at a range of different board shapes. Generalising a problem in such a way is an important problem solving technique. 
+**Generalisation as Problem Solving Technique:** Notice how we thought about the chess board puzzle by making it more general. Instead of just looking at one board shape and asking whether it can be tiled, we used at a range of different board shapes. Generalising a problem in such a way is an important problem solving technique. 
 
 ## Summary
 
