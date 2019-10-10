@@ -27,3 +27,5 @@ Lecture 7.1: ARS3: [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhg
 [Exercises](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH)
 
 Midterm: Thu, Oct 17.
+
+Coming soon: [Rules of logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJLBJLhdS) ... [Invariants](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkaF1g3_B)
