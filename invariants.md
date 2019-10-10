@@ -1,11 +1,13 @@
 # Invariants
 
+Invariants are one of the most important problem solving techniques. They play a major role in all parts of science. In physics, conservation of energy, momentum, etc is both a powerful device in calculations and an important conceptual tool. Modern chemistry started with [Lavoisier](https://en.wikipedia.org/wiki/Antoine_Lavoisier)'s law of [Conservation of Mass](https://en.wikipedia.org/wiki/Conservation_of_mass). But invariants are not only at the heart of [Stoichiometry](https://en.wikipedia.org/wiki/Stoichiometry) in chemistry but also of many other areas of science. See the concept [Clade](https://en.wikipedia.org/wiki/Clade) in biology for one more example. If you find an important new invariant, you can found a whole new area of science. In mathematics invariants are pervasive and I will try to convince you in a later lecture that while loops and recursion can only be properly understood via invariants.
+
 ## Learning Outcomes
 
 Students will be able to answer the following questions.
 
 - How to show that something is impossible?
-- How do you show that two elements are not equivalent?
+- How do you show that two elements of an ARS are not equivalent?
 - What is meant by a "nice description" of equivalence classes in the exercises?
 - What is an invariant?
 - How to build more complicated invariants from simpler ones in a compositional way?
