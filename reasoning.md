@@ -8,11 +8,13 @@ We will learn how the formal laws of logic can be helpul for informal reasoning.
 
 We draw the running example from the theoretical part of the course, but the same method applies to any kind of reasoning, for example, to debugging code or finding out why some software fails to install properly on our machines.
 
+Btw, if you remember questions from school about shapes, such as, "is every trapezoid a rectangle?", then what we are doing here is pursuing the same ideas in a more advanced setting.
+
 ## Learning Outcomes
 
 ...
 
-## Example
+## Examples
 
 We have learned the following:
 
@@ -35,7 +37,9 @@ Let us abbreviate these statement to highlight their logical structure
 
 We can combine the above ingredients to form many statements. How can we find out which are true and which are wrong?
 
-The logical method is a two pronged approach. To use the laws of logic to derive new results from what we already knwo to be true. And to find counterexamples for what we suspect might be wrong.
+The logical method is a two pronged approach. 
+- To use the laws of logic to derive new results from what we already knwo to be true. 
+- To find counterexamples for what we suspect might be wrong.
 
 Let us take the two in turns.
     
