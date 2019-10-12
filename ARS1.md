@@ -151,8 +151,7 @@ The next one seems very different at first sight as the coordinate plane is simi
 
 
 
-
-[In the next lecture](https://hackmd.io/s/B1DPNGEdm) we will see that even on the abstract level of ARSs, there is a bit of interesting theory that helps to clarify what happens in the examples.
+In the next lecture we will see that even on the abstract level of ARSs, there is a bit of interesting theory that helps to clarify what happens in the examples.
 
 **Notation:** We write $\to^\ast$ to mean the reflexive and transtitive closure of $\to$ and $\leftrightarrow^\ast$ (or maybe $\equiv$) for the symmetric, reflexive and transitive closure, that is the smallest equivalence relation containing $\to$. 
 
