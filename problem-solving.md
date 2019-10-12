@@ -10,6 +10,8 @@
 - Laws of Reasoning
 - Doublethink
 - Termination via Well-Founded Orderings
+- Lexicographic Orderings
+- Computation as Rewriting to Normal Form
 - Algorithm = ARS
 - Abstract Syntax Trees
 - Parsing
