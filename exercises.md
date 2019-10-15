@@ -4,7 +4,9 @@ I collect here exercises to practice the material that will be the subject of th
 
 But remember that there also are exercises scattered throughout the lecture notes.
 
-The exercises you can hand in to me on pen and paper, send to me via email, discuss in my office hours (Tue/Thu 2-3.30 or by appointment).
+The exercises you can hand in to me on pen and paper, send to me via email, discuss in my office hours (Tue/Thu 2-3.30 or by appointment) ... there is no due date and they are not graded, but I some engagement with the exercises is indispensable for good grades at the midterm and exam.
+
+In particular, revise the question about Lambda Calculus and about String Rewriting for the midterm. Moreover, be prepared to define notions like ARS, normal form, confluence, ...
 
 ---
 
@@ -126,7 +128,7 @@ Consider the ARS, from [Dershowitz: A Taste of Rewrite Systems](http://citeseerx
     min(x,0) -> 0
     min(s(x),s(y)) -> s(min(x,y))
     sort([]) -> [] 
-    sort([x | xs]) -> insert(x,xs)
+    sort([x | xs]) -> insert(x,sort(xs))
     insert(x,[]) -> [x]
     insert(x,[y|ys]) -> [min(x,y)|insert(max(x,y),ys)]
     
