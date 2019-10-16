@@ -24,11 +24,12 @@ Lecture 6.1: [Syntax and Semantics, revisited](https://hackmd.io/@m5rnD-8SSPuuSH
 Lecture 6.2: ARS2: [Confluence and Normal Forms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS).    
 Lecture 7.1: ARS3: [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur). ARS4: [Finitely Branching ARSs](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkX-t-HdH).
 
-[Exercises](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH)
+[Exercises](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH)    
 
-Midterm: Thu, Oct 17.
+Lecture 7.2: [Rules of logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJLBJLhdS). ARS5: [Invariants](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkaF1g3_B)    
 
-Lecture 7.2: [Rules of logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJLBJLhdS). ARS5: [Invariants](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkaF1g3_B)
+Lecture 8.1: [Normalisation by Evaluation](https://hackmd.io/w9RLzXmcS86U4HVAQi5Lqg)     
 
-Coming soon: [Normalisation by Evaluation](https://hackmd.io/w9RLzXmcS86U4HVAQi5Lqg)
+Midterm: Thu, Oct 17.    
+
 
