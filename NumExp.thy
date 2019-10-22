@@ -1,4 +1,15 @@
-(* Samuel Balco and Alexander Kurz, Sept 2018 *)
+(* Samuel Balco and Alexander Kurz, Sept 2018, Oct 2019 *)
+
+(* This file is an Isabelle/HOL supplement to the lecture notes
+
+       How does indcution reall work?
+
+   at
+   
+       https://hackmd.io/02w2FuLsT_uKYQxkPSdvtw# 
+
+*)
+
 
 section "Arithmetic Expressions"
 
@@ -9,36 +20,45 @@ subsection "Arithmetic Expressions"
 (* num ::= 1 | num + 1 
    exp ::= num | exp + exp | exp * exp *)
 
+(* The datatypes num and exp implement the abstract syntax of the language.
+   Concrete syntax is obtained not from a context free grammar,
+   but from annotating the abstract syntax with "infix" sugar such as ":+:" 
+   and precedences such as "14".*)
 datatype num = One ("\<one>") | S num ("_+\<one>")
 datatype exp = Num num ("\<langle>_\<rangle>") | Plus exp exp (infix ":+:" 14) | Mult exp exp (infix ":*:" 15)
 
+(* eval_num is the interpreter for numbers. *)
 fun eval_num :: "num \<Rightarrow> int" where
 "eval_num \<one> = 1" |
 "eval_num (num+\<one>) = (eval_num num) + 1"
 
+(* Open the "Output" pane and hover the mouse over a line to run the interpreter. *)
 value "eval_num \<one>"
 value "eval_num (\<one>+\<one>+\<one>)"
 
+(* eval_exp is the interpreter for expressions. *)
 fun eval_exp :: "exp \<Rightarrow> int" where
 "eval_exp \<langle>num\<rangle> = eval_num num" |
 "eval_exp (a\<^sub>1 :+: a\<^sub>2) = eval_exp a\<^sub>1 + (eval_exp a\<^sub>2)" |
 "eval_exp (a\<^sub>1 :*: a\<^sub>2) = eval_exp a\<^sub>1 * (eval_exp a\<^sub>2)"
 
+(* Open the "Output" pane and hover the mouse over a line to run the interpreter. *)
 value "eval_exp (Plus (Num (S One)) (Num One))"
-
 value "eval_exp (\<langle>\<one>+\<one>\<rangle> :+: \<langle>\<one>+\<one>\<rangle> :*: \<langle>\<one>+\<one>+\<one>\<rangle>)"
-
 value "eval_exp (Mult (Num (S One)) (Num One))"
 
-(* the following is easy because addition in integers is commutative *)
-(* so after evaluation, there is not much to prove *)
+(* We can not prove properties of the language and the interpreter. *)
+(* Commutativity on the semantic side is easy because addition in integers is commutative *)
+(* In fact, the prove can be done automatically by the tactic auto.  *)
 lemma "eval_exp (e\<^sub>1 :+: e\<^sub>2) = eval_exp (e\<^sub>2 :+: e\<^sub>1)"
   by auto
 
-(* but can we prove commutativity on the syntactic side? *)
-(* we need to assume something, that captures that Plus is addition *)
-(* in our simple situation, associativity is enough *)
+(* How can we prove commutativity on the syntactic side? *)
+(* We need to assume something, that captures that Plus is addition *)
+(* In our simple situation, associativity is enough *)
 
+(* First, we define syntactic equality. 
+   In the lecture notes, we wrote \<approx> where here we have \<equiv>ex.*) 
 inductive equal_exp :: "exp \<Rightarrow> exp \<Rightarrow> bool" (infix "\<equiv>ex" 13) where
 equal_exp_refl:         "e \<equiv>ex e" |
 equal_exp_symm:         "e\<^sub>1 \<equiv>ex e\<^sub>2 \<Longrightarrow> e\<^sub>2 \<equiv>ex e\<^sub>1" |
@@ -47,7 +67,7 @@ equal_exp_cong_plus:    "e\<^sub>1 \<equiv>ex e\<^sub>1' \<Longrightarrow> e\<^s
 equal_exp_plusone:      "\<langle>n+\<one>\<rangle> \<equiv>ex \<langle>n\<rangle> :+: \<langle>\<one>\<rangle>" |
 equal_exp_assoc:        "(e\<^sub>1 :+: (e\<^sub>2 :+: e\<^sub>3)) \<equiv>ex ((e\<^sub>1 :+: e\<^sub>2) :+: e\<^sub>3)" 
 
-
+(* Proposition 1 in the lecture notes. *)
 lemma plusone: "\<langle>\<one>\<rangle> :+: \<langle>n\<rangle> \<equiv>ex \<langle>n\<rangle> :+: \<langle>\<one>\<rangle>"
 (* Show 1+n=n+1 by induction on n:
    If n=1, then 1+1=1+1
@@ -74,11 +94,14 @@ lemma plusone: "\<langle>\<one>\<rangle> :+: \<langle>n\<rangle> \<equiv>ex \<la
   apply(rule equal_exp_plusone)
    apply(rule equal_exp_refl)
   done
+(* Exercise: Compare the Isabelle proof to the pen and paper proof of the lecture notes. *)
 
-(* We want to show that n+m=m+n, or, Plus n m = Plus m n, which again needs to be written as
-   "equal_exp (Plus (Num n) (Num m)) (Plus (Num m) (Num n))" to be understood by Isabelle  *)
+(* Commutativity on the syntactic side. *)
+(* Recall that "\<langle>n\<rangle> :+: \<langle>m\<rangle> \<equiv>ex \<langle>m\<rangle> :+: \<langle>n\<rangle>" is an abbreviation for
+   "equal_exp (Plus (Num n) (Num m)) (Plus (Num m) (Num n))".  *)
 lemma commutativity_num: "\<langle>n\<rangle> :+: \<langle>m\<rangle> \<equiv>ex \<langle>m\<rangle> :+: \<langle>n\<rangle>"
-(* Induction on m: 
+(* Recall the pen and paper proof:
+   Induction on m: 
    If n=1, then we need to show 1+m=m+1, which we proved in lemma plusone
    If n = Sl, then 
     n+m = Sl+m = (l+1)+m = (1+l)+m = 1+(l+m) = 1+(m+l) = (1+m)+l = (m+1)+l 
@@ -126,21 +149,19 @@ next
   finally show ?case by simp
 qed
 
+(* We added a simple tactic called exp_tac, which simply tries 
+   all* the rules on a goal in this order:
 
-(*I've added a simple tactic called exp_tac, which simply tries 
-all* the rules on a goal in this order:
+   1) try refl
+   2) try plusone
+   3) try symmetry and then plusone
+   ...
+   6) try split on n + m and recursively try to solve n and m
+   7) try custom derived rule
+   8) try symmetry and then custom rule
 
-1) try refl
-2) try plusone
-3) try symmetry and then plusone
-...
-6) try split on n + m and recursively try to solve n and m
-7) try custom derived rule
-8) try symmetry and then custom rule
-
-*this tactic does not apply the trans rule for obvious reasons
+   this tactic does not apply the trans rule (why?)
 *)
-
 
 method exp_tac uses rule = 
     rule equal_exp_refl |
@@ -152,7 +173,7 @@ method exp_tac uses rule =
     rule rule  |
     (rule equal_exp_symm ; rule rule)
 
-
+(* Here is another way of writing the proof of 1+n=n+1. *)
 lemma plusone_isar: "\<langle>\<one>\<rangle> :+: \<langle>n\<rangle> \<equiv>ex \<langle>n\<rangle> :+: \<langle>\<one>\<rangle>"
 (* Show 1+n=n+1 by induction on n:
    If n=1, then 1+1=1+1
@@ -170,7 +191,8 @@ next
   finally show ?case by simp
 qed
 
-lemma commutativity_num': "\<langle>n\<rangle> :+: \<langle>m\<rangle> \<equiv>ex \<langle>m\<rangle> :+: \<langle>n\<rangle>"
+(* Here is another way of writing the proof of 1+n=n+1. *)
+lemma commutativity_num_isar: "\<langle>n\<rangle> :+: \<langle>m\<rangle> \<equiv>ex \<langle>m\<rangle> :+: \<langle>n\<rangle>"
 (* Induction on m: 
    If n=1, then we need to show 1+m=m+1, which we proved in lemma plusone
    If n = Sl, then 
