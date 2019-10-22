@@ -4,8 +4,10 @@ Our aim is to understand better something we already know how to do. Namely how 
 
 ## Learning Outcomes
 
-- Understand Induction
-- Understand Equational Reasoning
+- Expand the range of phenomena that can be understand inductively from numbers via lists and trees to programs and logical reasoning.
+- Understanding inductive definition as defining a smallest set closed under a set of rules. 
+- Understand that from a suitably abstract point of view a parser and a theorem prover can be implemented by the same algorithm.
+- The formal rules of  equational reasoning known informally from high school algebra.
 
 ## Examples of Induction
 
@@ -38,7 +40,27 @@ holds for all positive integers as follows. If $n=1$ then the LHS is 1 (you star
     
 I made a circular definition. But is this a definition? Does it actually define a function ? Or, in other words, does `sum` terminate on all inputs? Yes, `sum` does terminate on all inputs ... because each recursive call `sum(n-1)` calls `sum` with a *smaller* argument `n-1`.
 
-### Expressions
+### Lists
+
+Going back to Assignment 1, a number such as `S S 0` could also be implemented as a list `S:S:#`. In fact, we can see lists as having the same *shape* as numbers but are also allowed to store some data at each *position*.
+
+Induction on numbers and lists are completely analogous.
+
+### Trees
+
+Trees can be encoded as nested lists. 
+
+**Exercise:** This exercise uses the programming language of Assignment 1. Draw the tree encoded by 
+
+    A:(B:(E:#):#):(C:(F:#):(G:#):#):(D:#):#
+    
+### Stocktaking
+
+In the previous examples, we went from induction over natural numbers, to induction over lists and induction over trees.
+
+In the following examples, we define sets inductively. For example, the set of all programs belonging to a programming language. Or the set of all pairs in the transitive closure of a relation. Or the set of all equations that can be deduced from a set of assumptions and the rules of logic.
+    
+### Context free grammars
 
 We defined a class of arithmetic expressions in BNF as
 
@@ -52,6 +74,8 @@ is a valid expression can be understood as generating an inductive proof that th
 
 On the other hand, the parser will also be able to establish that `1**` is not a valid expression. This can be understood as the parser establishing that there is no proof that `1**` is an element of the language inducutively defined by `exp ::= 1 | exp + exp | exp * exp`.
 
+To summarise, the programming language defined by a context free grammar is the smallest set of programs closed under the rules of the grammar.
+
 
 ### Transitive Closure
 
@@ -64,23 +88,26 @@ This is an inductive definition. We often write $R^+$ instead of $T$ to denote t
 
 ### Equational Reasoning
 
-We added to the `exp` above some equations. For example,
+Consider the grammar
 
-    X + ( Y + Z ) = ( X + Y ) + Z
+        num ::= 1 | S num
+        exp ::= num | exp + exp | exp * exp
 
-and then showed that for all expressions `n` and `m` in the language defined by `exp ::= 1 | exp + exp | exp * exp` the equation
+Also add to `exp` the equation for associativity
 
-    n + m = m + n
-    
-follows already, even without having an equation for commutativity.
+$$X + ( Y + Z ) \approx ( X + Y ) + Z$$
 
-What do we mean when we say that an equation follows from some others?
+In the lecture on Normalisation by Evaluation, we showed that for all expressions in the language defined by `exp ::= 1 | exp + exp | exp * exp` commutativity alread follows from associativity. Here that should mean that we can derive
 
-Given a set of equations $E$, can we define the set $E'$ of all equations that follow from $E$?
+$$X+Y\approx Y+X$$
+
+from associativity. The aim of the remainder of the lecture is to actually make precise what we mean when we say that one equation follows from some others.
+
+Given a set of equations $E$, can we define the set $E'$ of all equations that can be derived from $E$?
 
 Yes: An equation is in this set $E'$ if you can derive the equation from the equations in $E$ using the usual rules of equational reasoning from high-school algebra.
 
-This is an inductive definition.
+This is an inductive definition. We will study it in more detail below.
 
 ## What is Induction?
 
@@ -126,13 +153,17 @@ $$e_1\approx e_2$$
 
 that we want to study for expression. We write $n,m,\dots$ to denote `num`s and $e$'s to denote `exp`s.
 
+The first two rules define the set `num`.
+
 $$
 \frac{}{1\in\tt num}
 \quad\quad\quad\quad
 \frac{n\in\tt num}{Sn \in\tt num}
 $$
 
-I write now $Sn$ instead of $n+1$ to distinguish the $+1$ from addition. And for expressions are given by
+I write now $Sn$ instead of $n+1$ to distinguish the $+1$ from addition. 
+
+The rules for expressions are given by
 
 $$
 \frac{n\in\tt num}{n\in\tt exp}
@@ -153,28 +184,30 @@ and we want to show that
 $$ n+m \approx m+n $$
 follows already from associativity. Of course, this is only an example. What we are really interested in is to understand what it means for one equation **to follow** from other equations.
 
-As indicated above, the idea is to inductively define the set of all equations that follow. For this, we need to write out the rules of equational reasoning. They are as follows:
+As indicated above, the idea is to inductively define the set of all equations that can be derived from a set of assumptions (axioms). 
+
+For this, we need to write out the rules of equational reasoning. They are as follows, writing $t$ as a generic symbol for a term.
 
 $$
-\frac{}{e\approx e}{\ \rm (refl)\ }
+\frac{}{t\approx t}{\ \rm (refl)\ }
 \quad\quad\quad\quad
-\frac{e_1\approx e_2}{e_2\approx e_1}{\ \rm (sym)\ }
+\frac{t_1\approx t_2}{t_2\approx t_1}{\ \rm (sym)\ }
 \quad\quad\quad\quad
-\frac{e_1\approx e_2\quad\quad e_2\approx e_3}{e_1\approx e_3}{\ \rm (trans)\ }
+\frac{t_1\approx t_2\quad\quad t_2\approx t_3}{t_1\approx t_3}{\ \rm (trans)\ }
 $$
 and
 $$
-\frac{e_1\approx e_1'\quad\quad e_2\approx e_2'}{e_1+e_2\approx e_1'+e_2'}{\ \rm (cong)\ }
+\frac{t_1\approx t_1'\quad\quad t_2\approx t_2'}{t_1+t_2\approx t_1'+t_2'}{\ \rm (cong)\ }
 $$
 To these rules of equational reasoning we want to add, as we said, in our example, the axiom 
 $$
-\frac{}{e_1+(e_2+e_3) \approx (e_1+e_2)+e_3}{\ \rm (assoc)\ }
+\frac{}{t_1+(t_2+t_3) \approx (t_1+t_2)+t_3}{\ \rm (assoc)\ }
 $$
 
 To warm up, and to understand how equational reasoning is inductive, let us prove something even simpler then $n+m\approx m+n$, namely
 $$1+n \approx n+1$$
 
-The most important idea to understand in this note is the following.
+The most important idea to understand in this is the following.
 
 ***To say that the equation ${\ 1+n \approx n+1\ }$ follows from ${\ \rm (assoc)\ }$ by equational reasoning is to say that ${\ 1+n \approx n+1\ }$ is an element of the set inductively defined by the rules***
 $${\ \rm (refl)\ },
@@ -194,10 +227,16 @@ How do we show that $1+n \approx n+1$ is an element of that set?
 
 How would we do this in high-school algebra style?
 
-If $n=1$, then $1+1=1+1$.
+If $n=1$, then $1+1\approx 1+1$.
 
 If $n=Sk$, then
-$$ 1+Sk = 1+ (k+1) = (1+k)+1 = (k+1)+1 = Sk +1$$
+$$ 1+Sk \approx 1+ (k+1) \approx (1+k)+1 \approx (k+1)+1 \approx Sk +1$$
+
+**Exercise:** We have used one rule implicitely that we have not listed above. Can you spot it?
+
+To summarise, we have shown
+
+**Proposition 1:** $\quad 1+n \approx n+1$
 
 **Exercise:** Can you justify all the steps in the chain of reasoning above?
 
@@ -259,7 +298,7 @@ So can we compute with programs and theorems as we can compute with numbers?
 
 ## Arithmetic Expressions in Isabelle and Idris
 
-[See the next lecture](https://hackmd.io/s/HyV1IYYd7)
+[See the next lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr).
 
 
 
