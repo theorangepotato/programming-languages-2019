@@ -24,7 +24,7 @@ Part I: Lambda Calculus and Functional Programming
 [Lecture 5.1](https://github.com/alexhkurz/programming-languages-2019/blob/master/lecture-5.1.md): Introduction to Term Rewriting.   
 Lecture 5.2: [Syntax and Semantics](https://hackmd.io/r_6EY8pVR7OdijRAEFNKvg) and [Equivalence Relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr). [Meaning in Syntax](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH). 
 
-Part II: Termrewriting  
+Part II: Term Rewriting  
 
 Lecture 6.1: Abstract Reduction Systems [Examples](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/r1D5VMedS)    
 Lecture 6.2: ARS2: [Confluence and Normal Forms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS).    
