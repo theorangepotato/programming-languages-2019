@@ -34,7 +34,7 @@ Lecture 7.2: [Rules of logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJLBJLhd
 Lecture 8.1: [Normalisation by Evaluation](https://hackmd.io/w9RLzXmcS86U4HVAQi5Lqg)     
 Midterm: Thu, Oct 17.    
 
-Part II: Logic and Program Verification
+Part III: Logic and Program Verification
 
 Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS)    
 Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)
