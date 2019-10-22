@@ -36,12 +36,9 @@ Midterm: Thu, Oct 17.
 
 Part II: Logic and Program Verification
 
-coming soon:
+Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS)    
+Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)
 
-[Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS)    
-
-[Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)
-
-Hoare Logic
+coming soon: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)
 
 
