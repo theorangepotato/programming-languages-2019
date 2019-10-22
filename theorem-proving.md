@@ -6,11 +6,17 @@ Inductive definitions and proofs can be implemented in both Isabelle and Idris i
 
 
 
-[Isabelle](https://isabelle.in.tum.de) is a special purpose programming language which can do a lot of things (even general programming), but is designed to program mathematical proofs. To explain the fundamentals of how it works we look in some detail at how to prove $1+n\approx n+1$.
+[Isabelle](https://isabelle.in.tum.de) is a special purpose programming language which can do a lot of things (even general programming), but is designed to program mathematical proofs. To explain the fundamentals of how it works we look in some detail at how to prove $1+n\approx n+1$. 
 
-[Idris](http://docs.idris-lang.org/en/latest/) is a general purpose programming language inspired by Haskell, but with a much more powerful type system: Idris has so-called *dependent types*. And this allows us to use Idris not only as a programming language but also as a theorem prover. Indeed, types can be used to formulate properties of programs as types. For example, the $\approx$ relation becomes a type and the proof of $1+n\approx n+1$ a program of that type.
+**Exercise:** Install [Isabelle](https://isabelle.in.tum.de) and open the file [NumExp](https://github.com/alexhkurz/programming-languages-2019/blob/master/NumExp.thy). Read through the file in the Isabelle IDE to get a sense of how a formalisation of the previous lecture looks in an interactive theorem prover.
 
-I encourage you to download one or both of Isabelle and Idris and play around with it. A good point to start working with Isabelle is the book [Concrete Semantics](http://concrete-semantics.org), which is available for free online. 
+**Remark:** For those who want to learn more, a good point to start working with Isabelle is the book [Concrete Semantics](http://concrete-semantics.org), which is available for free online. 
+
+[Idris](https://www.idris-lang.org/) is a general purpose programming language inspired by Haskell, but with a much more powerful type system: Idris has so-called *dependent types*. And this allows us to use Idris not only as a programming language but also as a theorem prover. Indeed, types can be used to formulate properties of programs as types. For example, the $\approx$ relation becomes a type and the proof of $1+n\approx n+1$ a program of that type.
+
+**Exercise:** (I assume here that you have done the exercise on Isabelle above first.) Install [Idris](http://docs.idris-lang.org/en/latest/tutorial/starting.html). Download [NumExp](https://github.com/alexhkurz/programming-languages-2019/blob/master/NumExp.idr). Run `idris NumExp.idr` from the command line. Run `eval_num (S O)` (where `O` is the letter `O`, not the number `0`). Consult the code in `NumExp.idr` to understand the result. Run your own variations. Compare with the Isabelle code in `NumExp.idr`.
+
+
 
 ### The language of arithmetic expressions
 
@@ -40,7 +46,7 @@ where we read `O` as "One".
 
 ### Equations 
 
-Next, we definee inductively the set of equations $e\approx e'$. 
+Next, we define inductively the set of equations $e\approx e'$. 
 
 In Isabelle
 
