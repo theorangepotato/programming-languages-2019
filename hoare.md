@@ -10,7 +10,7 @@ In this lecture, we will just give some of the basic ideas and illustrate them w
 
 # Correctness of while programs
 
-The technique is based on a refinement of the method of invariants discussed in a [previous lecture](https://hackmd.io/s/rysQwJ2KX), so another possible title is
+The technique is based on a refinement of the method of invariants discussed in a [previous lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkaF1g3_B), so another possible title is
 
 # Invariants (Part 2)
 
@@ -83,7 +83,7 @@ The first important idea is that we want express that certain assumptions are sa
 If $\mathtt S$ is a program ("S" as in "Sequence of Statements") then we write
 $$ \{P\}\; \mathtt S\;\{Q\}$$
 
-A predicate that holds before the execution of the program is  called  a {\em precondition}  and a predicate that holds after  a {\em postcondition}. If the precondition is met before execution,  the program  establishes the postcondition if it terminates. 
+A predicate that holds before the execution of the program is  called  a *precondition*  and a predicate that holds after  a *postcondition*. If the precondition is met before execution,  the program  establishes the postcondition if it terminates. 
 
 
 For example, we can write
@@ -143,7 +143,10 @@ We will describe Hoare Logic for a minimal programming language containg only as
 
 ### While-loop
 
-Let us go back to our leading [example](https://hackmd.io/s/H1STFZVq7#Example). 
+Let us go back to our leading example        
+
+        while (x != 0 ) do z:=z+y;  x:= x-1 done
+ 
 
 So let us try to formalise this using pre and postcondition, or, as on says, ***Hoare triples***.
 
@@ -455,7 +458,7 @@ The second trick is that we can conclude the value of $\mathtt z$ after the loop
 
 [^looksright]: The problem with $\color{blue}{\{\mathtt{z=x*y}\}}$ is that it only gives what we want if take for $\mathtt x$ the value of $\mathtt x$ *before* the computation and for $\mathtt z$ the value of $\mathtt z$ *after* the computation. On the other hand, if we take for both variables their values after the computation, as we should, the condition $\color{blue}{\{\mathtt{z=x*y}\}}$ is false (for almost all initial values of the variables).
 
-[^equals]: The rule of logic that allows to replace equals by equals is one of the most basic rules that we typically use without feeling the need to formulate it explicitely, as we did in the example of [equational reasoning](https://hackmd.io/s/H1panO_um#Excursion-on-Equational-Logic) under the name of "congruence rule". 
+[^equals]: The rule of logic that allows to replace equals by equals is one of the most basic rules that we typically use without feeling the need to formulate it explicitely, as we did in the example of [equational reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS) under the name of "congruence rule". 
 
 
 [^xis0]: The condition $\mathtt B$ that forces to execute the loop is in our example `x!=0`, that is, $\neg(x=0)$. Therefore $\neg\mathtt B$ is $\neg\neg(x=0)$, which is $x=0$.
