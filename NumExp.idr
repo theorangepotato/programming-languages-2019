@@ -10,14 +10,11 @@ plus (S n)  y = S (plus n y)
 similarly mult
 -}
 
-
 infixr 11 :+:
 infixr 12 :*:
 
 data Num = O | S Num 
-
 data Exp = N Num | (:+:) Exp Exp | (:*:) Exp Exp
-
 
 total eval_num : Num -> Nat
 eval_num O = 1
@@ -28,13 +25,10 @@ eval_exp (N n) = eval_num n
 eval_exp (e1 :+: e2) = (eval_exp e1) + (eval_exp e2)
 eval_exp (e1 :*: e2) = (eval_exp e1) * (eval_exp e2)
 
-
 total eval_exp_comm : (e1 : Exp) -> (e2: Exp) -> eval_exp (e1 :+: e2) = eval_exp (e2 :+: e1)
 eval_exp_comm e1 e2 = rewrite plusCommutative (eval_exp e1) (eval_exp e2) in Refl
 
-
 infixr 10 :=:
-
 
 data (:=:) : Exp -> Exp -> Type where 
    EqExpRefl : e :=: e
