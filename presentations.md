@@ -17,7 +17,7 @@ Each group will get approx 15 min for the presentation. The essay should be 1 to
 - why I should consider the language to implement which task
 - some features you found particularly interesting
 
-and be distributed to the audience as a handout.
+and be distributed to the audience as a handout. You should also put the essay in form of a blog and host it on GitHub. The page restriction would not apply to the blog and you can also add coding examples, links to How-to-get-started instructions and your own coding examples.
 
 ## Some programming languages
 
