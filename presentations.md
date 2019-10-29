@@ -1,5 +1,7 @@
 # Essay and Presentations
 
+Presentations will take place in the last week before the finals (and possibly the Thu before that).
+
 Form groups of 3-4 students
 
 Choose a programming language (not Java, JavaScript, Python, C, C++, ... 
