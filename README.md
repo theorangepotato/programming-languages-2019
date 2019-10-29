@@ -37,8 +37,9 @@ Midterm: Thu, Oct 17.
 Part III: Logic and Program Verification
 
 Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS)    
-Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)
+Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)    
+Lecture 10.1: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)    
 
-coming soon: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)
+[Essay and Presentation](https://github.com/alexhkurz/programming-languages-2019/blob/master/presentations.md)    
 
 
