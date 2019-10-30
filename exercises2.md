@@ -25,6 +25,8 @@ In each case prove partial correctness by using an invariant and prove terminati
             | x < y = gcd x (y-x)
             | otherwise = x
 
+Recommended: Run [this program](https://github.com/alexhkurz/programming-languages-2019/blob/master/mygcd.hs) and test a few values.
+
 #### As a term rewriting system
 
 Let  $(\mathbb N\times \mathbb N,\to)$ be defined as follows:
