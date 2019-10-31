@@ -42,6 +42,8 @@ Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPu
 Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)    
 Lecture 10.1 and 10.2: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)   
 
+No office hours Thu, Oct 31    
+
 [Exercises on Program Verification](exercises2.md)
 
 [Essay and Presentation](https://github.com/alexhkurz/programming-languages-2019/blob/master/presentations.md)    
