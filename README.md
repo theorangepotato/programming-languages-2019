@@ -46,6 +46,8 @@ No office hours Thu, Oct 31
 
 [Exercises on Program Verification](exercises2.md)
 
+Short test (worth 5%) on Hoare Logic on Tue, Nov 12
+
 [Essay and Presentation](https://github.com/alexhkurz/programming-languages-2019/blob/master/presentations.md)    
 
 
