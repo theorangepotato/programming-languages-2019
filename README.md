@@ -47,6 +47,9 @@ Part IV: **Universal Algebra and Category Theory**
 Lecture 11.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SkZ2GBWiS), [Structure Preserving Maps](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/ryRN4HZjS),    
 Lecture 11.2: [Homomorphisms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HyqLPrWsH), [Variables and Free Algebras](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyscwH-iS)    
 
+Part V: **Type Theory**    
+coming soon
+
 [Exercises on Program Verification](exercises2.md)
 
 Short test (worth 5%) on Hoare Logic on Tue, Nov 12
