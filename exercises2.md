@@ -2,9 +2,9 @@
 
 For the test: There will be 5 points (out of a total of 100 for the course).
 
-- Two questions about writing out a rule of hoare logic (watch out for the rules in red in the [lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH))
+- Two questions, one point each, about writing out a rule of hoare logic (watch out for the rules in red in the [lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH))
 
-- One question about finding an invariant.
+- One question of one point about finding an invariant.
 
 - Two points for proving a given invariant correct.
 
