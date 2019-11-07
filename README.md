@@ -42,6 +42,10 @@ Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPu
 Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)    
 Lecture 10.1 and 10.2: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)   
 
+Part IV: **Universal Algebra and Category Theory**
+
+Lecture 10.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SkZ2GBWiS), []()
+
 No office hours Thu, Oct 31    
 
 [Exercises on Program Verification](exercises2.md)
