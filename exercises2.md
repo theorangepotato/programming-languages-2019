@@ -1,5 +1,17 @@
 # Exercises: Program Verification, Hoare Logic, Loop Invariants
 
+For the test: There will be 5 points (out of a total of 100 for the course).
+
+- Two questions about writing out a rule of hoare logic (watch out for the rules in red in the [lecture](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH))
+
+- One question about finding an invariant.
+
+- Two points for proving a given invariant correct.
+
+The programs you will be asked to work on, will be variations of the ones in the lecture notes and the ones below.
+
+
+
 ## Euclidean Algorithm
 
 (One of the oldest algorithms still in use)
