@@ -44,10 +44,8 @@ Lecture 10.1 and 10.2: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H
 
 Part IV: **Universal Algebra and Category Theory**
 
-Lecture 11.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SkZ2GBWiS), [Structure Preserving Maps](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/ryRN4HZjS), 
-Lecture 11.2: [Initial and Free Algebras]()
-
-No office hours Thu, Oct 31    
+Lecture 11.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SkZ2GBWiS), [Structure Preserving Maps](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/ryRN4HZjS),    
+Lecture 11.2: [Homomorphisms](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HyqLPrWsH), [Variables and Free Algebras](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyscwH-iS)    
 
 [Exercises on Program Verification](exercises2.md)
 
