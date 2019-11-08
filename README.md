@@ -53,6 +53,8 @@ coming soon
 Part VI: **Type Theory**    
 coming soon
 
+[Feedback on Midterm](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1WYuVziH)
+
 [Exercises on Program Verification](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkhVZNzjH)
 
 Short test (worth 5%) on Hoare Logic on Tue, Nov 12
