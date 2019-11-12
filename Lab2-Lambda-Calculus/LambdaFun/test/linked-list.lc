@@ -1,0 +1,25 @@
+val nil = 
+    let val a = new [] in 
+    a := "nil";
+    a ;;
+
+val cons = \e. \a. 
+    let val b = new [] in
+    b := [e,a];
+    b ;;
+
+val head = \a.
+    case !a of {
+        "nil"-> "tried to take the head of an empty list",
+        [e,a'] -> e 
+    } ;;
+
+val tail = \a.
+    case !a of {
+        "nil" -> "tried to take the tail of an empty list",
+        [e,a'] -> a'
+    } ;;
+
+
+
+
