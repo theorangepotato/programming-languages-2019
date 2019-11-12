@@ -40,3 +40,6 @@ The full grammar of λFun is given below:
 <op>        ::=  "*" | "+" | "-" | "/" | ">" | ">=" | "==" | "!=" | "=<" | "<"
 <number>    ::= <digit>+
 ```
+## Lab2
+
+Implement the programs of Assignment1 in LambdaFun by adding them to `test/linked-list.lc`
