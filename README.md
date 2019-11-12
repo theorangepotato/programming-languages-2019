@@ -48,7 +48,7 @@ Lecture 11.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sk
 Lecture 11.2: [Universal Properties](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HyqLPrWsH), [Variables and Free Algebras](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyscwH-iS)    
 
 Part V: **Memory and References**    
-coming soon
+[Lab2](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab2-Lambda-Calculus/LambdaFun)    
 
 Part VI: **Type Theory**    
 coming soon
