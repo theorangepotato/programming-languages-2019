@@ -33,14 +33,16 @@ Lecture 7.1: ARS3: [Termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhg
 Lecture 7.2: [Rules of logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJLBJLhdS). ARS5: [Invariants](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkaF1g3_B)    
 Lecture 8.1: [Normalisation by Evaluation](https://hackmd.io/w9RLzXmcS86U4HVAQi5Lqg)   
 
-[Exercises on ARSs](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH)    
-Midterm: Thu, Oct 17.    
+[Exercises on ARSs](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rJqQHKFuH). Midterm: Thu, Oct 17. [Feedback on Midterm](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1WYuVziH)
+
 
 Part III: **Logic and Program Verification**
 
 Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/BkHZL3jFS)    
-Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)    
+Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)   
 Lecture 10.1 and 10.2: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)   
+
+[Exercises on Program Verification](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkhVZNzjH). Test on Hoare Logic Tue, Nov 12. 
 
 Part IV: **Universal Algebra and Category Theory**
 
@@ -48,17 +50,13 @@ Lecture 11.1: [Abstract Data Types](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sk
 Lecture 11.2: [Universal Properties](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HyqLPrWsH), [Variables and Free Algebras](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SyscwH-iS)    
 
 Part V: **Memory and References**    
-[Lab2](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab2-Lambda-Calculus/LambdaFun)    
+Lab 12.1, 12.2: Programming Language [LambdaFun](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab2-Lambda-Calculus/LambdaFun)   
+
+Assignment 2 coming up in Week 13
 
 Part VI: **Type Theory**    
-coming soon
+comming soon
 
-[Feedback on Midterm](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1WYuVziH)
-
-[Exercises on Program Verification](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkhVZNzjH)
-
-Short test (worth 5%) on Hoare Logic on Tue, Nov 12
-
-[Essay and Presentation](https://github.com/alexhkurz/programming-languages-2019/blob/master/presentations.md)    
+Part VII: [Essay and Presentation](https://github.com/alexhkurz/programming-languages-2019/blob/master/presentations.md)    
 
 
