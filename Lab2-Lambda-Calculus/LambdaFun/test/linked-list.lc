@@ -21,5 +21,16 @@ val tail = \a.
     } ;;
 
 
-
+val length = \a. 
+    let val ptr = new [] in
+    let val i = new [] in
+    i := 0;
+    ptr := a;
+    while !(!ptr) != "nil" do
+        case !(!ptr) of {
+            [e,a'] -> 
+                    i := !i + 1; 
+                ptr := a'
+        } ;
+    !i;;
 

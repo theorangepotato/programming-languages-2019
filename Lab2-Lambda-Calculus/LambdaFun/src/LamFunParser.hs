@@ -133,7 +133,7 @@ expr_Grammar = mdo
             SLamCBV -> empty
             SLamNat -> empty
             SLamRec -> empty
-            _ -> unsafeMkContents_ <$> (namedToken "!" *> (varR <|> bracketed expr))
+            _ -> unsafeMkContents_ <$> (namedToken "!" *> atom)
     -- e
     expr <- rule $ appR <|> lambdaR <|> letR
     return expr
