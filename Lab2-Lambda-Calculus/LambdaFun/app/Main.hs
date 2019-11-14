@@ -33,6 +33,16 @@ import LamFunSyntax
 import LamFunLexer
 import Utils
 import GHC.IO.Encoding
+import System.IO (openFile, IOMode(..), hSetNewlineMode, universalNewlineMode, hGetContents)
+
+
+-- converts line endings to \n to ensure consistent decoding...
+-- should fix issues with parsing?
+readFile' :: FilePath -> IO String
+readFile' name = do
+    h <- openFile name ReadMode
+    hSetNewlineMode h universalNewlineMode 
+    hGetContents h
 
 
 type Repl (v :: Version) a = HaskelineT (StateT (Settings, (GlobEnv v, RawEnv v)) IO) a
@@ -154,7 +164,7 @@ loadFile args = do
   let fileName = unwords args
   oldEnv <- getEnv
   putEnv (init_env @v, empty)
-  contents <- liftIO $ readFile fileName
+  contents <- liftIO $ readFile' fileName
   loaded <- cmd contents
   case loaded of 
     True -> do
@@ -172,7 +182,7 @@ reloadFile _ = do
     Just fileName -> do
       oldEnv <- getEnv
       putEnv (init_env @v, empty)
-      contents <- liftIO $ readFile fileName
+      contents <- liftIO $ readFile' fileName
       loaded <- cmd contents
       case loaded of 
         True -> do
@@ -307,7 +317,7 @@ main = do
   version <- handle (\(_::IOException) -> do
     putStrLn $ "Settings file not found ... defaulting to " ++ (highlight "LamRec")
     return "LamRec") $ do
-    ver <- readFile ".lamfun"
+    ver <- readFile' ".lamfun"
     putStrLn $ "Found settings file ... setting language to " ++ (highlight ver)
     return ver
   setLang_ version False ini
