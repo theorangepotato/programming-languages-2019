@@ -32,6 +32,8 @@ import LamFunLexer(Token(..))
 import LamFunSyntax
 import LamFunLexer
 import Utils
+import GHC.IO.Encoding
+
 
 type Repl (v :: Version) a = HaskelineT (StateT (Settings, (GlobEnv v, RawEnv v)) IO) a
 
@@ -301,6 +303,7 @@ dontCrashVerbose m = do
 
 main :: IO ()
 main = do
+  setLocaleEncoding utf8
   version <- handle (\(_::IOException) -> do
     putStrLn $ "Settings file not found ... defaulting to " ++ (highlight "LamRec")
     return "LamRec") $ do
