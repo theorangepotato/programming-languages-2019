@@ -31,7 +31,7 @@ The full grammar of λFun is given below:
                 <expr> ";" <expr> |
                 <expr> ":=" <expr> | 
                 "!" <expr> | 
-                "&" <expr>
+                "addr" <expr>
 <list>      ::= "" | <expr> "," <list>
 <expr_opt>  ::= "_" | <expr>
 <case>      ::= <expr_opt> "->" <expr> | <expr_opt> "->" <expr> "," <case>
@@ -48,4 +48,9 @@ The full grammar of λFun is given below:
 
 **Lab on Thursday:** Implement the programs of Assignment1 in LambdaFun by adding them to `test/linked-list.lc`
 
+**Memory:** There are the following operations to deal with memory, which we can think of as having types as indicated:
 
+    new :: () -> addr
+    (:=) :: addr -> value -> ()
+    ! :: addr -> value
+    addr :: int -> addr
