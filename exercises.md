@@ -10,6 +10,18 @@ In particular, revise the question about Lambda Calculus and about String Rewrit
 
 ---
 
+## Definitions
+
+Find counter-examples to the following statements:
+
+- An ARS is not confluent if it is not terminating.
+
+- An ARS is confluent if it is terminating.
+
+- An ARS is not confluent if not all elements reduce to the same form.
+
+- An ARS is terminating if it is confluent and has unique normal forms.
+
 ## Abstract Reduction Systems
 
 To do the exercises you need to use the material about [equivalence relations](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/SJ1cc-dDr) and [syntax and semantics](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Sy3oqhpvH) and [abstract reduction systems](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/S1zQfzedS) and [termination](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H1jhgxmur).

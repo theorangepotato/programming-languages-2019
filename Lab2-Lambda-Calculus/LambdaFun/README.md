@@ -42,4 +42,10 @@ The full grammar of λFun is given below:
 ```
 ## Lab2
 
-Implement the programs of Assignment1 in LambdaFun by adding them to `test/linked-list.lc`
+**Lab on Tuesday:** Implement easy arithmetic: `plusone`, `add`
+
+**Homework before Thursday:** Implement the programs of Assignment1 in LambdaFun using the built-in lists. See `test/examples.lc` for examples.
+
+**Lab on Thursday:** Implement the programs of Assignment1 in LambdaFun by adding them to `test/linked-list.lc`
+
+
