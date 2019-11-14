@@ -20,6 +20,12 @@ val tail = \a.
         [e,a'] -> a'
     } ;;
 
+rec length = \l. 
+    case !l of { 
+        "nil" -> 0 , 
+        _ -> 1 + length (tail l) 
+    } ;;
+
 
 
 
