@@ -16,15 +16,9 @@ The library will consist of the following functions.[^types]
     insert :: elem, cList -> cList
     delete :: cList -> cList
 
-`newClist` takes an element and returns (the address of) a circular list of length 1 containing the element. The data structure looks like this, namely we use a pair `[e,a]`, where `e` is the element stored in the list and `a` is a pointer which points back at the pair: See ![](./newCList.svg).
+`newClist` takes an element and returns (the address of) a circular list of length 1 containing the element. The data structure looks like this, namely we use a pair `[e,a]`, where `e` is the element stored in the list and `a` is a pointer which points back at the pair
 
-```
-  ______________
- |    ___ ___   |
- |-->|   |   |  |
----->| e | a |--
-     |___|___|  
-```
+<img src="./newCList.svg" width=200px>
 
 `next` takes (the address of) a circular list `a` and returns (the address of) the list after the current position. (This is similar to the tail of linked lists but it doesn't need a case for the empty list and it doesn't reduce the length of the list.)
 
