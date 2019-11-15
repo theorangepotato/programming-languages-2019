@@ -20,7 +20,7 @@ The library will consist of the following functions.[^types]
 
 `newClist` takes an element and returns (the address of) a circular list of length 1 containing the element. The data structure looks like this, namely we use a pair `[e,a]`, where `e` is the element stored in the list and `a` is a pointer which points back at the pair    
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./newCList.svg" width=100px>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./newCList.svg" width=94px>
 
 ---
 
@@ -42,13 +42,17 @@ The library will consist of the following functions.[^types]
 
 `insert` takes an element `e` and a circular list `a` and inserts `e` after the current element. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="./insert1.svg" width=150px>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./insert2.svg" width=150px>
+|            Before                   |               After                 |
+|:-----------------------------------:|:-----------------------------------:|
+|<img src="./insert1.svg" width=150px>|<img src="./insert2.svg" width=150px>|
 
 ---
 
 `delete` takes a circular list `a` and "deletes" the element after the current element of `a` (if it exists) by reassigning the pointer of `a` pointing to the successor. In particular, deleting from the one-element cyclic list does not change the list. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./delete1.svg" width=200px>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./delete2.svg" width=200px>
+|            Before                   |               After                 |
+|:-----------------------------------:|:-----------------------------------:|
+|<img src="./delete1.svg" width=206px>|<img src="./delete2.svg" width=206px>|
 
 ---
 
