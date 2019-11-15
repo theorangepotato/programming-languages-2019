@@ -1,0 +1,100 @@
+val myclist = cListToList [6, 5, 4, 3];;
+testRRobin [addTask 6,tick,tick,addTask 5,0,0,0];;
+testRRobin [addTask 6,tick,tick,addTask 5,0,0];;
+testRRobin [addTask 6,tick,tick,addTask 5,0];;
+testRRobin [addTask 6,tick,tick,addTask 5];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick,tick];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick];;
+testRRobin [addTask 6,tick,tick,addTask 5,0];;
+testRRobin [addTask 6,tick,tick,addTask 5];;
+testRRobin [addTask 6,tick,tick,addTask 5]
+testRRobin [addTask 6,tick,tick,addTask 5,0];;
+testRRobin [addTask 6,tick,tick,addTask 5,0,0,0,0,0];;
+testRRobin [addTask 6,tick,tick,addTask 5,0,0,0];;
+testRRobin [addTask 6,tick,tick,addTask 5];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick,tick,tick];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick,tick,addTask 7];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick,tick,addTask7];;
+testRRobin [addTask 6,tick,tick,addTask 5,tick,tick];;
+testRRobin [addTask 6,tick,tick,addTask 5];;
+testRRobin [addTask 6,tick,tick];;
+testRRobin [addTask 6];;
+testRRobin [add Task 6];;
+testRRobin [6];;
+testRRobin [6,0,0,5,0,0,7,0,0,0];;
+testRRobin [6,0,0,5,0,0,7,0,0,0];;
+testRRobin [6,0,0,5,0,0,7];;
+testRRobin [6,0,0,5,0,0];;
+testRRobin [6,0,0,5];;
+testRRobin [6,0,0,4];;
+testRRobin [6,0,0];;
+testRRobin [6, 0];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3];;
+val myclist = cListToList [6, 5, 4, 3];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3, tick];;
+val myclist = cListToList [6];;
+val myclist = cListToList 6:[];;
+val myclist = cListToList [6];;
+val myclist = cListToList [];;
+val myclist = cListToList ([6, 5, 4, 3]);;
+val clist = cListToList [addTask 6, addTask 5, addTask 4, addTask 3];;
+val clist = clistToList [addTask 6, addTask 5, addTask 4, addTask 3];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3, tick];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3, tick, tick, tick, tick];;
+testRRobin [addTask 6, addTask 5, addTask 4, addTask 3];;
+testRRobin [addTask 5, addTask 3, addTask 4];;
+testRRobin [addTask 3, addTask 4];;
+testRRobin [addTask 3, addTask 4, tick, tick];;
+test1;;
+test2;;
+test1;;
+testRRobin test1;;
+testRRobin;;
+roundRobin [addTask 3] 2;;
+roundRobin [] 2;;
+:l solutions/round_robin.lc 
+:l solutions/round_robin.lc 
+:setLang LamMem
+! 1;;
+:setLang LamMem 
+:setLang LamMem
+:help
+:q
+head list2;;
+val list2 = cons 3 (cons 4 nil);;
+:env
+tail list1;;
+head list1;;
+:env
+list1;;
+val list1 = cons 2 (cons 1 nil) ;;
+:env ;; 
+cons 2 (cons 1 nil) ;;
+:env
+cons 1 nil;;
+:load test/linked-list.lc 
+:env
+cons a nil;;
+:load test/linked-list.lc 
+:setLang LamMem
+:help
+:setLang LamMem 
+:env
+add 2 3;;
+rec add = \x.\y. case x of  { 0 -> y , _ -> plusone (add (x-1) y) } ;;
+rec add = \x.\y. case x of  { 0 -> y , _ -> plusone (add (x-1) y } ;;
+plusone 3;;
+val plusone = \x. 1+x;;
+id 3 ;;
+id 3
+val id = \x.x ;;
+:setLang LamMem
+:help
+add 1 2;;
+rec add = \x.\y. case x of { 0 -> y  , _ -> plusone (add (x-1) y) } ;;
+add 1 2;;
+rec add = \x.\y. case x of { 0 -> y  , _ -> plusone add (x-1) y } ;;
+add 1 2;;
+val add = \x.\y. case x of { 0 -> y  , _ -> plusone add (x-1) y } ;;
+val add = \x.\y. case x of { 0 -> y  , _ -> plusone add (x-1) y }

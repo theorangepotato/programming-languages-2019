@@ -18,6 +18,7 @@ The full grammar of λFun is given below:
 <defn>      ::= "val" <id> "=" <expr> | "rec" <id> " " <ids> "=" <expr>
 <expr>      ::= <id> | 
                 <number> | 
+                <string> |
                 "true" | 
                 "false" | 
                 "\" <ids> "." <expr> | 
@@ -39,6 +40,7 @@ The full grammar of λFun is given below:
 <ids>       ::= <id> | <id> " " <ids>
 <op>        ::=  "*" | "+" | "-" | "/" | ">" | ">=" | "==" | "!=" | "=<" | "<"
 <number>    ::= <digit>+
+<string>    ::= """ (<letter> | <digit>)* """
 ```
 
 Remark: `while a do b ; c` is parsed as `(while a do b) ; c`, not as `while a do (b ; c)`
