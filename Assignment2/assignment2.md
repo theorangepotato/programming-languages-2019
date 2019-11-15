@@ -20,7 +20,7 @@ The library will consist of the following functions.[^types]
 
 `newClist` takes an element and returns (the address of) a circular list of length 1 containing the element. The data structure looks like this, namely we use a pair `[e,a]`, where `e` is the element stored in the list and `a` is a pointer which points back at the pair    
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./newCList.svg" width=94px>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./newCList.svg" width=105px>
 
 ---
 
@@ -44,7 +44,7 @@ The library will consist of the following functions.[^types]
 
 |            Before                   |               After                 |
 |:-----------------------------------:|:-----------------------------------:|
-|<img src="./insert1.svg" width=150px>|<img src="./insert2.svg" width=150px>|
+|<img src="./insert1.svg" width=180px>|<img src="./insert2.svg" width=180px>|
 
 ---
 
@@ -52,7 +52,7 @@ The library will consist of the following functions.[^types]
 
 |            Before                   |               After                 |
 |:-----------------------------------:|:-----------------------------------:|
-|<img src="./delete1.svg" width=206px>|<img src="./delete2.svg" width=206px>|
+|<img src="./delete1.svg" width=248px>|<img src="./delete2.svg" width=248px>|
 
 ---
 
