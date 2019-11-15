@@ -1,0 +1,67 @@
+val newCList = \e.
+    let val a = new [] in
+    a := [e,a];
+    a;;
+
+-- complete the following functions
+
+-- val insert = \e. \a. 
+
+-- val delete = \a. 
+
+-- val next = \a.
+
+-- val get = \a. 
+
+-- val update = \e. \a. 
+
+-- after completing the functions above
+-- the code below should run 
+
+rec roundRobin = \ts. \a. case ts of {
+    [] -> a,
+    (0 : ts') -> (
+        let val c = get (next a) in
+        case c of {
+            0 -> delete a ,
+            _ -> update (c-1) (next a)
+        };
+        roundRobin ts' (next a)
+    ),
+    (t : ts') -> (
+        case [a == (next a) , (get a) == 0] of {
+            [true,true] -> update t a,
+            _ -> insert t a
+        };
+        roundRobin ts' (next a)
+    )
+};;
+
+rec toListAux = \h. \b. case b == h of { 
+        true -> [] ,
+        false -> case !b of {
+            [v, b'] -> v : (toListAux h b')
+        } 
+};;
+
+val cListToList = \a. case !a of {
+    [v, a'] -> v : (toListAux a a') 
+};;
+
+val testRRobin = \ts. cListToList (roundRobin ts (newCList 0));;
+
+val tick = 0;;
+
+val addTask = \n.n;;
+
+val test1 = (testRRobin [tick]) == [0];;
+
+val test2 = (testRRobin [addTask 3, addTask 4, tick, tick]) == [2, 3];;
+
+val test3 = (testRRobin [addTask 6, tick, tick]) == [4];;
+
+val test4 = (testRRobin [addTask 6, tick, tick,addTask 5]) == [5,4];;
+
+val test5 = (testRRobin [addTask 6, tick, tick,addTask 5,tick]) == [3,5];;
+
+
