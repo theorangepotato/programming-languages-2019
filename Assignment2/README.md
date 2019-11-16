@@ -4,6 +4,22 @@ This assignment is about a simple round robin algorithm that allocates CPU time 
 
 The assignment provides the round robin algorithm, but asks you to implement the library functions needed to run it.
 
+## Instructions
+
+This assignment is worth 15% of the total grade.
+
+Deadline for hand-in is Friday, November 22.
+
+You may form groups of up to 4 students.
+
+Each group submits their answer by sending me a link to a github repository via [email using this link](mailto:akurz@chapman.edu?subject=CPSC-354-Assignment-2).
+
+**Make this a private github repository, so that your solution is not visible to other groups.**
+
+If possible, use the same repository as for Assignment 1.
+
+To assess your work, I will run the code in the file `/solution/round_robin.lc`, so make sure that the functions you implement all run as expected.
+
 ## Specification
 
 The library will consist of the following functions.[^types] 
