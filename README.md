@@ -52,7 +52,7 @@ Lecture 11.2: [Universal Properties](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/H
 Part V: **Memory and References**    
 Lab 12.1, 12.2: Programming Language [LambdaFun](https://github.com/alexhkurz/programming-languages-2019/tree/master/Lab2-Lambda-Calculus/LambdaFun)   
 
-Assignment 2 coming up in Week 13
+[Assignment 2](https://github.com/alexhkurz/programming-languages-2019/tree/master/Assignment2)
 
 Part VI: **Type Theory**    
 comming soon
