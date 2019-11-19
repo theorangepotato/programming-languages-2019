@@ -6,6 +6,10 @@ The assignment provides the round robin algorithm, but asks you to implement the
 
 ## Instructions
 
+Pull the repository `programming-languages-2019` ... if you get an error message about `unrelated histories` do
+
+    git pull --allow-unrelated-histories
+
 This assignment is worth 15% of the total grade.
 
 Deadline for hand-in is Friday, November 22.
