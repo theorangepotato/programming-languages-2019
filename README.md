@@ -42,7 +42,7 @@ Lecture 9.1: [Induction and Equational Reasoning](https://hackmd.io/@m5rnD-8SSPu
 Lecture 9.2: [Theorem Proving](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/HkMfp2sFr)   
 Lecture 10.1 and 10.2: [Hoare Logic](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/Hy135C2tH)   
 
-[Exercises on Program Verification](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkhVZNzjH). Test on Hoare Logic Tue, Nov 12. [Feedback](https://hackmd.io/@alexhkurz/Bkras2ehS),
+[Exercises on Program Verification](https://hackmd.io/@m5rnD-8SSPuuSHTKgXvMjg/rkhVZNzjH). Test on Hoare Logic Tue, Nov 12. [Feedback](https://hackmd.io/@alexhkurz/Bkras2ehS).
 
 Part IV: **Universal Algebra and Category Theory**
 
