@@ -51,12 +51,4 @@ Remark: `while a do b ; c` is parsed as `(while a do b) ; c`, not as `while a do
 
 **Lab on Thursday:** Implement the programs of Assignment1 in LambdaFun by adding them to `test/linked-list.lc`
 
-**Memory:** There are the following operations to deal with memory, which we can think of as having types as indicated:
-
-    new :: () -> addr
-    (:=) :: addr -> value -> ()
-    ! :: addr -> value
-
-and later
-
-    addr :: int -> addr
+**Memory:** See  the discussion on the [Memory Model](https://hackmd.io/@alexhkurz/HkEBbgGnS). 
