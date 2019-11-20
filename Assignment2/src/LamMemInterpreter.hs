@@ -186,6 +186,7 @@ instance Interpreter 'LamMem where
       pureprim "head" (\ (Cons h _) -> h),
       pureprim "tail" (\ (Cons _ t) -> t),
       primitive "print" (\ v -> output (show v) $> (\ () -> result v)),
+      primitive "println" (\ v -> output (show v ++ "\n") $> (\ () -> result v)),
       primitive "new" (\ _ -> new $> (\a -> result (Addr a))),
       primitive "!" (\ (Addr a) -> get a)
       ], init_mem)
